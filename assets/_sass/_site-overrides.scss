@@ -63,10 +63,62 @@
   }
 
   // The templates use `ul.list-group`, but the theme only styles `div.list-group`,
-  // so the entries keep the browser's default disc bullets.
+  // so entries keep the browser's default disc bullets. Drop them: in Experience,
+  // Education and Awards each `li` is a full two-column card row, not a list item.
   ul.list-group {
     padding-left: 0;
     list-style: none;
+  }
+
+  // ...except in the generic sections (Patents, Selected Oral Presentations,
+  // Professional Memberships), where each entry is a genuine one-line list item
+  // and reads as an undifferentiated block without a marker.
+  //
+  // Those sections emit one single-item <ul> per entry, while Experience and
+  // friends emit one <ul> holding every entry. That is the only structural
+  // difference available, so select it directly: the two rules below together
+  // match every <ul> in a multi-<ul> section and none in a single-<ul> one.
+  ul.list-group:nth-last-of-type(n + 2),
+  ul.list-group + ul.list-group {
+    margin-bottom: 0;
+
+    li.list-group-item {
+      position: relative;
+      padding: 0.3rem 0 0.3rem 1.1rem;
+      border: 0;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0.78em;
+        left: 0.15rem;
+        width: 0.3rem;
+        height: 0.3rem;
+        border-radius: 50%;
+        background-color: var(--global-theme-color);
+      }
+    }
+  }
+
+  // Generic "label: details" entries (Service & Leadership) render as bare
+  // sibling divs, so four multi-line entries run together into one wall of text.
+  // Lift the label onto its own line and space the entries apart.
+  //
+  // The child combinator matters: the Skills section reuses `.card-text
+  // .font-weight-light` as a wrapper, but its <strong> sits inside `.skill-item`
+  // and so is never a direct child.
+  .card > div > .card-text.font-weight-light {
+    margin-bottom: 1rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    > strong {
+      display: block;
+      margin-bottom: 0.15rem;
+      color: var(--global-theme-color);
+    }
   }
 
   ul.items {

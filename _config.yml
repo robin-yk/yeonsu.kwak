@@ -296,6 +296,13 @@ defaults:
 
 sass:
   style: compressed
+  # The site's own Sass lives in assets/_sass, not the default _sass. That is
+  # deliberate: `bust_css_cache` digests the `assets/_sass` directory to version
+  # main.css, and falls back to the theme's partials when that directory is
+  # missing — so overrides kept anywhere else never change the ?v= query and
+  # browsers keep serving a stale stylesheet.
+  load_paths:
+    - assets/_sass
 
 # -----------------------------------------------------------------------------
 # Jekyll Minifier
