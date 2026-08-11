@@ -14,6 +14,51 @@
 }
 
 // -----------------------------------------------------------------------------
+// Publication authorship filter
+// -----------------------------------------------------------------------------
+
+.pub-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1.5rem 0 0.5rem;
+
+  button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.35rem 0.8rem;
+    border: 1px solid var(--global-divider-color);
+    border-radius: 2rem;
+    background: none;
+    color: var(--global-text-color);
+    font-size: 0.82rem;
+    line-height: 1.2;
+    cursor: pointer;
+    transition:
+      border-color 0.15s ease,
+      color 0.15s ease,
+      background-color 0.15s ease;
+
+    &:hover {
+      border-color: var(--global-theme-color);
+      color: var(--global-theme-color);
+    }
+
+    &.is-active {
+      border-color: var(--global-theme-color);
+      background-color: var(--global-theme-color);
+      color: var(--global-card-bg-color);
+    }
+  }
+
+  .pub-filter-count {
+    font-size: 0.72rem;
+    opacity: 0.7;
+  }
+}
+
+// -----------------------------------------------------------------------------
 // Publication venue badges
 // -----------------------------------------------------------------------------
 // `.badge` sets `white-space: nowrap`, so longer journal abbreviations
@@ -24,6 +69,22 @@
   white-space: normal;
   text-align: center;
   line-height: 1.25;
+}
+
+// -----------------------------------------------------------------------------
+// About page profile photo
+// -----------------------------------------------------------------------------
+// The about layout floats the photo at the top of <article>, which starts below
+// the <header> holding the name and subtitle, so the photo sits noticeably lower
+// than the heading. Pull it up alongside the name. Only from the breakpoint where
+// the photo actually sits beside the text; narrower than that it stacks, and a
+// negative margin would drag it under the navbar.
+
+@media (min-width: 768px) {
+  .profile.float-right,
+  .profile.float-left {
+    margin-top: -6.5rem;
+  }
 }
 
 // -----------------------------------------------------------------------------

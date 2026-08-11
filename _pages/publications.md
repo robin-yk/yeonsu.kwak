@@ -2,18 +2,21 @@
 layout: page
 permalink: /publications/
 title: publications
-description: "10 first-author and 16 co-author peer-reviewed papers. † equal contribution, * corresponding author."
+description: "† equal contribution, * corresponding author."
 nav: true
 nav_order: 1
 ---
 
 <!-- _pages/publications.md -->
 
-<!-- Bibsearch Feature -->
+<!-- Filter by authorship. Hidden until the script runs, so it never shows as a dead control. -->
+<div class="pub-filter" role="group" aria-label="Filter publications by authorship" hidden>
+  <button type="button" data-filter="all" aria-pressed="true">All</button>
+  <button type="button" data-filter="first" aria-pressed="false">First authorship</button>
+  <button type="button" data-filter="co" aria-pressed="false">Co-authorship</button>
+</div>
 
-{% include bib_search.liquid %}
-
-<div class="publications">
+<div class="publications" id="published">
 
 {% bibliography --query @article %}
 
@@ -26,3 +29,5 @@ nav_order: 1
 {% bibliography --query @unpublished %}
 
 </div>
+
+<script src="{{ '/assets/js/pubfilter.js' | relative_url }}"></script>
