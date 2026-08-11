@@ -27,6 +27,33 @@
 }
 
 // -----------------------------------------------------------------------------
+// Tools page
+// -----------------------------------------------------------------------------
+
+.tool-list {
+  margin-top: 2rem;
+
+  .tool {
+    padding: 1rem 0;
+    border-top: 1px solid var(--global-divider-color);
+
+    &:last-child {
+      border-bottom: 1px solid var(--global-divider-color);
+    }
+
+    h3 {
+      margin: 0 0 0.35rem;
+      font-size: 1.15rem;
+    }
+
+    p {
+      margin: 0;
+      color: var(--global-text-color-light);
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
 // Highlights page
 // -----------------------------------------------------------------------------
 // Two items of very different aspect ratio (a portrait journal cover and a
