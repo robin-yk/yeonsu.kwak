@@ -11,19 +11,19 @@ nav_order: 3
 
 <div class="tool-list">
 
-<div class="tool">
-  <h3><a href="https://robin-yk.github.io/Electrification/#microwave">Microwave Heating 2D Model</a></h3>
-  <p>Steady-state powder-bed temperature fields, with dielectric response, penetration depth, heat transfer and experimental calibration.</p>
-</div>
+<a class="tool" href="https://robin-yk.github.io/Electrification/#microwave">
+    <h3>Microwave Heating 2D Model</h3>
+    <p>Steady-state powder-bed temperature fields, with dielectric response, penetration depth, heat transfer and experimental calibration.</p>
+  </a>
 
-<div class="tool">
-  <h3><a href="https://robin-yk.github.io/Electrification/#joule">Joule Heating 2D Optimizer</a></h3>
-  <p>Electrical and thermal screening across materials, geometry, hardware limits and heat losses, with an axisymmetric temperature field.</p>
-</div>
+<a class="tool" href="https://robin-yk.github.io/Electrification/#joule">
+    <h3>Joule Heating 2D Optimizer</h3>
+    <p>Electrical and thermal screening across materials, geometry, hardware limits and heat losses, with an axisymmetric temperature field.</p>
+  </a>
 
-<div class="tool">
-  <h3><a href="https://robin-yk.github.io/Electrification/#rphcjh">RPH vs CJH Dimensionless Visualizer</a></h3>
-  <p>Jensen's-inequality effects of ramped versus continuous heating on temperature-dependent kinetics and transport, and the resulting exposure and Damköhler ratios for ethane cracking.</p>
-</div>
+<a class="tool" href="https://robin-yk.github.io/Electrification/#rphcjh">
+    <h3>RPH vs CJH Dimensionless Visualizer</h3>
+    <p>Jensen's-inequality effects of ramped versus continuous heating on temperature-dependent kinetics and transport, and the resulting exposure and Damköhler ratios for ethane cracking.</p>
+  </a>
 
 </div>

@@ -46,10 +46,11 @@
 
   ready(function () {
     var bar = document.querySelector(".pub-filter");
-    // Scope to the published list only. The under-review section is a separate
-    // block below and stays visible whatever is selected, which also keeps the
-    // counts equal to the ones quoted on the CV.
-    var lists = document.querySelectorAll("#published ol.bibliography");
+    // Every list on the page, including the under-review block. Filtering only
+    // the published one left an under-review paper of the wrong authorship on
+    // screen, which reads as the filter being broken.
+    var blocks = document.querySelectorAll(".publications");
+    var lists = document.querySelectorAll(".publications ol.bibliography");
     if (!bar || !lists.length) return;
 
     var items = [];
@@ -73,12 +74,21 @@
         li.hidden = role !== "all" && li.dataset.role !== role;
       });
 
-      // A year heading is a sibling of its list, so hide any heading whose list
-      // has nothing left to show.
+      // A year heading is the sibling immediately before its list, so hide any
+      // heading whose list has nothing left to show.
       lists.forEach(function (list) {
         var visible = list.querySelector(":scope > li:not([hidden])");
         list.hidden = !visible;
         var heading = list.previousElementSibling;
+        if (heading && heading.tagName === "H2") heading.hidden = !visible;
+      });
+
+      // Section headings sit outside their block, so they need the same
+      // treatment one level up.
+      blocks.forEach(function (block) {
+        var visible = block.querySelector("ol.bibliography > li:not([hidden])");
+        block.hidden = !visible;
+        var heading = block.previousElementSibling;
         if (heading && heading.tagName === "H2") heading.hidden = !visible;
       });
 
