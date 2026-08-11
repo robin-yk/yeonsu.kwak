@@ -8,10 +8,6 @@ nav_order: 2
 horizontal: false
 ---
 
-{% include figure.liquid loading="eager" path="assets/img/lab_reactors.jpg" class="img-fluid rounded z-depth-1" alt="Continuous-flow hydrogen reactor systems in the laboratory" %}
-
-<div class="caption">Continuous-flow reactor systems built for scaled hydrogen release.</div>
-
 <!-- pages/projects.md -->
 <div class="projects">
 {% assign sorted_projects = site.projects | sort: "importance" %}

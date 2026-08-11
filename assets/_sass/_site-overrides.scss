@@ -27,6 +27,51 @@
 }
 
 // -----------------------------------------------------------------------------
+// Highlights page
+// -----------------------------------------------------------------------------
+// Two items of very different aspect ratio (a portrait journal cover and a
+// landscape press photo), so give each column its own track and let the images
+// size themselves rather than forcing a shared height. Deliberately not built
+// on `.row`/`.col-*`: those Bootstrap classes are only half-present without the
+// compat layer, which is what broke the CV page.
+
+.highlights-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  margin-top: 1.5rem;
+
+  @media (min-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+
+  figure {
+    margin: 0;
+  }
+
+  // A portrait cover next to a landscape photo looks lopsided at equal widths,
+  // so cap both on height instead and let the widths fall where they may.
+  img {
+    width: auto;
+    max-width: 100%;
+    max-height: 24rem;
+    height: auto;
+  }
+
+  figcaption {
+    margin-top: 0.75rem;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: var(--global-text-color-light);
+
+    strong {
+      color: var(--global-theme-color);
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
 // CV page layout
 // -----------------------------------------------------------------------------
 // The al_folio_cv templates are written in Bootstrap grid markup (.row +
