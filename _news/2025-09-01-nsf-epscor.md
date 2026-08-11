@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Awarded the **Delaware EPSCoR Graduate Bridge Fund** by the National Science Foundation, for 2025 to 2026.
+Awarded the **Delaware EPSCoR Graduate Bridge Fund** (NSF) for 2025 to 2026.

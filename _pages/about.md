@@ -10,7 +10,7 @@ profile:
   image_circular: true # crops the image to make it circular
   more_info: # text under the photo; left empty on purpose, the affiliation is already in the subtitle
 
-selected_papers: true # includes a list of papers marked as "selected={true}"
+selected_papers: false # the full list lives on the publications page; no need to repeat it here
 social: true # includes social icons at the bottom of the page
 
 announcements:
@@ -24,8 +24,6 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I work on **electrifying catalytic chemical manufacturing**: driving reactors with microwaves and pulsed Joule heating instead of a flame, and using operando methods to find out what the catalyst is actually doing while the field is on. That has produced coke-resistant propane dehydrogenation without an H₂ co-feed, pulsed heating that raises methane coupling while suppressing coke, and an internally heated ethane cracker.
+I electrify catalytic reactors: microwaves and pulsed Joule heating instead of a flame, with operando methods to see what the catalyst is doing while the field is on. That has produced coke-resistant propane dehydrogenation with no H₂ co-feed, pulsed heating that raises methane coupling while suppressing coke, and an internally heated ethane cracker.
 
-I am advised by [Prof. Dionisios G. Vlachos](https://cbi.udel.edu/) and expect to defend in August 2026, and I am currently an R&D intern at Linde Engineering America. Before Delaware I spent four years turning catalysis into hardware: a 2.3 Nm³/h hydrogen-release reactor at KIST, and a continuous 5 ton/yr sustainable-aviation-fuel pilot at IAE.
-
-I am on the job market for research and process-development roles. Email is the fastest way to reach me.
+Advised by [Prof. Dionisios G. Vlachos](https://cbi.udel.edu/), defending August 2026, currently an R&D intern at Linde Engineering America. Before Delaware, four years building hydrogen and fuel reactors at KIST and IAE. I am on the job market for research and process-development roles, and email is the fastest way to reach me.

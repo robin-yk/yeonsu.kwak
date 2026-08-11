@@ -27,6 +27,115 @@
 }
 
 // -----------------------------------------------------------------------------
+// Research page
+// -----------------------------------------------------------------------------
+// Icon cards that stay quiet until pointed at. The description is always in the
+// DOM so it is readable by search engines and screen readers; only its height is
+// animated, via the 0fr/1fr grid-row trick, which avoids guessing a max-height.
+
+.research-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin: 2rem 0 1.5rem;
+
+  @media (min-width: 600px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.research-card {
+  padding: 1.5rem 1.25rem;
+  border: 1px solid var(--global-divider-color);
+  border-radius: 0.4rem;
+  background-color: var(--global-card-bg-color);
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+  cursor: default;
+
+  i {
+    font-size: 1.6rem;
+    color: var(--global-theme-color);
+  }
+
+  h3 {
+    margin: 0.75rem 0 0;
+    font-size: 1.05rem;
+    line-height: 1.3;
+  }
+
+  // Collapsed by default. The text is wrapped in a span on purpose: a grid
+  // container turns every child into a grid item, so bare text plus inline
+  // <sub>/<sup> would each land on their own row, and the 0fr track needs a real
+  // element to clamp with `min-height: 0`.
+  p {
+    display: grid;
+    grid-template-rows: 0fr;
+    overflow: hidden;
+    margin: 0;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: var(--global-text-color-light);
+    opacity: 0;
+    transition:
+      grid-template-rows 0.25s ease,
+      opacity 0.2s ease,
+      margin-top 0.25s ease;
+
+    > span {
+      min-height: 0;
+    }
+  }
+
+  &:hover,
+  &:focus-visible,
+  &:focus-within {
+    border-color: var(--global-theme-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 14px rgb(0 0 0 / 8%);
+
+    p {
+      grid-template-rows: 1fr;
+      margin-top: 0.6rem;
+      opacity: 1;
+    }
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--global-theme-color);
+    outline-offset: 2px;
+  }
+}
+
+// Nothing to hover with on a touch screen, so show every description outright.
+@media (hover: none) {
+  .research-card p {
+    grid-template-rows: 1fr;
+    margin-top: 0.6rem;
+    opacity: 1;
+  }
+}
+
+// Respect a reduced-motion preference: reveal without animating.
+@media (prefers-reduced-motion: reduce) {
+  .research-card,
+  .research-card p {
+    transition: none;
+  }
+}
+
+.research-footnote {
+  font-size: 0.85rem;
+  color: var(--global-text-color-light);
+}
+
+// -----------------------------------------------------------------------------
 // Tools page
 // -----------------------------------------------------------------------------
 
