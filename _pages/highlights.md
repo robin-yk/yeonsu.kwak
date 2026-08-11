@@ -22,8 +22,10 @@ nav_order: 3
   {% include figure.liquid loading="eager" path="assets/img/highlights/lab_reactors.jpg" class="img-fluid rounded z-depth-1" alt="Continuous-flow hydrogen reactor systems in the laboratory" %}
   <figcaption>
     <strong>Press coverage</strong><br>
-    Scaled hydrogen-release reactor systems developed at the Korea Institute of Science and Technology.
-    <!-- TODO: add the outlet name, publication date and a link to the article. -->
+    Scaled hydrogen-release reactor systems developed at the Korea Institute of Science and Technology.<br>
+    <a href="https://v.daum.net/v/20210722120128318">Read the article</a>
+    <!-- TODO: the outlet name and headline are not filled in, because the link could not be opened
+         from the build environment to confirm them. Add them here rather than guessing. -->
   </figcaption>
 </figure>
 
