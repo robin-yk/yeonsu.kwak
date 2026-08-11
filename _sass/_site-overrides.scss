@@ -1,0 +1,80 @@
+// Site-local overrides for yeonsukwak-folio.
+// Loaded last from assets/css/main.scss so these rules win over the theme partials.
+
+// -----------------------------------------------------------------------------
+// Accent colour
+// -----------------------------------------------------------------------------
+// The theme ships a magenta accent ($purple-color). Override the custom
+// properties rather than shadowing _themes.scss, so only the colour changes.
+// Swap the two hex values below to re-theme the whole site.
+
+:root {
+  --global-theme-color: #0f766e; // deep teal
+  --global-hover-color: #115e59; // darker teal, for hover states
+}
+
+// -----------------------------------------------------------------------------
+// Publication venue badges
+// -----------------------------------------------------------------------------
+// `.badge` sets `white-space: nowrap`, so longer journal abbreviations
+// ("Angew. Chem. Int. Ed.") run past the edge of the pill instead of wrapping.
+
+.publications .abbr abbr,
+.publications .abbr .badge {
+  white-space: normal;
+  text-align: center;
+  line-height: 1.25;
+}
+
+// -----------------------------------------------------------------------------
+// CV page layout
+// -----------------------------------------------------------------------------
+// The al_folio_cv templates are written in Bootstrap grid markup (.row +
+// .col-md-2/.col-md-10), but this site runs with `compat.bootstrap.enabled:
+// false`. Without that shim both columns resolve to `width: 100%`, so the date
+// badge and location overlap the position title. Restore the intended split at
+// the medium breakpoint and let it stack below that.
+
+.cv {
+  .row {
+    align-items: flex-start;
+  }
+
+  @media (min-width: 768px) {
+    .col-md-2 {
+      flex: 0 0 20%;
+      max-width: 20%;
+      width: 20%;
+    }
+
+    .col-md-10 {
+      flex: 0 0 80%;
+      max-width: 80%;
+      width: 80%;
+    }
+  }
+
+  // The date column holds a `min-width: 75px` badge and a `white-space: nowrap`
+  // location line; without this they force the column past its share.
+  .date-column {
+    p.location {
+      white-space: normal;
+    }
+  }
+
+  // The templates use `ul.list-group`, but the theme only styles `div.list-group`,
+  // so the entries keep the browser's default disc bullets.
+  ul.list-group {
+    padding-left: 0;
+    list-style: none;
+  }
+
+  ul.items {
+    margin-top: 0.4rem;
+  }
+
+  // Section cards sit flush against each other by default.
+  .card {
+    margin-bottom: 1rem;
+  }
+}

@@ -2,7 +2,7 @@
 layout: page
 permalink: /publications/
 title: publications
-description: Peer-reviewed papers in reverse chronological order — 10 first-author, plus selected co-author work. Hover the ⓘ icon on an entry for equal-contribution and corresponding-author notes.
+description: 10 first-author and 16 co-author peer-reviewed papers. Hover the ⓘ on an entry for equal-contribution and corresponding-author notes.
 nav: true
 nav_order: 1
 ---
@@ -15,6 +15,14 @@ nav_order: 1
 
 <div class="publications">
 
-{% bibliography %}
+{% bibliography --query @article %}
+
+</div>
+
+<h2 id="under-review">Under review &amp; in preparation</h2>
+
+<div class="publications">
+
+{% bibliography --query @unpublished %}
 
 </div>
