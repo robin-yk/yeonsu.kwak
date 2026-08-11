@@ -34,8 +34,9 @@ bundle exec al-folio upgrade overrides diff <path>   # then `overrides accept <p
 - `axe.yml`, `broken-links-site.yml`, `broken-links.yml` — accessibility and link checking (these build with a blank baseurl on purpose).
 - `update-tocs.yml` — regenerates `<!--ts-->…<!--te-->` blocks in changed root and `docs/` Markdown. Expect a follow-up auto-commit on `main` after heading changes.
 - `upgrade-check.yml` — `bundle exec al-folio upgrade audit`.
+- `update-citations.yml` — its schedule is commented out on purpose. `bin/update_scholar_citations.py` exits 1 without `scholar_userid` in `_data/socials.yml`, so a cron run would only produce failure mail. Set the ID, then uncomment the `schedule:` block.
 
-Several workflows inherited from the al-folio template only make sense for the template project itself (`release.yml`, `deploy-image.yml`, `docker-slim.yml`, `deploy-docker-tag.yml`, `star-history.yml`, `lighthouse-badger.yml`, `update-screenshots.yml`). They are harmless but can be deleted.
+Several workflows inherited from the al-folio template only make sense for the template project itself (`release.yml`, `deploy-image.yml`, `docker-slim.yml`, `deploy-docker-tag.yml`, `lighthouse-badger.yml`, `update-screenshots.yml`). None of them fire on their own — they are harmless but can be deleted.
 
 ## Gem version pins
 
