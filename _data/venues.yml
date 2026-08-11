@@ -1,9 +1,54 @@
-"AJP":
-  url: https://aapt.scitation.org/journal/ajp
-  color: "#00369f"
+# Journal abbreviations used as `abbr` in _bibliography/papers.bib.
+# `url` links the badge; add a `color` (hex) to override the default badge color.
+"ACS Energy Lett.":
+  url: https://pubs.acs.org/journal/aelccp
 
-"PhysRev":
-  url: https://journals.aps.org/
+"Sci. Adv.":
+  url: https://www.science.org/journal/sciadv
 
-"Vision":
-  color: "#009f36"
+"Angew. Chem. Int. Ed.":
+  url: https://onlinelibrary.wiley.com/journal/15213773
+
+"JACS":
+  url: https://pubs.acs.org/journal/jacsat
+
+"ACS Catal.":
+  url: https://pubs.acs.org/journal/accacs
+
+"ACS Sustain. Chem. Eng.":
+  url: https://pubs.acs.org/journal/ascecg
+
+"ACS Appl. Mater. Interfaces":
+  url: https://pubs.acs.org/journal/aamick
+
+"Chem. Rev.":
+  url: https://pubs.acs.org/journal/chreay
+
+"Chem. Soc. Rev.":
+  url: https://pubs.rsc.org/en/journals/journalissues/cs
+
+"J. Mater. Chem. A":
+  url: https://pubs.rsc.org/en/journals/journalissues/ta
+
+"Chem. Eng. J.":
+  url: https://www.sciencedirect.com/journal/chemical-engineering-journal
+
+"Appl. Catal. B":
+  url: https://www.sciencedirect.com/journal/applied-catalysis-b-environment-and-energy
+
+"J. Catal.":
+  url: https://www.sciencedirect.com/journal/journal-of-catalysis
+
+"Energy Convers. Manag.":
+  url: https://www.sciencedirect.com/journal/energy-conversion-and-management
+
+"Fuel":
+  url: https://www.sciencedirect.com/journal/fuel
+
+"J. Alloys Compd.":
+  url: https://www.sciencedirect.com/journal/journal-of-alloys-and-compounds
+
+"Int. J. Energy Res.":
+  url: https://onlinelibrary.wiley.com/journal/1099114x
+
+"J. Korean Oil Chem. Soc.":

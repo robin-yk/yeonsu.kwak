@@ -1,189 +1,267 @@
 cv:
-  name: Albert Einstein
-  label: Scientist
-  email: einstein@example.com
-  location: Princeton, NJ
+  name: Yeonsu Kwak
+  label: Ph.D. Candidate in Chemical & Biomolecular Engineering
+  email: fiske@udel.edu
+  location: Newark, DE
   image: ""
-  summary: A German-born theoretical physicist, widely ranked among the greatest and most influential scientists of all time
+  summary: >
+    Catalysis and reaction engineering researcher working on the electrification of chemical manufacturing.
+    I design heterogeneous catalysts and continuous-flow reactors driven by microwave and pulsed Joule heating,
+    resolve their behavior with operando spectroscopy, and carry the resulting chemistry from the bench through
+    pilot-scale operation.
 
   social_networks:
-    - network: X
-      username: AlbertEinstein
-    - network: GitHub
-      username: example
     - network: LinkedIn
-      username: example
+      username: yeonsukwak
 
   address:
-    street: 2712 Broadway St
-    city: San Francisco
-    region: California
-    postalCode: CA 94115
+    city: Newark
+    region: Delaware
     countryCode: US
 
   sections:
     Education:
-      - institution: University of Zurich
-        location: Zurich, Switzerland
-        url: https://www.uzh.ch/
-        area: Physics
-        studyType: PhD
-        start_date: 1900
-        end_date: 1905
-        score: ""
-        courses: "Theory of Relativity"
+      - institution: University of Delaware (UD)
+        location: Newark, DE, United States
+        url: https://www.che.udel.edu/
+        area: Chemical & Biomolecular Engineering
+        studyType: Ph.D. Candidate
+        start_date: 2021-08
+        end_date: 2026-08
         highlights:
-          - Description 1.
-          - Description 2.
+          - "Expected August 2026. Advisor: Prof. Dionisios G. Vlachos."
+          - Dissertation committee includes Prof. Raul Lobo.
 
-      - institution: Eidgenössische Technische Hochschule
-        location: Zurich, Switzerland
-        area: Physics
-        studyType: Federal teaching diploma
-        start_date: 1896
-        end_date: 1900
-        highlights:
-          - Description 1.
-          - Description 2.
+      - institution: Texas A&M University (TAMU)
+        location: College Station, TX, United States
+        url: https://energy.tamu.edu/
+        area: Energy
+        studyType: M.S.
+        start_date: 2016-09
+        end_date: 2017-08
+
+      - institution: Pohang University of Science and Technology (POSTECH)
+        location: Pohang, South Korea
+        url: https://www.postech.ac.kr/eng/
+        area: Chemical Engineering
+        studyType: B.S.
+        start_date: 2012-03
+        end_date: 2016-08
 
     Experience:
-      - company: Institute for Advanced Study, Princeton University
-        position: Professor of Theoretical Physics
-        location: Princeton University, NJ
-        start_date: 1933
-        end_date: 1955
-        summary: Teaching at Palmer Physical Laboratory (now 302 Frist Campus Center). While not a professor at Princeton, I associated with the physics professors and continued to give lectures on campus.
+      - company: Linde Engineering America
+        position: R&D Intern
+        location: Tonawanda, NY, United States
+        start_date: 2026-05
         highlights:
-          - Relativity
-          - Description 2.
+          - Developed and validated an equilibrium-kinetic model predicting high-temperature water-gas-shift performance and hydrocarbon byproduct formation from reactor operating conditions; deployed as an interactive web solver.
+          - Developed a UniSim hydrogen-plant flowsheet model and quantitative design guidance for H<sub>2</sub> recycle, reformer/shift configuration, heat integration, and carbon intensity.
 
-      - company: California Institute of Technology
-        position: Visiting Professor
-        location: Pasadena, California, US
-        start_date: 1933
-        end_date: 1933
+      - company: University of Delaware
+        position: Graduate Research Assistant
+        location: Newark, DE, United States
+        start_date: 2021-08
+        end_date: 2026-08
+        summary: "Advisor: Prof. Dionisios G. Vlachos."
         highlights:
-          - Description 1.
-          - Description 2.
+          - Designed heterogeneous catalysts and investigated structure–property–performance relationships using operando dielectric, Raman, XRD, and catalytic measurements to understand oxygen-vacancy-mediated reactivity.
+          - Developed continuous-flow microwave and conventional catalytic reactor systems for methane reforming, propane dehydrogenation, and ethane cracking.
+          - Combined pulsed Joule-heating experiments with microkinetic modeling conducted in collaboration to explain enhanced methane coupling and reduced coke and aromatic byproduct formation relative to continuous heating.
+          - Led experimental reactor development and collaborated with CFD researchers to design an internally Joule-heated ethane cracker with enhanced ethylene yield and projected reductions in capital requirements and CO<sub>2</sub> emissions.
+          - Synthesized PtSn/SiO<sub>2</sub> catalysts and demonstrated coke-resistant microwave propane dehydrogenation (PDH) without H<sub>2</sub> co-feed, with higher energy efficiency and slower nanoparticle sintering than furnace heating.
 
-      - company: Kaiser Wilhelm Institute for Physics
-        position: Director
-        location: Berlin, Germany
-        start_date: 1917
-        end_date: 1933
-
-      - company: Karl-Ferdinand University
-        position: Professor of Theoretical Physics
-        location: Prague, Czechoslovakia
-        start_date: 1911
-        end_date: 1917
-
-      - company: University of Zurich
-        position: Associate Professor of Theoretical Physics
-        location: Zurich, Switzerland
-        start_date: 1909
-        end_date: 1911
-
-    Volunteer:
-      - company: People's Climate March
-        position: Lead Organizer
-        location: Zurich, Switzerland
-        start_date: 2014-04-01
-        end_date: 2015-07-01
-        summary: Lead organizer for the New York City branch of the People's Climate March, the largest climate march in history.
+      - company: ITACA Institute, Universitat Politècnica de València
+        position: Visiting Scholar
+        location: Valencia, Spain
+        start_date: 2024-06
+        end_date: 2024-06
+        summary: "Host: Prof. José M. Catalá-Civera."
         highlights:
-          - "Awarded 'Climate Hero' award by Greenpeace for my efforts organizing the march."
-          - "Men of the year 2014 by Time magazine"
+          - Developed perturbation-based dual-mode cavity protocols to quantify microwave heating profiles and dielectric properties for operando catalysis studies.
+          - Coordinated ITACA–UD dual-mode cavity co-development, international shipment and customs, and preparation for XAS-compatible microwave experiments at QAS, BNL.
 
-    Awards:
-      - title: Nobel Prize in Physics
-        authors:
-          - "Royal Swedish Academy of Sciences"
-        date: 1921-11-01
-        awarder: Royal Swedish Academy of Sciences
-        url: https://www.nobelprize.org/prizes/physics/1921/einstein/biographical/
-        summary: The Nobel Prizes are five separate prizes that, according to Alfred Nobel's will of 1895, are awarded to 'those who, during the preceding year, have conferred the greatest benefit to humankind.'
+      - company: INMA Institute, University of Zaragoza
+        position: Visiting Scholar
+        location: Zaragoza, Spain
+        start_date: 2022-11
+        end_date: 2022-11
+        summary: "Host: Prof. Jesús Santamaría."
+        highlights:
+          - Conducted cross-laboratory experiments to verify the reproducibility of microwave-assisted PDH performance.
 
-      - title: Max Planck Medal
-        authors:
-          - "German Physical Society"
-        date: 2029
-        awarder: German Physical Society
-        summary: Awarded for outstanding scientific achievement
+      - company: Korea Institute of Science and Technology (KIST)
+        position: Research Scientist (Alternative Military Service)
+        location: Seoul, South Korea
+        start_date: 2019-11
+        end_date: 2021-08
+        highlights:
+          - Advanced LOHC dehydrogenation systems from catalyst benchmarking to low-platinum-loading catalyst development via atomic layer deposition for scalable hydrogen release.
+          - Designed and constructed Ni-alloy foam architectures for Joule-heated ammonia decomposition reactors.
+          - Scaled an LOHC dehydrogenation reactor to 2.3 Nm<sup>3</sup> h<sup>-1</sup> H<sub>2</sub> production using phase-change thermal management.
+          - Managed multi-year projects funded by Hyundai Motor Company and the National Research Foundation of Korea.
 
-    Publications:
-      - title: Zur Elektrodynamik bewegter Körper
-        authors:
-          - Albert Einstein
-        publisher: Annalen der Physik
-        releaseDate: 1905-06-30
-        url: https://en.wikisource.org/wiki/Translation:On_the_Electrodynamics_of_Moving_Bodies
-        summary: It concerned an interpretation of the Michelson–Morley experiment and the properties of light and time. Special relativity incorporates the principle that the speed of light is the same for all inertial observers regardless of the state of motion of the source.
+      - company: Institute for Advanced Engineering (IAE)
+        position: Research Engineer (Alternative Military Service)
+        location: Yongin, South Korea
+        start_date: 2017-08
+        end_date: 2019-11
+        highlights:
+          - Scaled a continuous 5 ton yr<sup>-1</sup> sustainable aviation fuel pilot process integrating palm-oil deoxygenation, hydrocracking, isomerization, and distillation to produce jet-fuel-range hydrocarbons meeting ASTM D7566.
+          - Managed continuous pilot operations, rotating shift schedules, and process-safety procedures.
 
-      - title: Über einen die Erzeugung und Verwandlung des Lichtes betreffenden heuristischen Gesichtspunkt
-        authors:
-          - Albert Einstein
-        publisher: Annalen der Physik
-        releaseDate: 1905-03-18
-        url: https://de.wikisource.org/wiki/Über_einen_die_Erzeugung_und_Verwandlung_des_Lichtes_betreffenden_heuristischen_Gesichtspunkt
-        summary: In the second paper, he applied the quantum theory to light to explain the photoelectric effect. In particular, he used the idea of light quanta (photons) to explain experimental results, but stressed the importance of the experimental results. The importance of his work on the photoelectric effect earned him the Nobel Prize in Physics in 1921.
+      - company: Texas A&M University
+        position: Graduate Research Assistant
+        location: College Station, TX, United States
+        start_date: 2016-09
+        end_date: 2017-08
+        summary: "Advisors: Profs. Hae-Kwon Jeong & Phanourios Tamamis."
+        highlights:
+          - Synthesized CO<sub>2</sub>-capturing amyloid biomaterials via peptide self-assembly and validated CO<sub>2</sub> uptake.
 
-      - title: Die Grundlage der allgemeinen Relativitätstheorie
-        authors:
-          - Albert Einstein
-        publisher: Annalen der Physik
-        releaseDate: 1916-03-20
-        url: https://de.wikisource.org/wiki/Die_Grundlage_der_allgemeinen_Relativitätstheorie
-        summary: The publication of the theory of general relativity made him internationally famous. He was professor of physics at the universities of Zurich (1909–1911) and Prague (1911–1912), before he returned to ETH Zurich (1912–1914).
+    Research Interests:
+      - label: Catalysis
+        details: Heterogeneous catalysis; catalytic reaction engineering; biomass, plastic, and hydrocarbon conversion.
+      - label: Reactors
+        details: Continuous-flow reactors; process intensification and electrification.
+      - label: Characterization
+        details: Catalyst characterization and operando spectroscopy.
 
     Skills:
-      - name: Physics
-        level: Master
-        icon: fa-solid fa-hashtag
-        keywords: "Quantum Mechanics, Quantum Computing, Quantum Information, Quantum Cryptography, Quantum Communication, Quantum Teleportation"
+      - name: Catalyst & Reactor Engineering
+        icon: fa-solid fa-flask
+        keywords:
+          - Catalyst synthesis
+          - Redox processing
+          - High-pressure flow systems
+          - Thermal treatment
+          - Continuous/batch reactors
+          - Operando and in situ experimentation
+          - Multiscale data processing
 
-    Languages:
-      - name: German
-        summary: "Native speaker"
+      - name: Process Development
+        icon: fa-solid fa-industry
+        keywords:
+          - Lab-to-pilot scale-up
+          - High-temperature systems
+          - Electrified reactor design (microwave/Joule)
+          - Thermal management
+          - Continuous processing
+          - Techno-economic analysis
+          - Thermodynamic/kinetic calculations
 
-      - name: English
-        summary: "Fluent"
+      - name: Process Modeling & Analysis
+        icon: fa-solid fa-laptop-code
+        keywords:
+          - UniSim
+          - Aspen Plus
+          - Pro/II
+          - ProMax
+          - Python
+          - Autodesk Fusion
 
-    Interests:
-      - name: Physics
-        icon: fa-solid fa-tag
-        keywords: "Quantum Mechanics, Quantum Computing, Quantum Information, Quantum Cryptography, Quantum Communication, Quantum Teleportation"
+      - name: Characterization
+        icon: fa-solid fa-wave-square
+        keywords:
+          - XPS
+          - AP-XPS
+          - XAS (trained at BNL)
+          - XRD
+          - TEM/STEM
+          - SEM
+          - BET
+          - GC-FID/TCD
+          - GC-MS
+          - QMS
+          - Raman
+          - UV-Vis
+          - FT-IR/DRIFTS
+          - TGA/TPD/TPR
+          - Dual-mode dielectric property measurement
 
-    Certificates:
-      - name: Machine Learning
-        date: 2018-01-01
-        issuer: Stanford University
-        icon: fa-solid fa-location-dot
+    Patents:
+      - bullet: Hydrogen extraction reactor and hydrogen extraction process using phase change materials — **US 11,674,068 B2**
+      - bullet: A catalyst for dehydrogenation of LOHCs and method for producing the same — **KR 10-2472412**
+      - bullet: Apparatus for manufacturing eco-friendly transportation fuel and method therefor — **KR 10-2859154**
+      - bullet: Apparatus for separating and producing hydrocarbon fuels — **KR 10-2786950**
 
-      - name: Quantum Computing
-        date: 2018-01-01
-        issuer: Stanford University
-        icon: fa-solid fa-tag
+    Selected Oral Presentations:
+      - bullet: "**2026** — Process Electrification for Scalable and Intensified Chemical Manufacturing. KAIST YGIS, Korea."
+      - bullet: "**2025** — Dynamic Electrification of Nonoxidative Propane Dehydrogenation. NAM29, GA."
+      - bullet: "**2024** — Electrified Biogas Upgrading into Value-Added Chemicals. AIChE Fall, CA."
+      - bullet: "**2024** — Mechanistic Insights into Microwave-Assisted Thermal Catalysis. 5GCMEA, Japan."
+      - bullet: "**2023** — Microwave-Assisted Direct Propane Dehydrogenation. AIChE Fall, FL & NAM28, PI."
+      - bullet: "**2023** — Electromagnetic field driven catalysis for electrification. ACS Spring, Hybrid."
 
-      - name: Quantum Information
-        date: 2018-01-01
-        issuer: Stanford University
-        icon: fa-solid fa-envelope
+    Awards:
+      - title: Theodore A. Koch Graduate Student Travel Award
+        awarder: Catalysis Club of Philadelphia (CCP)
+        date: 2026
 
-    Projects:
-      - name: Quantum Computing
-        summary: Quantum computing is the use of quantum-mechanical phenomena such as superposition and entanglement to perform computation. Computers that perform quantum computations are known as quantum computers.
-        highlights:
-          - Quantum Teleportation
-          - Quantum Cryptography
-        start_date: 2018-01-01
-        end_date: 2018-01-01
+      - title: Delaware EPSCoR Graduate Bridge Fund Award
+        awarder: National Science Foundation (NSF)
+        date: 2025
+        summary: 2025 – 2026
 
-    References:
-      - name: Professor John Doe
-        icon: fa-solid fa-laptop
-        reference: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit.
+      - title: Best Oral Presentation Award
+        awarder: 5th Global Congress on Microwave Energy Applications (5GCMEA)
+        date: 2024
 
-      - name: Professor Jane Smith
-        icon: fa-solid fa-thumbtack
-        reference: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit.
+      - title: AIChE Hanwha Travel Award
+        awarder: Hanwha Solutions & TotalEnergies Petrochemical
+        date: 2024
+
+      - title: Graduate Student Travel Awards
+        awarder: UD Graduate College & UD CCST
+        date: 2024
+        summary: 2024 – 2025
+
+      - title: Commendation for Oral Ph.D. Qualifier Exam (Exceptional)
+        awarder: UD Chemical & Biomolecular Engineering
+        date: 2022
+
+      - title: Finalist, Fulbright Graduate Scholarship
+        awarder: U.S. Department of State & Fulbright Korea
+        date: 2021
+
+      - title: Master of Science in Energy Scholarship
+        awarder: Texas A&M Energy Institute
+        date: 2017
+
+      - title: Global Engineers Fostering Scholarship (M.S. Full Funding)
+        awarder: EDRC of Seoul National University
+        date: 2016
+        summary: 2016 – 2017
+
+      - title: National Scholarship in Science and Technology (B.S. Full Funding)
+        awarder: Ministry of Education of Korea
+        date: 2012
+        summary: 2012 – 2016
+
+      - title: 4th Place, Korea Chemical Process Simulation Olympiad
+        awarder: KIChE & Schneider Electric
+        date: 2016
+
+      - title: Research Scholarship for Undergraduate Research Program
+        awarder: POSTECH
+        date: 2015
+
+      - title: Exchange Student Scholarships (National University of Singapore, Nanyang Technological University)
+        awarder: POSTECH
+        date: 2014
+        summary: 2014 – 2015
+
+    Service & Leadership:
+      - label: Peer Reviewer (2022 – Present)
+        details: American Chemical Society, Royal Society of Chemistry & Elsevier. Completed 40 peer reviews for ACS Catalysis, Chemical Engineering Journal, Fuel, International Journal of Hydrogen Energy, Catalysis Today, Molecular Catalysis, ACS Omega, Journal of Alloys and Compounds, RSC Advances, and Fuel Processing Technology.
+      - label: Research Mentor (2023 – Present)
+        details: UD Delaware Energy Institute. Auden Jones ('24–'25), microwave catalysis of metal oxides, admitted to the University of Houston Ph.D. program; Matthew Conlon ('23), microwave heating of carbon materials, admitted to Purdue's Ph.D. program.
+      - label: UD Korean Graduate Student Association (2022 – 2024)
+        details: President ('23–'24) and Treasurer ('22–'23). Managed annual finances exceeding $3,000 and organized 10+ academic and community events serving 100+ members of the UD Korean and Korean-American community.
+      - label: Teaching Assistant (2023)
+        details: UD ChBE. CHEG614/814 Special Topics in Energy (Spring, Prof. Dionisios G. Vlachos) — led office hours and facilitated graduate-level discussions on energy systems. CHEG445 Chemical Engineering Lab II, Distillation (Fall, Prof. Nicholas Shevchenko) — supervised distillation pilot plant operations and graded technical reports for 30+ seniors under safety protocols.
+
+    Professional Memberships:
+      - bullet: Catalysis Club of Philadelphia (CCP), Graduate Student Member (2024 – Present)
+      - bullet: American Institute of Chemical Engineers (AIChE), Graduate Student Member (2022 – Present)
+      - bullet: Korean-American Scientists and Engineers Association (KSEA), Graduate Student Member (2022 – Present)
+      - bullet: Korean Institute of Chemical Engineers (KIChE), Regular Member, on leave (2017 – Present)
