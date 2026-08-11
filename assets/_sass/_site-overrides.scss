@@ -62,11 +62,22 @@
 // on `.row`/`.col-*`: those Bootstrap classes are only half-present without the
 // compat layer, which is what broke the CV page.
 
+// Captions sit directly under their image, so a following section heading needs
+// its own breathing room or it reads as part of the last caption.
+h2 + .highlights-grid {
+  margin-top: 1.5rem;
+}
+
+.highlights-grid + h2 {
+  margin-top: 3.5rem;
+}
+
 .highlights-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 2.5rem;
   margin-top: 1.5rem;
+  margin-bottom: 1rem;
 
   @media (min-width: 768px) {
     grid-template-columns: 1fr 1fr;
