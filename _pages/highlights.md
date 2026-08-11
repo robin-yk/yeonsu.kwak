@@ -9,7 +9,7 @@ nav_order: 4
 
 ## Journal covers
 
-<div class="highlights-grid">
+<div class="highlights-grid covers">
 
 <figure>
   {% include figure.liquid loading="eager" path="assets/img/highlights/cover_acs_energy_letters_2025.jpg" class="img-fluid rounded z-depth-1" alt="Cover of ACS Energy Letters, December 2025" %}
@@ -47,7 +47,7 @@ nav_order: 4
 
 ## Press
 
-<div class="highlights-grid">
+<div class="highlights-grid press">
 
 <figure>
   {% include figure.liquid loading="eager" path="assets/img/highlights/lab_reactors.jpg" class="img-fluid rounded z-depth-1" alt="Continuous-flow hydrogen reactor systems in the laboratory" %}
