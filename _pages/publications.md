@@ -30,4 +30,7 @@ nav_order: 1
 
 </div>
 
-<script src="{{ '/assets/js/pubfilter.js' | relative_url }}"></script>
+<!-- `bust_file_cache` appends an MD5 of the file. Without it the URL never changes,
+     so a browser holding an older copy keeps running it: the numbering shipped and
+     simply did not appear for anyone who had loaded this page before. -->
+<script src="{{ '/assets/js/pubfilter.js' | relative_url | bust_file_cache }}"></script>

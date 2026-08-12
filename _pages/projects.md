@@ -2,7 +2,7 @@
 layout: page
 title: research
 permalink: /research/
-description: Five directions across electrified heating, hydrogen reactors, operando characterization and reactor modeling.
+description: Six directions across electrified heating, operando characterization, hydrogen and sustainable-fuel reactors, and reactor modeling.
 nav: true
 nav_order: 2
 ---
@@ -21,15 +21,21 @@ nav_order: 2
   </div>
 
   <div class="research-card" tabindex="0">
+    <i class="fa-solid fa-wave-square" aria-hidden="true"></i>
+    <h3>Operando characterization</h3>
+    <p><span>Electromagnetic fields can change catalyst temperature, oxidation state and structure during reaction. Dielectric, Raman and X-ray measurements help identify which change produces the observed performance.</span></p>
+  </div>
+
+  <div class="research-card" tabindex="0">
     <i class="fa-solid fa-industry" aria-hidden="true"></i>
     <h3>Hydrogen reactor development</h3>
     <p><span>Hydrogen-carrier processes must combine catalyst activity with effective heat management and scalable reactor design. My work covers this path from catalyst screening to pilot-scale operation.</span></p>
   </div>
 
   <div class="research-card" tabindex="0">
-    <i class="fa-solid fa-wave-square" aria-hidden="true"></i>
-    <h3>Operando characterization</h3>
-    <p><span>Electromagnetic fields can change catalyst temperature, oxidation state and structure during reaction. Dielectric, Raman and X-ray measurements help identify which change produces the observed performance.</span></p>
+    <i class="fa-solid fa-plane" aria-hidden="true"></i>
+    <h3>Sustainable aviation fuel scale-up</h3>
+    <p><span>Converting triglycerides into sustainable aviation fuel requires hydrotreating, hydrocracking and distillation to meet ASTM D7566 specifications. I helped develop and operate a 5 ton/yr pilot plant.</span></p>
   </div>
 
   <div class="research-card" tabindex="0">
