@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Received the **Theodore A. Koch Travel Award** from the Catalysis Club of Philadelphia.
+Received the [**Theodore A. Koch Travel Award**](https://catalysisclubphilly.org/awe9a91v/koch-graduate-student-travel-award/) from the Catalysis Club of Philadelphia.

@@ -2,7 +2,7 @@
 layout: page
 title: research
 permalink: /research/
-description: Six directions across electrified heating, operando characterization, hydrogen and sustainable-fuel reactors, and reactor modeling.
+description: Six directions across electrified heating, operando characterization, hydrogen and sustainable-fuel reactors, and process modeling.
 nav: true
 nav_order: 2
 ---
@@ -40,7 +40,7 @@ nav_order: 2
 
   <div class="research-card" tabindex="0">
     <i class="fa-solid fa-diagram-project" aria-hidden="true"></i>
-    <h3>Reactor modeling and scale-up</h3>
+    <h3>Process modeling and TEA</h3>
     <p><span>Kinetic, transport and process models connect laboratory measurements to reactor design, energy use and cost. I develop these models alongside experiments and release selected design tools openly.</span></p>
   </div>
 </div>
