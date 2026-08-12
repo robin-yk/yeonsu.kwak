@@ -306,6 +306,18 @@
       outline-offset: 2px;
     }
 
+    // Yeonsu's own solver icons. One is 144x146 rather than square, so the box
+    // is squared off here and the artwork centred inside it with `contain`;
+    // left to their intrinsic sizes the three would sit a pixel out of line.
+    img {
+      display: block;
+      width: 3.5rem;
+      height: 3.5rem;
+      margin-bottom: 0.75rem;
+      object-fit: contain;
+      object-position: left center;
+    }
+
     h3 {
       margin: 0 0 0.4rem;
       font-size: 1.05rem;
