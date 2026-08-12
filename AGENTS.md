@@ -1,4 +1,4 @@
-# Agent Guidelines for yeonsukwak-folio
+# Agent Guidelines for yeonsu.kwak
 
 This is **Yeonsu Kwak's personal academic website**, built from the [al-folio](https://github.com/alshedivat/al-folio) v1.x Jekyll starter. It is a site, not a copy of the upstream template — the starter's own test suite, demo content, and contribution rules have been removed.
 
@@ -20,14 +20,14 @@ This is **Yeonsu Kwak's personal academic website**, built from the [al-folio](h
 
 1. **Features fail silently.** A feature renders only when its gem is loaded _and_ its flag is on in `_config.yml` _and_ the page opts in. Otherwise the Liquid tag emits an empty string — no warning.
 2. **`Gemfile` and `_config.yml` are two lists that must agree.** A plugin in only one of them is inert. Repo dirs use hyphens (`al-folio-core`); gem/plugin ids use underscores (`al_folio_core`).
-3. **This site's baseurl is `/yeonsukwak-folio`.** `_config.yml` already sets it, so a plain `bundle exec jekyll build` is correct. Blanking the baseurl is what renders the site unstyled with broken links. Dev server: `http://localhost:4000/yeonsukwak-folio/`.
+3. **This site's baseurl is `/yeonsu.kwak`.** `_config.yml` already sets it, so a plain `bundle exec jekyll build` is correct. Blanking the baseurl is what renders the site unstyled with broken links. Dev server: `http://localhost:4000/yeonsu.kwak/`.
 
 ## Local commands
 
 ```bash
 bundle install
 bundle exec jekyll build          # baseurl comes from _config.yml
-bundle exec jekyll serve          # → http://localhost:4000/yeonsukwak-folio/
+bundle exec jekyll serve          # → http://localhost:4000/yeonsu.kwak/
 npm ci && npm run lint:prettier   # Prettier + @shopify/prettier-plugin-liquid, printWidth 150
 bundle exec al-folio upgrade audit
 ```

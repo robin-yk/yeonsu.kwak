@@ -98,6 +98,23 @@
         if (heading && heading.tagName === "H2") heading.hidden = !visible;
       });
 
+      // Number what is on screen, newest first, the way the CV numbers its
+      // lists. Renumbering per filter is the point: pick first authorship and
+      // the top entry reads 10, matching "10 first-author publications".
+      var visible = counted.filter(function (li) {
+        return !li.hidden;
+      });
+      counted.forEach(function (li) {
+        var old = li.querySelector(":scope > .pub-index");
+        if (old) old.remove();
+      });
+      visible.forEach(function (li, i) {
+        var tag = document.createElement("span");
+        tag.className = "pub-index";
+        tag.textContent = visible.length - i;
+        li.insertBefore(tag, li.firstChild);
+      });
+
       buttons.forEach(function (button) {
         var on = button.dataset.filter === role;
         button.classList.toggle("is-active", on);

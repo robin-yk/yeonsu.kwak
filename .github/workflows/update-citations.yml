@@ -1,13 +1,11 @@
 name: Update Google Scholar Citations
 
 on:
-  # The schedule is off until `scholar_userid` is set in _data/socials.yml.
-  # bin/update_scholar_citations.py exits 1 when it is missing, so a scheduled
-  # run would just fail three times a week. Re-enable these lines after adding it.
-  # schedule:
-  #   - cron: "0 0 * * 1" # Monday
-  #   - cron: "0 0 * * 3" # Wednesday
-  #   - cron: "0 0 * * 5" # Friday
+  # `scholar_userid` is set in _data/socials.yml, so this can run again. Note
+  # that Google Scholar rate-limits scrapers, so a run failing there is normal
+  # and not a sign the site is broken.
+  schedule:
+    - cron: "0 0 * * 1" # Monday
   workflow_dispatch:
 
 jobs:

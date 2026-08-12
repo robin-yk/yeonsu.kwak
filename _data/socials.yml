@@ -6,7 +6,6 @@ email: fiske@udel.edu # your email address
 github_username: robin-yk # your GitHub username
 linkedin_username: yeonsukwak # your LinkedIn username
 rss_icon: true # comment this line to hide the RSS icon
-# TODO: fill these in and uncomment — the IDs were not in the CV
-# orcid_id: # your ORCID iD (e.g. 0000-0002-1825-0097)
-# scholar_userid: # your Google Scholar ID (the string after `user=` in your profile URL)
+orcid_id: 0000-0002-4437-0025 # your ORCID iD
+scholar_userid: JjrP1zAAAAAJ # your Google Scholar ID (the string after `user=` in your profile URL)
 # research_gate_profile: # your ResearchGate profile name

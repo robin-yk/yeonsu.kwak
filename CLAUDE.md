@@ -10,7 +10,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ```bash
 bundle install                       # ruby gems
-bundle exec jekyll serve             # dev server → http://localhost:4000/yeonsukwak-folio/  (NOTE baseurl)
+bundle exec jekyll serve             # dev server → http://localhost:4000/yeonsu.kwak/  (NOTE baseurl)
 bundle exec jekyll build             # production-style build to _site/
 npm ci && npm run lint:prettier      # formatting check; `npx prettier . --write` fixes
 bundle exec al-folio upgrade apply --safe   # deterministic codemods
@@ -20,12 +20,12 @@ bundle exec al-folio upgrade overrides diff <path>   # then `overrides accept <p
 ## Optional toolchains
 
 - **Responsive images.** `imagemagick.enabled: true` in `_config.yml` needs ImageMagick `convert` on `PATH`. Without it the build still succeeds; it just logs `convert: not found` and skips the WebP variants.
-- **Scholar citation counts.** `bin/update_scholar_citations.py` (and `.github/workflows/update-citations.yml`) need `scholar_userid` set in `_data/socials.yml` and `scholarly` installed from `requirements.txt`. Both are currently unset, so that workflow has nothing to do.
+- **Scholar citation counts.** `bin/update_scholar_citations.py` (and `.github/workflows/update-citations.yml`) need `scholar_userid` set in `_data/socials.yml` and `scholarly` installed from `requirements.txt`. The ID is set, so the workflow runs weekly. Google Scholar rate-limits scrapers, so an occasional failed run is expected.
 - **Manual deploy.** `bin/deploy` is the manual `gh-pages` build + purgecss + force-push path; `deploy.yml` normally handles it. `purgecss` is not a devDependency — `npm install -g purgecss`.
 
 ## Docker serving model
 
-`docker compose up -d` bind-mounts the repo to `/srv/jekyll` and runs `bin/entry_point.sh`, which serves with `--force_polling --destination /tmp/_site`. Output deliberately goes to **container-local `/tmp/_site`, not the bind-mounted `_site`** — writing `_site` back across the host bind mount caused write deadlocks. The container also `inotifywait`s `_config.yml` and restarts Jekyll on change (config edits aren't hot-reloaded by `--watch`). Verify at `http://127.0.0.1:8080/yeonsukwak-folio/`.
+`docker compose up -d` bind-mounts the repo to `/srv/jekyll` and runs `bin/entry_point.sh`, which serves with `--force_polling --destination /tmp/_site`. Output deliberately goes to **container-local `/tmp/_site`, not the bind-mounted `_site`** — writing `_site` back across the host bind mount caused write deadlocks. The container also `inotifywait`s `_config.yml` and restarts Jekyll on change (config edits aren't hot-reloaded by `--watch`). Verify at `http://127.0.0.1:8080/yeonsu.kwak/`.
 
 ## CI
 
@@ -34,7 +34,7 @@ bundle exec al-folio upgrade overrides diff <path>   # then `overrides accept <p
 - `axe.yml`, `broken-links-site.yml`, `broken-links.yml` — accessibility and link checking (these build with a blank baseurl on purpose).
 - `update-tocs.yml` — regenerates `<!--ts-->…<!--te-->` blocks in changed root and `docs/` Markdown. Expect a follow-up auto-commit on `main` after heading changes.
 - `upgrade-check.yml` — `bundle exec al-folio upgrade audit`.
-- `update-citations.yml` — its schedule is commented out on purpose. `bin/update_scholar_citations.py` exits 1 without `scholar_userid` in `_data/socials.yml`, so a cron run would only produce failure mail. Set the ID, then uncomment the `schedule:` block.
+- `update-citations.yml` — runs weekly now that `scholar_userid` is set, writing counts into `_data/citations.yml`.
 
 Several workflows inherited from the al-folio template only make sense for the template project itself (`release.yml`, `deploy-image.yml`, `docker-slim.yml`, `deploy-docker-tag.yml`, `lighthouse-badger.yml`, `update-screenshots.yml`). None of them fire on their own — they are harmless but can be deleted.
 

@@ -1,4 +1,4 @@
-// Site-local overrides for yeonsukwak-folio.
+// Site-local overrides for yeonsu.kwak.
 // Loaded last from assets/css/main.scss so these rules win over the theme partials.
 
 // -----------------------------------------------------------------------------
@@ -48,7 +48,7 @@
     &.is-active {
       border-color: var(--global-theme-color);
       background-color: var(--global-theme-color);
-      color: var(--global-card-bg-color);
+      color: #fff; // explicit, so the label keeps contrast on the teal fill
     }
   }
 
@@ -59,16 +59,31 @@
 }
 
 // -----------------------------------------------------------------------------
-// Publication venue badges
+// Publication numbering
 // -----------------------------------------------------------------------------
-// `.badge` sets `white-space: nowrap`, so longer journal abbreviations
-// ("Angew. Chem. Int. Ed.") run past the edge of the pill instead of wrapping.
+// Entries carry a number rather than a venue badge: the journal is already
+// named in italics under the authors, so the badge repeated it in a heavy pill,
+// and 26 of those read louder than the titles. pubfilter.js writes the number
+// and recounts it per filter.
+//
+// It is positioned in a padding gutter rather than a grid column. Switching
+// thumbnails off removes the theme's whole left column, and the Bootstrap
+// column classes are only half-defined here anyway.
 
-.publications .abbr abbr,
-.publications .abbr .badge {
-  white-space: normal;
-  text-align: center;
-  line-height: 1.25;
+.publications ol.bibliography > li {
+  position: relative;
+  padding-left: 2.75rem;
+}
+
+.pub-index {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2rem;
+  text-align: right;
+  font-size: 0.95rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--global-text-color-light);
 }
 
 // -----------------------------------------------------------------------------

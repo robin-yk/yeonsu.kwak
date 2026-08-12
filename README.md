@@ -1,4 +1,4 @@
-# yeonsukwak-folio
+# yeonsu.kwak
 
 Personal academic website for **Yeonsu Kwak** — Ph.D. candidate in Chemical & Biomolecular Engineering at the University of Delaware, working on heterogeneous catalysis, reaction engineering, and the electrification of chemical manufacturing.
 
@@ -21,10 +21,10 @@ Built on [al-folio](https://github.com/alshedivat/al-folio) (v1.x), a Jekyll sta
 
 ```bash
 bundle install
-bundle exec jekyll serve      # → http://localhost:4000/yeonsukwak-folio/
+bundle exec jekyll serve      # → http://localhost:4000/yeonsu.kwak/
 ```
 
-Note the `/yeonsukwak-folio` path: `_config.yml` sets `baseurl`, so the site is not served from `/`. Building with a blank baseurl is what produces an unstyled page with broken links.
+Note the `/yeonsu.kwak` path: `_config.yml` sets `baseurl`, so the site is not served from `/`. Building with a blank baseurl is what produces an unstyled page with broken links.
 
 Optional extras: ImageMagick (`convert` on `PATH`) for responsive WebP images, and `npm ci && npm run lint:prettier` for formatting checks.
 
