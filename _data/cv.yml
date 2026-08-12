@@ -5,10 +5,11 @@ cv:
   location: Newark, DE
   image: ""
   summary: >
-    Catalysis and reaction engineering researcher working on the electrification of chemical manufacturing.
-    I design heterogeneous catalysts and continuous-flow reactors driven by microwave and pulsed Joule heating,
-    resolve their behavior with operando spectroscopy, and carry the resulting chemistry from the bench through
-    pilot-scale operation.
+    Process and reaction engineer working on the design, modeling and scale-up of continuous thermal systems,
+    from heat transfer and reactor design to kinetics, flowsheet simulation and techno-economics. I have taken
+    systems from bench rigs to a continuous 5 ton/yr pilot plant, and I build the models and solvers that
+    support design decisions. My domains so far are hydrogen carriers, sustainable fuels, and the
+    electrification of chemical manufacturing.
 
   social_networks:
     - network: LinkedIn
