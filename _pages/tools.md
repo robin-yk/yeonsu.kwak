@@ -7,7 +7,7 @@ nav: true
 nav_order: 3
 ---
 
-[**Electrification Suite**](https://robin-yk.github.io/Electrification/#home) is a set of three solvers for electrified reactor design, written because these calculations are usually done ad hoc in spreadsheets and one-off scripts. Each runs entirely in the browser, and each solver is also importable as a standalone JavaScript module. Source and tests are on [GitHub](https://github.com/robin-yk/Electrification).
+[**Electrification Suite**](https://robin-yk.github.io/Electrification/#home) is a set of three solvers for electrified reactor design, written because these calculations are usually done ad hoc in spreadsheets and one-off scripts. Each runs entirely in the browser, and each solver is also importable as a standalone JavaScript module. Source and test runs are on [GitHub](https://github.com/robin-yk/Electrification) and [GitHub page](https://robin-yk.github.io/Electrification/).
 
 <div class="tool-list">
 
