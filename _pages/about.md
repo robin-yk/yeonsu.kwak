@@ -24,6 +24,6 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I electrify catalytic reactors: microwaves and pulsed Joule heating instead of a flame, with operando methods to see what the catalyst is doing while the field is on. That has produced coke-resistant propane dehydrogenation with no H₂ co-feed, pulsed heating that raises methane coupling while suppressing coke, and an internally heated ethane cracker.
+I develop electrified catalytic reactors using microwave and pulsed Joule heating, coupled with operando methods to track catalyst behavior under reaction conditions. This work has enabled coke-resistant propane dehydrogenation without H₂ co-feed, pulsed methane coupling with reduced coking, and internally heated ethane cracking.
 
-Advised by [Prof. Dionisios G. Vlachos](https://cbi.udel.edu/), defending August 2026, currently an R&D intern at Linde Engineering America. Before Delaware, four years building hydrogen and fuel reactors at KIST and IAE. I am on the job market for research and process-development roles, and email is the fastest way to reach me.
+I am a Ph.D. candidate advised by [Prof. Dionisios G. Vlachos](https://cbi.udel.edu/) and expect to defend in August 2026. I recently completed an R&D internship at Linde Engineering America. Before Delaware, I spent four years at KIST and IAE developing hydrogen and sustainable-fuel reactors from laboratory systems to pilot scale. I am seeking research and process-development roles. Email is the best way to reach me.

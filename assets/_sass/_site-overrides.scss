@@ -14,6 +14,33 @@
 }
 
 // -----------------------------------------------------------------------------
+// Social icon row
+// -----------------------------------------------------------------------------
+// The theme sets the icons inline, separated by literal space characters, so the
+// distance between any two of them is one space plus whatever side bearings the
+// two glyphs happen to carry. Font Awesome and Academicons do not agree on those,
+// which is why Scholar sits tighter against ORCID than GitHub does against the
+// envelope. Lay the row out as flex instead: one `gap` sets every distance, so
+// the spacing stops depending on seven separate glyph metrics.
+
+.social .contact-icons {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+
+  a {
+    display: inline-flex;
+    align-items: center;
+
+    i {
+      line-height: 1;
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
 // Publication authorship filter
 // -----------------------------------------------------------------------------
 

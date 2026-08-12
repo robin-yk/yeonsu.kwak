@@ -6,8 +6,7 @@ title: blank # the website title (if blank, full name will be used instead)
 first_name: Yeonsu
 middle_name:
 last_name: Kwak
-contact_note: >
-  Email is the fastest way to reach me.
+contact_note: # left empty: the bio already closes on how to reach him, and the note repeated it under the icons
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   Ph.D. candidate in Chemical & Biomolecular Engineering at the University of Delaware, working on
   heterogeneous catalysis, catalytic reaction engineering, and the electrification of chemical manufacturing.
