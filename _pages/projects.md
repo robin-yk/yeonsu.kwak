@@ -2,7 +2,7 @@
 layout: page
 title: research
 permalink: /research/
-description: Six directions across electrified heating, operando characterization, hydrogen and sustainable-fuel reactors, and process modeling.
+description: Six directions across electrified heating, operando characterization, hydrogen carriers, sustainable aviation fuel (SAF), and process modeling.
 nav: true
 nav_order: 2
 ---
@@ -34,7 +34,7 @@ nav_order: 2
 
   <div class="research-card" tabindex="0">
     <i class="fa-solid fa-plane" aria-hidden="true"></i>
-    <h3>Sustainable aviation fuel scale-up</h3>
+    <h3>SAF process scale-up</h3>
     <p><span>Converting triglycerides into sustainable aviation fuel requires hydrotreating, hydrocracking and distillation to meet ASTM D7566 specifications. I helped develop and operate a 5 ton/yr pilot plant.</span></p>
   </div>
 
