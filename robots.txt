@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://robin-yk.github.io/yeonsukwak-folio/sitemap.xml
+Sitemap: https://robin-yk.github.io/yeonsu.kwak/sitemap.xml
