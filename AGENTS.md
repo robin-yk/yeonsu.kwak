@@ -42,4 +42,4 @@ bundle exec al-folio upgrade audit
 
 ## Further reading
 
-`docs/` still carries the upstream al-folio maintainer documentation. It describes the template project, not this site, so treat it as background reference only — `docs/CUSTOMIZE.md` and `docs/FAQ.md` are the useful ones.
+`CLAUDE.md` carries the longer operational detail: the daily dev loop, optional toolchains, the Docker serving model, and what each CI workflow does. Upstream al-folio documentation lives in [the template's own repository](https://github.com/alshedivat/al-folio/tree/main/docs); it describes the template project rather than this site, so treat it as background only.

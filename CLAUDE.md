@@ -32,11 +32,11 @@ bundle exec al-folio upgrade overrides diff <path>   # then `overrides accept <p
 - `deploy.yml` — builds and force-pushes `_site` to `gh-pages` on every push to `main`. This is the one that matters.
 - `prettier.yml` / `prettier-html.yml` — Prettier with `@shopify/prettier-plugin-liquid`, `printWidth: 150`.
 - `axe.yml`, `broken-links-site.yml`, `broken-links.yml` — accessibility and link checking (these build with a blank baseurl on purpose).
-- `update-tocs.yml` — regenerates `<!--ts-->…<!--te-->` blocks in changed root and `docs/` Markdown. Expect a follow-up auto-commit on `main` after heading changes.
+- `update-tocs.yml` — regenerates `<!--ts-->…<!--te-->` blocks in changed root Markdown. Expect a follow-up auto-commit on `main` after heading changes.
 - `upgrade-check.yml` — `bundle exec al-folio upgrade audit`.
 - `update-citations.yml` — runs weekly now that `scholar_userid` is set, writing counts into `_data/citations.yml`.
 
-Several workflows inherited from the al-folio template only make sense for the template project itself (`release.yml`, `deploy-image.yml`, `docker-slim.yml`, `deploy-docker-tag.yml`, `lighthouse-badger.yml`, `update-screenshots.yml`). None of them fire on their own — they are harmless but can be deleted.
+The workflows that only made sense for the template project itself (`release.yml`, `deploy-image.yml`, `docker-slim.yml`, `deploy-docker-tag.yml`, `lighthouse-badger.yml`, `update-screenshots.yml`, `schedule-posts.txt`) have been deleted, along with the template's issue forms, PR template, Copilot instruction set and `docs/`. Recover any of them from history rather than from the upstream repository, since the versions here had already been edited for this site: `git log --diff-filter=D -- <path>`, then `git show <sha>^:<path>`.
 
 ## Gem version pins
 
