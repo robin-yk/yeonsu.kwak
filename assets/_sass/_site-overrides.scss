@@ -86,6 +86,26 @@
   color: var(--global-text-color-light);
 }
 
+// The "Under review & in preparation" heading sits outside `.publications`, so
+// it inherits none of that block's spacing. The theme leaves it flush against
+// the last published entry above it and then strands it a good 5rem above the
+// year rule below, so it reads as a footnote to the published list rather than
+// as the start of a new one. Put the gap on the side where the break actually
+// is, and pull the block underneath back up under the heading.
+
+#under-review {
+  margin-top: 4rem;
+  margin-bottom: 0;
+}
+
+#under-review + .publications {
+  margin-top: 0;
+
+  h2.bibliography:first-child {
+    margin-top: 0.75rem;
+  }
+}
+
 // -----------------------------------------------------------------------------
 // About page profile photo
 // -----------------------------------------------------------------------------
