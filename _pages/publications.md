@@ -11,9 +11,9 @@ nav_order: 1
 
 <!-- Filter by authorship. Hidden until the script runs, so it never shows as a dead control. -->
 <div class="pub-filter" role="group" aria-label="Filter publications by authorship" hidden>
-  <button type="button" data-filter="all" aria-pressed="true">All</button>
-  <button type="button" data-filter="first" aria-pressed="false">First authorship</button>
+  <button type="button" data-filter="first" aria-pressed="true">First authorship</button>
   <button type="button" data-filter="co" aria-pressed="false">Co-authorship</button>
+  <button type="button" data-filter="all" aria-pressed="false">All</button>
 </div>
 
 <div class="publications" id="published">

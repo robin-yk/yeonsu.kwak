@@ -61,9 +61,15 @@
       });
     });
 
-    // Label each button with how many papers it will show.
-    var counts = { all: items.length, first: 0, co: 0 };
-    items.forEach(function (li) {
+    // Counts come from the published list alone, so they report peer-reviewed
+    // papers only. Filtering still covers the under-review block below, which
+    // is separately headed and reads as its own thing.
+    var counted = [];
+    document.querySelectorAll("#published ol.bibliography > li").forEach(function (li) {
+      counted.push(li);
+    });
+    var counts = { all: counted.length, first: 0, co: 0 };
+    counted.forEach(function (li) {
       counts[li.dataset.role] += 1;
     });
 
@@ -113,6 +119,7 @@
     });
 
     bar.hidden = false;
-    apply("all");
+    // First authorship is the default view: it is the work Yeonsu led.
+    apply("first");
   });
 })();
