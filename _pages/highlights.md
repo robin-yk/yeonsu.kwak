@@ -45,14 +45,14 @@ nav_order: 4
 
 </div>
 
-## Press
+## Photos
 
-<div class="highlights-grid press">
+<div class="highlights-grid photos">
 
 <figure>
   {% include figure.liquid loading="eager" path="assets/img/highlights/lab_reactors.jpg" class="img-fluid rounded z-depth-1" alt="Continuous-flow hydrogen reactor systems in the laboratory" %}
   <figcaption>
-    <strong>Herald Corp</strong>, Korea, July 2021.<br>
+    Press in <strong>Herald Corp</strong> and others, Korea, July 2021.<br>
     Scaled hydrogen-release reactor systems developed at the Korea Institute of Science and Technology.
     <a href="https://v.daum.net/v/20210722120128318">Read the article</a>
   </figcaption>

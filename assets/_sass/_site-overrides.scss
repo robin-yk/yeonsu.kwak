@@ -395,13 +395,17 @@ h2 + .highlights-grid {
     max-height: none;
   }
 
+  // A bare figcaption has no top margin of its own, so without this the caption
+  // sits flush against the bottom edge of the cover.
   figcaption {
+    margin-top: 0.8rem;
     font-size: 0.78rem;
+    line-height: 1.5;
   }
 }
 
 // One landscape photo, so hold it to half width rather than letting it stretch.
-.highlights-grid.press {
+.highlights-grid.photos {
   @media (min-width: 768px) {
     grid-template-columns: 1fr 1fr;
   }
