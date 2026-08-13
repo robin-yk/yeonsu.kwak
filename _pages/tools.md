@@ -26,7 +26,7 @@ nav_order: 3
 <a class="tool" href="https://robin-yk.github.io/Electrification-Suite/#rphcjh">
     <img src="{{ '/assets/img/tools/rph.png' | relative_url }}" alt="" width="144" height="144" loading="lazy" />
     <h3>RPH vs CJH Visualizer</h3>
-    <p>Jensen's-inequality effects of rapid versus continuous heating on temperature-dependent kinetics and transport, and the resulting exposure and Damköhler ratios for CH<sub>4</sub> + CO<sub>2</sub> coupling.</p>
+    <p>Selectivity to a reaction intermediate under pulsed versus continuous heating, compared at matched average temperature, electrical power or conversion, with the Jensen's-inequality and Damköhler arguments behind it.</p>
   </a>
 
 </div>
