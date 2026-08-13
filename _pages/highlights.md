@@ -50,19 +50,19 @@ nav_order: 4
 <div class="highlights-grid photos">
 
 <figure>
+  {% include figure.liquid loading="eager" path="assets/img/highlights/linde_internship.jpg" class="img-fluid rounded z-depth-1" alt="Yeonsu Kwak at Linde Engineering America" %}
+  <figcaption>
+    <strong>Linde Engineering America</strong>, Tonawanda, NY, 2026.<br>
+    R&amp;D internship on hydrogen plant flowsheet modeling and water-gas-shift reactor performance.
+  </figcaption>
+</figure>
+
+<figure>
   {% include figure.liquid loading="eager" path="assets/img/highlights/lab_reactors.jpg" class="img-fluid rounded z-depth-1" alt="Continuous-flow hydrogen reactor systems in the laboratory" %}
   <figcaption>
     Press in <strong>Herald Corp</strong> and others, Korea, July 2021.<br>
     Scaled hydrogen-release reactor systems developed at the Korea Institute of Science and Technology.
     <a href="https://v.daum.net/v/20210722120128318">Read the article</a>
-  </figcaption>
-</figure>
-
-<figure>
-  {% include figure.liquid loading="eager" path="assets/img/highlights/linde_internship.jpg" class="img-fluid rounded z-depth-1" alt="Yeonsu Kwak at Linde Engineering America" %}
-  <figcaption>
-    <strong>Linde Engineering America</strong>, Tonawanda, NY, 2026.<br>
-    R&amp;D internship on hydrogen plant flowsheet modeling and water-gas-shift reactor performance.
   </figcaption>
 </figure>
 
