@@ -58,4 +58,12 @@ nav_order: 4
   </figcaption>
 </figure>
 
+<figure>
+  {% include figure.liquid loading="eager" path="assets/img/highlights/linde_internship.jpg" class="img-fluid rounded z-depth-1" alt="Yeonsu Kwak at Linde Engineering America" %}
+  <figcaption>
+    <strong>Linde Engineering America</strong>, Tonawanda, NY, 2026.<br>
+    R&amp;D internship on hydrogen plant flowsheet modeling and water-gas-shift reactor performance.
+  </figcaption>
+</figure>
+
 </div>
