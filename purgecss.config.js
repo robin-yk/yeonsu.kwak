@@ -23,5 +23,12 @@ module.exports = {
     // and page chrome (scroll-progress bar, ToC) bleeds through a zoomed image.
     "medium-zoom-overlay",
     "medium-zoom-image--opened",
+    // pubfilter.js writes these three at runtime, so they only ever appear in
+    // script text and never in the static markup. They survived while the script
+    // was a scanned .js file; safelisting them keeps the rules alive regardless of
+    // whether it ships as a file or inline.
+    "pub-index",
+    "pub-filter-count",
+    "is-active",
   ],
 };
