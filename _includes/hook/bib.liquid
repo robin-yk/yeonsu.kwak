@@ -1,0 +1,17 @@
+{%- comment -%}
+  Runs inside `_layouts/bib.liquid` (al_folio_core), between the point where
+  `additional_info` is appended to `entrytype` and the point where `periodical`
+  is assembled.
+
+  The layout builds the venue line as `{{ entrytype }}, {{ year }}`, and pipes
+  `additional_info` through `markdownify`, which wraps its output in a paragraph
+  and ends it with a newline. The layout strips the `<p>` tags but not that
+  trailing newline, so the comma before the year landed after it and the line
+  rendered as "Chemical Society Reviews, in press , 2026" — a stray space ahead
+  of the comma on every entry carrying `additional_info`.
+
+  Stripping `entrytype` here puts the comma back against the word it follows.
+  Entries without `additional_info` have no trailing whitespace to begin with,
+  so this is a no-op for them.
+{%- endcomment -%}
+{%- assign entrytype = entrytype | strip -%}
