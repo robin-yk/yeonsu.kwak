@@ -519,9 +519,11 @@ body.cv-page {
     margin-bottom: 0;
   }
 
-  // Experience headers share two rows; descriptions use the full card width.
+  // All dated CV sections share the same header and full-width description layout.
   // Flatten only the template's layout wrappers, leaving all CV text intact.
-  #experience + .card {
+  #experience + .card,
+  #education + .card,
+  #awards + .card {
     .list-group-item {
       padding: 0;
       border: 0;
@@ -535,12 +537,12 @@ body.cv-page {
       grid-template-columns: minmax(0, 1fr);
       gap: 0.35rem 1.5rem;
 
-      > .date-column,
+      > .col-md-2,
       > .col-md-10,
-      .date-column table,
-      .date-column tbody,
-      .date-column tr,
-      .date-column td {
+      .col-md-2 table,
+      .col-md-2 tbody,
+      .col-md-2 tr,
+      .col-md-2 td {
         display: contents;
       }
 
@@ -615,6 +617,17 @@ body.cv-page {
           grid-row: 2;
           text-align: right;
         }
+      }
+    }
+  }
+
+  // Awards have only a year on the right, so long award names get the remaining width.
+  @media (min-width: 768px) {
+    #awards + .card .list-group-item > .row {
+      grid-template-columns: minmax(0, 1fr) auto;
+
+      h6:nth-child(2) {
+        grid-column: 1 / -1;
       }
     }
   }
