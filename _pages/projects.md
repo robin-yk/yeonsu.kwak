@@ -2,10 +2,16 @@
 layout: page
 title: research
 permalink: /research/
-description: Six directions across electrified heating, operando characterization, hydrogen carriers, sustainable aviation fuel (SAF), and process modeling.
+description: I study how electrical energy delivery changes catalytic reactions, and use those insights to design reactors.
 nav: true
 nav_order: 2
 ---
+
+<figure class="research-overview">
+  <a href="{{ '/assets/img/research-overview.png' | relative_url }}" target="_blank" rel="noopener" aria-label="Enlarge the research overview">
+    <img src="{{ '/assets/img/research-overview.png' | relative_url }}" alt="Designing the reaction environment through spatial control of microwave and Joule heating, temporal control of power, and material reduction state. Feed and products pass through inlet and outlet ports. Conceptual synthesis of separate studies." width="1672" height="941" fetchpriority="high">
+  </a>
+</figure>
 
 <div class="research-grid">
   <div class="research-card" tabindex="0">

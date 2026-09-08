@@ -156,6 +156,22 @@
 // DOM so it is readable by search engines and screen readers; only its height is
 // animated, via the 0fr/1fr grid-row trick, which avoids guessing a max-height.
 
+.research-overview {
+  margin: 1.5rem 0 2.5rem;
+  background: #fff;
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  a:focus-visible {
+    outline: 2px solid var(--global-theme-color);
+    outline-offset: 4px;
+  }
+}
+
 .research-grid {
   display: grid;
   grid-template-columns: 1fr;
