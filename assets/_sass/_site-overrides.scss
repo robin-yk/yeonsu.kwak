@@ -425,6 +425,101 @@ h2 + .highlights-grid {
 // -----------------------------------------------------------------------------
 // CV page layout
 // -----------------------------------------------------------------------------
+// Keep these adjustments local to the CV; its data and the shared theme stay intact.
+body.cv-page {
+  .post-header {
+    margin-bottom: 1.5rem;
+  }
+
+  footer.fixed-bottom {
+    position: static;
+    margin-top: 2rem;
+  }
+
+  .cv > .card:first-child > .table {
+    display: block;
+    margin-bottom: 0;
+
+    tbody {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 0.35rem 1.5rem;
+    }
+
+    tr {
+      display: grid;
+      grid-template-columns: 5rem minmax(0, 1fr);
+      align-items: baseline;
+    }
+
+    td {
+      padding: 0 !important;
+      overflow-wrap: anywhere;
+    }
+
+    @media (min-width: 992px) {
+      tbody {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      tr:nth-child(2) {
+        grid-column: 1 / -1;
+        grid-row: 2;
+      }
+
+      tr:nth-child(4) {
+        grid-column: 1 / -1;
+      }
+    }
+  }
+
+  .cv .date-column {
+    text-align: left;
+
+    .table-cv {
+      margin: 0;
+    }
+  }
+
+  .cv .list-group-item > .row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.75rem;
+    margin: 0;
+
+    > [class*="col-"] {
+      width: auto;
+      max-width: none;
+      min-width: 0;
+      padding: 0;
+    }
+
+    > .col-md-10 {
+      > h6,
+      > p {
+        margin-left: 0 !important;
+      }
+
+      > ul.items {
+        padding-left: 1.1rem;
+      }
+    }
+
+    @media (min-width: 768px) {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 4fr);
+      gap: 1.25rem;
+    }
+  }
+
+  .cv .list-group-item + .list-group-item {
+    margin-top: 1.25rem;
+  }
+
+  .cv .card > p:last-child {
+    margin-bottom: 0;
+  }
+}
+
 // The al_folio_cv templates are written in Bootstrap grid markup (.row +
 // .col-md-2/.col-md-10), but this site runs with `compat.bootstrap.enabled:
 // false`. Without that shim both columns resolve to `width: 100%`, so the date
