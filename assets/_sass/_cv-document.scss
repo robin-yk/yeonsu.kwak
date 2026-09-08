@@ -7,9 +7,35 @@ body.cv-page footer.fixed-bottom {
 }
 
 .cv-document {
+  --cv-heading: #202020;
+  --cv-body: #383838;
+  --cv-muted: #666;
   font-size: 15px;
   line-height: 1.65;
-  color: var(--global-text-color);
+  color: var(--cv-body);
+}
+html[data-theme="dark"] .cv-document {
+  --cv-heading: #eee;
+  --cv-body: #d4d4d4;
+  --cv-muted: #aaa;
+}
+.cv-document h2,
+.cv-document h3 {
+  color: var(--cv-heading);
+}
+.cv-document .document-entry h3 a {
+  color: inherit;
+  text-decoration: none;
+}
+.cv-document .document-entry h3 a:hover,
+.cv-document .document-entry h3 a:focus-visible {
+  color: var(--global-theme-color);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.cv-document a:focus-visible {
+  outline: 2px solid var(--global-theme-color);
+  outline-offset: 3px;
 }
 .cv-document * {
   box-sizing: border-box;
@@ -75,6 +101,7 @@ body.cv-page footer.fixed-bottom {
 }
 .document-date,
 .document-location {
+  color: var(--cv-muted);
   font-size: 13px;
   text-align: right;
   font-weight: 400;
@@ -111,6 +138,13 @@ body.cv-page footer.fixed-bottom {
 .document-section .card-text > strong {
   display: block;
   margin-top: 14px;
+}
+#research-interests + div > .card-text {
+  margin-bottom: 8px;
+}
+#research-interests + div > .card-text > strong {
+  display: inline;
+  margin: 0;
 }
 .document-section .list-group {
   padding-left: 20px;
