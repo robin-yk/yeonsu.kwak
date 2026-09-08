@@ -1,0 +1,150 @@
+body.cv-page footer.fixed-bottom {
+  position: static;
+  margin-top: 2rem;
+}
+.document-section {
+  scroll-margin-top: 90px;
+}
+
+.cv-document {
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--global-text-color);
+}
+.cv-document * {
+  box-sizing: border-box;
+}
+.document-section {
+  padding: 25px 0 0;
+  margin: 26px 0 0;
+  border-top: 1px solid var(--global-divider-color, #ddd);
+}
+.document-section h2 {
+  font-size: 25px;
+  font-weight: 500;
+  margin: 0 0 22px;
+  padding: 0;
+}
+.contact-section {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+.contact-section h2 {
+  font-size: 17px;
+  margin: 0 0 14px;
+}
+.document-contact {
+  margin: 0;
+  display: grid;
+  gap: 8px;
+}
+.document-contact > div {
+  display: grid;
+  grid-template-columns: 80px minmax(0, 1fr);
+  gap: 12px;
+}
+.document-contact dt {
+  font-size: 13px;
+  font-weight: 400;
+  opacity: 0.75;
+}
+.document-contact dd {
+  margin: 0;
+  padding: 0;
+}
+.document-entry {
+  margin: 0 0 30px;
+  padding: 0;
+}
+.document-entry:last-child {
+  margin-bottom: 0;
+}
+.document-entry header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 3px 24px;
+  align-items: baseline;
+}
+.document-entry h3 {
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
+}
+.document-date,
+.document-location {
+  font-size: 13px;
+  text-align: right;
+  font-weight: 400;
+}
+.document-location {
+  max-width: 225px;
+}
+.document-institution {
+  font-size: 14px;
+}
+.document-entry ul {
+  list-style: disc;
+  margin: 12px 0 0;
+  padding: 0 0 0 20px;
+}
+.document-entry li {
+  padding: 0;
+  margin: 0 0 7px;
+  font-weight: 400;
+}
+.document-entry .item {
+  font-weight: 400 !important;
+}
+.document-note {
+  font-size: 14px;
+  font-weight: 400;
+  font-style: italic;
+  margin: 7px 0 0;
+  line-height: 1.5;
+}
+.document-section p {
+  margin: 0;
+}
+.document-section .card-text > strong {
+  display: block;
+  margin-top: 14px;
+}
+.document-section .list-group {
+  padding-left: 20px;
+  list-style: disc;
+}
+.document-section .list-group-item {
+  background: none;
+  border: 0;
+  padding: 0;
+  margin: 0 0 8px;
+}
+@media (max-width: 767px) {
+  .document-entry header {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 3px;
+  }
+  .document-entry h3 {
+    grid-row: 1;
+  }
+  .document-institution {
+    grid-row: 2;
+  }
+  .document-date {
+    grid-row: 3;
+  }
+  .document-location {
+    grid-row: 4;
+    max-width: none;
+  }
+  .document-date,
+  .document-location {
+    text-align: left;
+  }
+  .document-contact > div {
+    grid-template-columns: 64px minmax(0, 1fr);
+  }
+}
