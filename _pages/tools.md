@@ -3,7 +3,8 @@ layout: page
 title: tools
 permalink: /tools/
 description: Interactive browser models of electrified reactors. No install, no account, no backend.
-nav: true
+published: false
+nav: false
 nav_order: 3
 ---
 

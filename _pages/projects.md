@@ -45,4 +45,4 @@ nav_order: 2
   </div>
 </div>
 
-<p class="research-footnote">The papers behind each direction are on the <a href="{{ '/publications/' | relative_url }}">publications</a> page, and the solvers are on <a href="{{ '/tools/' | relative_url }}">tools</a>.</p>
+<p class="research-footnote">The papers behind each direction are on the <a href="{{ '/publications/' | relative_url }}">publications</a> page.</p>
