@@ -518,6 +518,106 @@ body.cv-page {
   .cv .card > p:last-child {
     margin-bottom: 0;
   }
+
+  // Experience headers share two rows; descriptions use the full card width.
+  // Flatten only the template's layout wrappers, leaving all CV text intact.
+  #experience + .card {
+    .list-group-item {
+      padding: 0;
+      border: 0;
+    }
+
+    .list-group-item + .list-group-item {
+      margin-top: 2rem;
+    }
+
+    .list-group-item > .row {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 0.35rem 1.5rem;
+
+      > .date-column,
+      > .col-md-10,
+      .date-column table,
+      .date-column tbody,
+      .date-column tr,
+      .date-column td {
+        display: contents;
+      }
+
+      h6,
+      p,
+      ul.items {
+        grid-column: 1 / -1;
+        margin: 0 !important;
+      }
+
+      h6:first-child {
+        grid-row: 1;
+      }
+
+      h6:nth-child(2) {
+        grid-row: 2;
+      }
+
+      .badge {
+        grid-column: 1;
+        grid-row: 3;
+        justify-self: start;
+        padding: 0;
+        border: 0;
+        border-radius: 0;
+        background: transparent !important;
+        color: var(--global-text-color) !important;
+        font-size: 0.9rem;
+        font-weight: 400 !important;
+        line-height: 1.5;
+        text-transform: none !important;
+      }
+
+      p.location {
+        grid-row: 4;
+        font-size: 0.85rem;
+        line-height: 1.5;
+        white-space: normal;
+
+        i {
+          display: none;
+        }
+      }
+
+      ul.items {
+        padding-left: 1.15rem;
+        margin-top: 0.5rem !important;
+        font-weight: 400;
+        line-height: 1.6;
+
+        li + li {
+          margin-top: 0.4rem;
+        }
+      }
+
+      @media (min-width: 768px) {
+        grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+
+        h6:first-child,
+        h6:nth-child(2) {
+          grid-column: 1;
+        }
+
+        .badge {
+          grid-column: 2;
+          grid-row: 1;
+          justify-self: end;
+        }
+
+        p.location {
+          grid-column: 2;
+          grid-row: 2;
+          text-align: right;
+        }
+      }
+    }
+  }
 }
 
 // The al_folio_cv templates are written in Bootstrap grid markup (.row +
