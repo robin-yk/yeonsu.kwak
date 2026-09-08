@@ -64,11 +64,10 @@ cv:
         end_date: 2026-08
         summary: "Advisor: Prof. Dionisios G. Vlachos."
         highlights:
-          - Designed heterogeneous catalysts and investigated structure–property–performance relationships using operando dielectric, Raman, XRD, and catalytic measurements to understand oxygen-vacancy-mediated reactivity.
-          - Developed continuous-flow microwave and conventional catalytic reactor systems for methane reforming, propane dehydrogenation, and ethane cracking.
-          - Combined pulsed Joule-heating experiments with microkinetic modeling conducted in collaboration to explain enhanced methane coupling and reduced coke and aromatic byproduct formation relative to continuous heating.
-          - Led experimental reactor development and collaborated with CFD researchers to design an internally Joule-heated ethane cracker with enhanced ethylene yield and projected reductions in capital requirements and CO<sub>2</sub> emissions.
-          - Synthesized PtSn/SiO<sub>2</sub> catalysts and demonstrated coke-resistant microwave propane dehydrogenation (PDH) without H<sub>2</sub> co-feed, with higher energy efficiency and slower nanoparticle sintering than furnace heating.
+          - Designed catalysts and used operando dielectric, Raman, XRD, and reaction measurements to investigate oxygen-vacancy-mediated reactivity.
+          - Combined pulsed Joule-heating experiments with collaborative microkinetic modeling to explain enhanced methane coupling and reduced coke and aromatics relative to continuous heating.
+          - Led internally Joule-heated ethane reactor experiments and collaborated on CFD modeling, improving ethylene yield with projected reductions in capital requirements and CO<sub>2</sub> emissions.
+          - Developed continuous-flow microwave reactors and PtSn/SiO<sub>2</sub> catalysts for coke-resistant propane dehydrogenation without H<sub>2</sub> co-feed, improving energy efficiency and slowing sintering versus furnace heating.
 
       - company: ITACA Institute, Universitat Politècnica de València
         position: Visiting Scholar
