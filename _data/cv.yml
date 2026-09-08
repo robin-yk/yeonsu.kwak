@@ -28,7 +28,7 @@ cv:
         end_date: 2026-08
         highlights:
           - "Expected August 2026. Advisor: Prof. Dionisios G. Vlachos."
-          - Dissertation committee includes Prof. Raul Lobo.
+          - "Dissertation committee: Profs. Raul Lobo, Dongxia Liu, and José M. Catalá-Civera."
 
       - institution: Texas A&M University (TAMU)
         location: College Station, TX, United States
@@ -37,6 +37,8 @@ cv:
         studyType: M.S.
         start_date: 2016-09
         end_date: 2017-08
+        highlights:
+          - "Advisors: Profs. Hae-Kwon Jeong and Phanourios Tamamis."
 
       - institution: Pohang University of Science and Technology (POSTECH)
         location: Pohang, South Korea
