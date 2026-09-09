@@ -105,14 +105,13 @@
         return !li.hidden;
       });
       counted.forEach(function (li) {
-        var old = li.querySelector(":scope > .pub-index");
-        if (old) old.remove();
+        li.removeAttribute("value");
       });
       visible.forEach(function (li, i) {
-        var tag = document.createElement("span");
-        tag.className = "pub-index";
-        tag.textContent = visible.length - i;
-        li.insertBefore(tag, li.firstChild);
+        // Use the browser's native ordered-list marker. Unlike the previous
+        // absolutely positioned span, it stays in normal list layout in every
+        // browser. Explicit values keep numbering continuous across year lists.
+        li.value = visible.length - i;
       });
 
       buttons.forEach(function (button) {

@@ -90,24 +90,19 @@
 // -----------------------------------------------------------------------------
 // Entries carry a number rather than a venue badge: the journal is already
 // named in italics under the authors, so the badge repeated it in a heavy pill,
-// and 26 of those read louder than the titles. pubfilter.js writes the number
-// and recounts it per filter.
-//
-// It is positioned in a padding gutter rather than a grid column. Switching
-// thumbnails off removes the theme's whole left column, and the Bootstrap
-// column classes are only half-defined here anyway.
+// and 26 of those read louder than the titles. pubfilter.js updates each native
+// list item's value and recounts it per filter.
 
-.publications ol.bibliography > li {
-  position: relative;
+.publications ol.bibliography {
   padding-left: 2.75rem;
+  list-style: decimal;
 }
 
-.pub-index {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 2rem;
-  text-align: right;
+.publications ol.bibliography > li {
+  padding-left: 0.5rem;
+}
+
+.publications ol.bibliography > li::marker {
   font-size: 0.95rem;
   font-variant-numeric: tabular-nums;
   color: var(--global-text-color-light);
