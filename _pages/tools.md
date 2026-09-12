@@ -14,7 +14,7 @@ nav_order: 3
   <p class="tool-feature-title">Electrothermal Design of Reactor Elements under Power-Supply and Electrode Constraints</p>
   <p class="tool-feature-meta"><strong>Yeonsu Kwak*</strong><span aria-hidden="true"> · </span>Preprint, 2026</p>
   <div class="tool-actions">
-    <a class="tool-action primary" href="https://robin-yk.github.io/Electrification-Suite/#home">Open ScreenJoule <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <a class="tool-action primary" href="https://robin-yk.github.io/ScreenJoule/dist/#joule3d">Open ScreenJoule <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
     <a class="tool-action" href="{{ '/assets/pdf/ScreenJoule-Preprint-2026.pdf' | relative_url }}" target="_blank" rel="noopener">Read preprint <i class="fa-regular fa-file-pdf" aria-hidden="true"></i></a>
     <a class="tool-action" href="https://github.com/robin-yk/Electrification-Suite">Source code <i class="fa-brands fa-github" aria-hidden="true"></i></a>
   </div>
