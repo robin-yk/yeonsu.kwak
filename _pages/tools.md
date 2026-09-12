@@ -22,26 +22,30 @@ nav_order: 3
 
 ScreenJoule brings three browser-based solvers together for electrified reactor design. Each runs locally in the browser with no installation, account, or backend, and is also importable as a standalone JavaScript module.
 
+{% comment %}
+Temporarily hidden while the older model interfaces are being revised.
+
 ## Models
 
-<div class="tool-list">
+  <div class="tool-list">
 
-<a class="tool" href="https://robin-yk.github.io/Electrification-Suite/#microwave">
-    <img src="{{ '/assets/img/tools/microwave.png' | relative_url }}" alt="" width="144" height="146" loading="lazy" />
-    <h3>Microwave Heating 2D Model</h3>
-    <p>Steady-state powder-bed temperature fields, with dielectric response, penetration depth and experimental calibration.</p>
-  </a>
+  <a class="tool" href="https://robin-yk.github.io/Electrification-Suite/#microwave">
+      <img src="{{ '/assets/img/tools/microwave.png' | relative_url }}" alt="" width="144" height="146" loading="lazy" />
+      <h3>Microwave Heating 2D Model</h3>
+      <p>Steady-state powder-bed temperature fields, with dielectric response, penetration depth and experimental calibration.</p>
+    </a>
 
-<a class="tool" href="https://robin-yk.github.io/Electrification-Suite/#joule">
-    <img src="{{ '/assets/img/tools/joule.png' | relative_url }}" alt="" width="144" height="144" loading="lazy" />
-    <h3>Joule Heating 2D Model</h3>
-    <p>Electrical and thermal screening across materials, geometry and hardware limits, with an axisymmetric temperature field.</p>
-  </a>
+  <a class="tool" href="https://robin-yk.github.io/Electrification-Suite/#joule">
+      <img src="{{ '/assets/img/tools/joule.png' | relative_url }}" alt="" width="144" height="144" loading="lazy" />
+      <h3>Joule Heating 2D Model</h3>
+      <p>Electrical and thermal screening across materials, geometry and hardware limits, with an axisymmetric temperature field.</p>
+    </a>
 
-<a class="tool" href="https://robin-yk.github.io/Electrification-Suite/#rphcjh">
-    <img src="{{ '/assets/img/tools/rph.png' | relative_url }}" alt="" width="144" height="144" loading="lazy" />
-    <h3>RPH vs CJH Visualizer</h3>
-    <p>Selectivity to a reaction intermediate under pulsed versus continuous heating, compared at matched average temperature, electrical power or conversion, with the Jensen's-inequality and Damköhler arguments behind it.</p>
-  </a>
+  <a class="tool" href="https://robin-yk.github.io/Electrification-Suite/#rphcjh">
+      <img src="{{ '/assets/img/tools/rph.png' | relative_url }}" alt="" width="144" height="144" loading="lazy" />
+      <h3>RPH vs CJH Visualizer</h3>
+      <p>Selectivity to a reaction intermediate under pulsed versus continuous heating, compared at matched average temperature, electrical power or conversion, with the Jensen's-inequality and Damköhler arguments behind it.</p>
+    </a>
 
-</div>
+  </div>
+{% endcomment %}
