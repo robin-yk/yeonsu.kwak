@@ -2,7 +2,7 @@
 layout: page
 title: tools
 permalink: /tools/
-description: Interactive browser models of electrified reactors. No install, no account, no backend.
+description: Browser-based models for electrified reactor design.
 published: true
 nav: true
 nav_order: 3
@@ -20,7 +20,7 @@ nav_order: 3
   </div>
 </section>
 
-ScreenJoule brings three browser-based solvers together for electrified reactor design. Each runs locally in the browser with no installation, account, or backend, and is also importable as a standalone JavaScript module.
+ScreenJoule brings three browser-based solvers together for electrified reactor design. Each runs locally in the browser and is also importable as a standalone JavaScript module.
 
 {% comment %}
 Temporarily hidden while the older model interfaces are being revised.
