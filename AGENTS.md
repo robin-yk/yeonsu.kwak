@@ -9,7 +9,7 @@ This is **Yeonsu Kwak's personal academic website**, built from the [al-folio](h
 | Bio, subtitle, headshot, contact block          | `_pages/about.md`                                                                             |
 | Site metadata, feature flags, plugin activation | `_config.yml` (and `Gemfile` when adding/removing a plugin)                                   |
 | Social links, CV download link                  | `_data/socials.yml`                                                                           |
-| CV contents                                     | `_data/cv.yml`; the PDF is `assets/pdf/YeonsuKwak_CV.pdf`                                     |
+| CV contents                                     | `_data/cv.yml`; `assets/pdf/YeonsuKwak_CV.pdf` is the compiled LaTeX CV, kept in step by hand |
 | Publications                                    | `_bibliography/papers.bib`; badge links in `_data/venues.yml`                                 |
 | News items                                      | `_news/` (one file per item, `inline: true` for one-liners)                                   |
 | Research cards                                  | `_projects/` (`category` + `importance` drive grouping/order)                                 |
@@ -36,7 +36,7 @@ bundle exec al-folio upgrade audit
 
 ## Before you push
 
-- Never invent facts about Yeonsu's record — publications, dates, awards, and affiliations must come from the CV or from Yeonsu directly.
+- Never invent facts about Yeonsu's record — publications, dates, awards, and affiliations must come from `_bibliography/papers.bib`, `_data/cv.yml`, or Yeonsu directly. The CV PDF is built from those, so it is not an independent source.
 - Run `npm run lint:prettier`.
 - Deployment is automatic: `.github/workflows/deploy.yml` publishes `_site` to `gh-pages` on every push to `main`.
 

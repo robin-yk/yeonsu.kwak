@@ -44,4 +44,6 @@ The workflows that only made sense for the template project itself (`release.yml
 
 ## Content accuracy
 
-Publications, dates, awards, patent numbers, and affiliations on this site come from Yeonsu's CV (`assets/pdf/YeonsuKwak_CV.pdf`). Do not add or alter any of them from inference — ask instead.
+Publications, dates, awards, patent numbers, and affiliations come from `_bibliography/papers.bib`, `_data/cv.yml`, or Yeonsu directly. Do not add or alter any of them from inference — ask instead.
+
+`assets/pdf/YeonsuKwak_CV.pdf` is the compiled LaTeX CV, built from those same facts. It is a downstream artifact, not a source to cite — it used to be a hand-made Word file and the repository won every disagreement between the two. The LaTeX source is maintained outside this repository, so the PDF has to be recompiled and re-committed by hand whenever `cv.yml` or `papers.bib` changes.
