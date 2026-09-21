@@ -53,6 +53,7 @@ cv:
         position: R&D Intern
         location: Tonawanda, NY, United States
         start_date: 2026-05
+        end_date: 2026-08
         summary: "Managers: Dr. Monica Zanfir & Dr. Troy M. Raybold."
         highlights:
           - Developed and validated an equilibrium-kinetic model predicting high-temperature water-gas-shift performance and hydrocarbon byproduct formation from reactor operating conditions; deployed as an interactive web solver.
@@ -191,7 +192,7 @@ cv:
       - bullet: "**2025.** Dynamic Electrification of Nonoxidative Propane Dehydrogenation. NAM29, GA."
       - bullet: "**2024.** Electrified Biogas Upgrading into Value-Added Chemicals. AIChE Fall, CA."
       - bullet: "**2024.** Mechanistic Insights into Microwave-Assisted Thermal Catalysis. 5GCMEA, Japan."
-      - bullet: "**2023.** Microwave-Assisted Direct Propane Dehydrogenation. AIChE Fall, FL & NAM28, PI."
+      - bullet: "**2023.** Microwave-Assisted Direct Propane Dehydrogenation. AIChE Fall, FL & NAM28, RI."
       - bullet: "**2023.** Electromagnetic field driven catalysis for electrification. ACS Spring, Hybrid."
 
     Awards:
