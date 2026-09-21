@@ -9,7 +9,7 @@ This is **Yeonsu Kwak's personal academic website**, built from the [al-folio](h
 | Bio, subtitle, headshot, contact block          | `_pages/about.md`                                                                             |
 | Site metadata, feature flags, plugin activation | `_config.yml` (and `Gemfile` when adding/removing a plugin)                                   |
 | Social links, CV download link                  | `_data/socials.yml`                                                                           |
-| CV contents                                     | `_data/cv.yml`; `assets/pdf/YeonsuKwak_CV.pdf` is the compiled LaTeX CV, kept in step by hand |
+| CV contents                                     | `_data/cv.yml`; the downloadable PDF is built from `cv-source/YeonsuKwak_CV.tex` by hand      |
 | Publications                                    | `_bibliography/papers.bib`; badge links in `_data/venues.yml`                                 |
 | News items                                      | `_news/` (one file per item, `inline: true` for one-liners)                                   |
 | Research cards                                  | `_projects/` (`category` + `importance` drive grouping/order)                                 |

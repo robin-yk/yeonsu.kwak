@@ -1,0 +1,554 @@
+%==============================================================================
+%  Yeonsu Kwak - Curriculum Vitae
+%
+%  Compile with:  pdflatex YeonsuKwak_CV.tex   (run twice for page refs)
+%  Works as-is on Overleaf (pdfLaTeX).
+%
+%  Computer Modern throughout. Layout follows the Word original: left-aligned
+%  text, bold uppercase section headers with a rule, right-aligned dates.
+%  For justified text instead of ragged right, delete the \raggedright after
+%  \begin{document}.
+%  Tweak margins in \geometry{} and the accent colour in \definecolor{accent}.
+%==============================================================================
+\documentclass[10pt,letterpaper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{textcomp}
+\usepackage{lmodern}                  % Computer Modern (Latin Modern: the
+                                      % vector-outline version, so the PDF has
+                                      % no bitmap fonts and T1 accents work)
+\usepackage{geometry}
+\geometry{letterpaper,top=0.60in,bottom=0.60in,left=0.70in,right=0.70in}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
+
+\definecolor{accent}{HTML}{1A3D6D}
+\hypersetup{colorlinks=true,urlcolor=accent,linkcolor=accent,
+            pdftitle={Yeonsu Kwak - Curriculum Vitae},pdfauthor={Yeonsu Kwak}}
+
+\setlength{\parindent}{0pt}
+\setlength{\emergencystretch}{2em}
+
+%------------------------------------------------------------------ headings --
+% the rule is wrapped in its own command so the [0.9pt] bracket cannot end the
+% optional [after] argument of \titleformat
+\newcommand{\sectionrule}{\vspace{2pt}\titlerule[0.9pt]}
+% \secnote{...} sets a small note flush right ON the next section heading line,
+% above the rule. It clears itself, so it only affects that one heading.
+\makeatletter
+\newcommand{\@secnote}{}
+\newcommand{\secnote}[1]{\renewcommand{\@secnote}{#1}}
+\newcommand{\@titlewithnote}[1]{%
+  \MakeUppercase{#1}%
+  \ifx\@secnote\@empty\else\hfill{\normalfont\small\@secnote}\fi
+  \global\let\@secnote\@empty}
+\titleformat{\section}{\normalfont\bfseries\large}{}{0pt}{\@titlewithnote}[\sectionrule]
+\makeatother
+\titlespacing*{\section}{0pt}{11pt}{5pt}
+
+%------------------------------------------------------------------- building --
+% \dateline{left text}{right date}
+% The date column is measured from the date itself, so a date never wraps and
+% the text column always gets whatever is left. The two columns plus the gutter
+% exactly fill \linewidth, which keeps the date hard against the right margin.
+\newlength{\datecol}
+\newlength{\textcol}
+\newcommand{\dateline}[2]{%
+  \settowidth{\datecol}{#2}%
+  \setlength{\textcol}{\dimexpr\linewidth-\datecol-0.8em\relax}%
+  \begin{minipage}[t]{\textcol}\raggedright #1\end{minipage}\hfill
+  \begin{minipage}[t]{\datecol}\raggedleft #2\end{minipage}}
+% \cventry{role}{dates}
+\newcommand{\cventry}[2]{\vspace{4pt}\dateline{\textbf{#1}}{#2}\par}
+% \cvdegree{degree (bold italic)}{field}{dates} - matches the Word original
+\newcommand{\cvdegree}[3]{\vspace{4pt}\dateline{\textbf{\textit{#1}} #2}{#3}\par}
+% \cvwhere{institution, location (advisor/host)}
+\newcommand{\cvwhere}[1]{#1\par}
+
+\newenvironment{cvbullets}
+  {\begin{itemize}[leftmargin=1.15em,topsep=2pt,itemsep=1.5pt,parsep=0pt,
+                   label=\textbullet]}
+  {\end{itemize}\vspace{1pt}}
+
+\newenvironment{cvplain}
+  {\begin{itemize}[leftmargin=1.15em,topsep=2pt,itemsep=1.5pt,parsep=0pt,
+                   label=\textbullet]}
+  {\end{itemize}}
+
+% Publication list numbered downwards, newest first: \begin{publist}{11}
+% prints [11], [10], [9], ... - the argument is how many entries the list holds,
+% so adding a paper means bumping that one number.
+\newcounter{pubnum}
+\newenvironment{publist}[1]
+  {\setcounter{pubnum}{\numexpr#1+1\relax}%
+   \begin{list}{}%
+     {\setlength{\leftmargin}{2.6em}\setlength{\labelwidth}{2.1em}%
+      \setlength{\labelsep}{0.5em}\setlength{\itemsep}{5pt}%
+      \setlength{\parsep}{0pt}\setlength{\topsep}{3pt}%
+      \setlength{\listparindent}{0pt}%
+      \renewcommand{\makelabel}[1]{##1\hfil}}}
+  {\end{list}}
+% steps the number down and opens the entry
+\newcommand{\pubitem}{\addtocounter{pubnum}{-1}\item[{[\thepubnum]}]}
+
+\newcommand{\me}{\textbf{Y. Kwak}}
+\newcommand{\eq}{\textsuperscript{\dag}}
+\newcommand{\co}{\textsuperscript{*}}
+
+% \pub{authors}{title}{journal}{volume/year/pages}{doi url}
+\newcommand{\pub}[5]{\pubitem #1\par
+  ``#2''\par
+  \href{#5}{\textit{#3}}#4}
+% \pubnl{authors}{title}{journal + status}   -- no link (in press / in prep.)
+\newcommand{\pubnl}[3]{\pubitem #1\par
+  ``#2''\par
+  #3}
+
+% Right-aligned dated one-liners (presentations, awards, memberships)
+\newcommand{\dated}[2]{\item\dateline{#1}{#2}}
+
+\begin{document}
+\raggedright                           % Word-style left alignment
+
+
+%================================================================== header ====
+\begin{center}
+  {\LARGE\bfseries Yeonsu Kwak}\\[5pt]
+  {\small 512 Scotland Dr, Newark, DE \textbar{}~\href{mailto:fiske@udel.edu}{fiske@udel.edu}
+   \textbar{}~+1 (302) 661-5002
+   \textbar{}~\href{https://www.linkedin.com/in/yeonsukwak}{linkedin.com/in/yeonsukwak}}
+\end{center}
+\vspace{2pt}
+
+%=============================================================== education ====
+\section{Education}
+
+\cvdegree{Ph.D. Candidate}{in Chemical \& Biomolecular Engineering}{Aug 2021 -- Nov 2026 (Expected)}
+\cvwhere{University of Delaware (UD), Newark, DE, United States}
+
+\cvdegree{M.S.}{in Energy}{Sep 2016 -- Aug 2017}
+\cvwhere{Texas A\&M University (TAMU), College Station, TX, United States}
+
+\cvdegree{B.S.}{in Chemical Engineering}{Mar 2012 -- Aug 2016}
+\cvwhere{Pohang University of Science and Technology (POSTECH), Pohang, South Korea}
+
+%====================================================== research interests ====
+\section{Research Interests}
+
+Heterogeneous catalysis and reaction engineering \textbar{} Electrified and intensified chemical manufacturing\\
+Hydrogen and low-carbon process systems modeling \textbar{} Catalytic upcycling of biomass and plastics
+
+%===================================================== research experience ====
+\section{Research Experience}
+
+\cventry{Postdoctoral Researcher (Incoming)}{Late 2026}
+\cvwhere{National Laboratory of the Rockies (NLR) (Host: Dr.\ Gregg Beckham)}
+
+\cventry{Graduate Research Assistant}{Aug 2021 -- Nov 2026 (Expected)}
+\cvwhere{University of Delaware, Newark, DE, United States (Advisor: Prof.\ Dionisios G. Vlachos)}
+\begin{cvbullets}
+  \item Synthesized PtSn/SiO\textsubscript{2} catalysts and demonstrated coke-resistant
+        microwave propane dehydrogenation (PDH) without H\textsubscript{2} co-feed, with
+        higher energy efficiency and slower nanoparticle sintering than furnace heating
+  \item Quantified the linear scaling of dielectric loss with oxygen-vacancy concentration
+        in reduced rutile TiO\textsubscript{2} and related microwave absorption to reduction
+        kinetics and reverse water-gas shift performance using operando dielectric and
+        spectroscopic measurements
+  \item Used rapid pulsed Joule heating to intensify methane coupling while suppressing coke
+        and aromatic byproducts relative to continuous heating
+  \item Integrated CFD, kinetic modeling, and experiments to design an internally
+        Joule-heated ethane cracker with enhanced ethylene yield, projected lower capital
+        requirements, and reduced CO\textsubscript{2} emissions
+\end{cvbullets}
+
+\cventry{R\&D Intern}{05/2026 -- 08/2026}
+\cvwhere{Linde Engineering America, Tonawanda, NY
+         (Managers: Dr.\ Monica Zanfir \& Dr.\ Troy M. Raybold)}
+\begin{cvbullets}
+  \item Developed a hybrid equilibrium--kinetic model that defines the thermodynamic
+        over-reduction boundary of Fe\textsubscript{3}O\textsubscript{4} water-gas-shift
+        catalysts and predicts hydrocarbon slip from finite-rate methanation and
+        Fischer--Tropsch reactions
+  \item Developed a UniSim blue-hydrogen flowsheet and evaluated reformer and shift
+        configurations to quantify H\textsubscript{2} recycle, carbon intensity, heat
+        integration, and process-design trade-offs
+\end{cvbullets}
+
+\cventry{Visiting Scholar}{Jun 2024}
+\cvwhere{ITACA Institute, Universitat Politècnica de València, Spain
+         (Host: Prof.\ José M. Catalá-Civera)}
+\begin{cvbullets}
+  \item Developed perturbation-based dual-mode cavity protocols to quantify microwave heating
+        profiles and dielectric properties for operando catalysis studies
+  \item Coordinated ITACA--UD dual-mode cavity co-development, international shipment and
+        customs, and preparation for XAS-compatible microwave experiments at QAS, BNL
+\end{cvbullets}
+
+\cventry{Visiting Scholar}{Nov 2022}
+\cvwhere{INMA Institute, University of Zaragoza, Spain (Host: Prof.\ Jesús Santamaría)}
+\begin{cvbullets}
+  \item Conducted cross-laboratory experiments to verify the reproducibility of
+        microwave-assisted PDH performance
+\end{cvbullets}
+
+\cventry{Research Scientist (Alternative Military Service)}{Nov 2019 -- Aug 2021}
+\cvwhere{Korea Institute of Science and Technology (KIST), Seoul, South Korea}
+\begin{cvbullets}
+  \item Advanced LOHC dehydrogenation systems from catalyst benchmarking to
+        low-platinum-loading catalyst development via atomic layer deposition for scalable
+        hydrogen release
+  \item Designed and constructed Ni-alloy foam architectures for Joule-heated ammonia
+        decomposition reactors
+  \item Scaled an LOHC dehydrogenation reactor to 2.3~Nm\textsuperscript{3}~hr\textsuperscript{-1}
+        H\textsubscript{2} production using phase-change thermal management
+  \item Managed multi-year projects funded by Hyundai Motor Company and National Research
+        Foundation of Korea
+\end{cvbullets}
+
+\cventry{Research Engineer (Alternative Military Service)}{Aug 2017 -- Nov 2019}
+\cvwhere{Institute for Advanced Engineering (IAE), Yongin, South Korea}
+\begin{cvbullets}
+  \item Scaled a continuous 5~ton~yr\textsuperscript{-1} sustainable aviation fuel pilot
+        process integrating palm-oil deoxygenation, hydrocracking, isomerization, and
+        distillation to produce jet-fuel-range hydrocarbons meeting ASTM D7566 specifications
+  \item Managed continuous pilot operations, rotating shift schedules, and process-safety
+        procedures
+\end{cvbullets}
+
+\cventry{Graduate Research Assistant}{Sep 2016 -- Aug 2017}
+\cvwhere{Texas A\&M University, College Station, TX, United States
+         (Advisors: Profs.\ Hae-Kwon Jeong \& Phanourios Tamamis)}
+\begin{cvbullets}
+  \item Synthesized CO\textsubscript{2}-capturing amyloid biomaterials via peptide
+        self-assembly and validated CO\textsubscript{2} uptake
+\end{cvbullets}
+
+%============================================================ publications ====
+\secnote{(\textsuperscript{\dag}Equal contribution, \textsuperscript{*}Corresponding authors,
+  \href{https://scholar.google.com/citations?user=JjrP1zAAAAAJ}{Full list of publications})}
+\section{Publications}
+\vspace{3pt}
+
+\textbf{First-author Publications}
+\begin{publist}{11}
+
+\pub{\me\eq, A. S. Sundaramoorthy\eq, A. Mittal\eq, C. Arumugam, B. Teressa, D. Debraj,
+     H. Goyal\co{} \& D. G. Vlachos\co}
+    {From electromagnetic field-material interactions to intensified chemical manufacturing
+     via microwave catalysis}
+    {Chemical Society Reviews}{, 2026.}
+    {https://doi.org/10.1039/D5CS01379H}
+
+\pub{\me\eq, R. Railkar\eq, W. Zheng \& D. G. Vlachos\co}
+    {Tandem non-oxidative coupling of methane and carbon dioxide reduction via pulsed Joule
+     thermochemistry}
+    {ACS Energy Letters}{, 2025, 10, 12, 6188--6196.}
+    {https://doi.org/10.1021/acsenergylett.5c02853}
+
+\pub{A. Mittal\eq, \me\eq, W. Zheng, M. Ierapetritou \& D. G. Vlachos\co}
+    {Short contact time, high temperature, internally-heated ethane crackers}
+    {Chemical Engineering Journal}{ 523 (2025) 168251.}
+    {https://doi.org/10.1016/j.cej.2025.168251}
+
+\pub{\me\eq, Y.-J. Lee\eq, S. Moon\eq, K. Lee, S. Ramadhani, E.-R. On, C.-I. Ahn, S.-J. Hwang,
+     H. Sohn, H. Jeong, S. W. Nam \& Y. Kim\co}
+    {Scalable atomic-layer tailoring of abundant oxide supports unlocks superior interfaces
+     for low-metal-loading dehydrogenation}
+    {Angewandte Chemie International Edition}{ 2025, 64, e202417598.}
+    {https://doi.org/10.1002/anie.202417598}
+
+\pub{\me, C. Wang, K. C. Ajit, K. Yu, E. Selvam, R. Mallada, J. Santamaria, H. Goyal,
+     I. Julian, J. M. Catala-Civera, W. Zheng \& D. G. Vlachos\co}
+    {Microwave-assisted, performance-advantaged electrification of propane dehydrogenation}
+    {Science Advances}{, 9 (37), eadi8219 (2023).}
+    {https://doi.org/10.1126/sciadv.adi8219}
+
+\pub{D. K. Kang\eq, \me\eq, S. Moon, S. Ramadhani, W. Jeong, H. Jeong, H. Sohn, S. W. Nam,
+     Y. S. Jo, C. W. Yoon \& Y. Kim\co}
+    {Thermally manageable and scalable reactor configurations towards efficient hydrogen
+     release from liquid organic hydrogen carriers}
+    {Energy Conversion and Management}{ 307 (2024) 118345.}
+    {https://doi.org/10.1016/j.enconman.2024.118345}
+
+\pub{\me, S. Moon, C.-I. Ahn, A. Kim, Y. Park, Y. Kim, H. Jeong, H. Sohn, S. W. Nam,
+     C. W. Yoon\co{} \& Y. S. Jo\co}
+    {Effect of support properties in dehydrogenation of biphenyl-based eutectic mixture as
+     LOHC over Pt/Al\textsubscript{2}O\textsubscript{3} catalysts}
+    {Fuel}{ 284 (2021) 119285.}
+    {https://doi.org/10.1016/j.fuel.2020.119285}
+
+\pub{\me, J. Kirk, S. Moon, T. Ohm, Y.-J. Lee, M. Jang, L.-H. Park, C.-I. Ahn, H. Jeong,
+     H. Sohn, S. W. Nam, C. W. Yoon, Y. S. Jo\co{} \& Y. Kim\co}
+    {Hydrogen production from homocyclic LOHCs: Benchmarking studies and energy-economic
+     analyses}
+    {Energy Conversion and Management}{ 239 (2021) 114124.}
+    {https://doi.org/10.1016/j.enconman.2021.114124}
+
+\pub{\me, H. Shin, S. Moon, J. Kirk, Y. Park, H. Jeong, H. Sohn, S. W. Nam, C. W. Yoon,
+     Y. S. Jo\co{} \& Y. Kim\co}
+    {Investigation of a hydrogen generator with the heat management module utilizing
+     liquid-gas organic phase change material}
+    {International Journal of Energy Research}{ (2021) 45, 10378--10392.}
+    {https://doi.org/10.1002/er.6526}
+
+\pub{Y. Park\eq, \me\eq, S. Yu, A. Badakhsh, Y.-J. Lee, H. Jeong, Y. Kim, H. Sohn, S. W. Nam,
+     C. W. Yoon, J. H. Han\co{} \& Y. S. Jo\co}
+    {Degradation mechanism of a Pd/Ta composite membrane: Catalytic surface fouling with
+     inter-diffusion}
+    {Journal of Alloys and Compounds}{ 854 (2021) 157196.}
+    {https://doi.org/10.1016/j.jallcom.2020.157196}
+
+\pub{\me, J. H. Jang, S. Kim, M. Ahn, E.-S. Lee, G. B. Han\co, B. H. Jeong, J. S. Han
+     \& C.-H. Jeon\co}
+    {Reaction characteristics of hydrocarbon fuels under various operation conditions of
+     hydro-upgrading process for vegetable oil-based bio-jet fuel production}
+    {Journal of Oil \& Applied Science}{, 35 (2018) 731--743.}
+    {https://doi.org/10.12925/jkocs.2018.35.3.731}
+
+\end{publist}
+
+\vspace{6pt}
+\textbf{Co-author Publications}
+\begin{publist}{16}
+
+\pub{G. Yan\eq, S. Yoon\eq, \me, A. Kizil, J. A. Boscoboinik, W. Zheng \& D. G. Vlachos}
+    {Facet dependence of redox cycling of ceria nanocrystals}
+    {Catalysis Science \& Technology}{, 2026.}
+    {https://doi.org/10.1039/d6cy00710d}
+
+\pub{J. Choi, M. Kim, \me, A. Pophali, G. Halada, H. Luo, G. Kwon, I. Ro, J. Kim,
+     M. Rafailovich \& T. Kim\co}
+    {Elucidating the role of surface species in CO oxidation catalyzed by boron nitride
+     nanotube supported transition metal oxides}
+    {Journal of Catalysis}{ 456 (2026) 116715.}
+    {https://doi.org/10.1016/j.jcat.2026.116715}
+
+\pub{S. Luo\eq, A. Kamali\eq, J. M. Little, A. Warty, J. K. Keum, P.-Y. Chen, \me, H. K. Kim,
+     D. G. Vlachos, K. Zhang, J. Yang \& D. Liu\co}
+    {Vapor-phase pillarization of MXenes for engineering hierarchical interlayer porosity}
+    {Journal of Materials Chemistry A}{, 2026.}
+    {https://doi.org/10.1039/d5ta09345g}
+
+\pub{R. Railkar, \me{} \& D. G. Vlachos\co}
+    {Intensifying steam methane reforming and water-gas shift in tandem via rapid pulsed
+     Joule heating}
+    {Chemical Engineering Journal}{ 512 (2025) 162700.}
+    {https://doi.org/10.1016/j.cej.2025.162700}
+
+\pub{E. Selvam, Z. O. G. Schyns, J. A. Sun, P. A. Kots, \me, L. T. J. Korley, R. F. Lobo
+     \& D. G. Vlachos\co}
+    {Conversion of compositionally diverse plastic waste over earth-abundant sulfides}
+    {Journal of the American Chemical Society}{ 2025, 147 (13) 11227--11238.}
+    {https://doi.org/10.1021/jacs.4c18001}
+
+\pub{E.-R. On\eq, K. Lee\eq, \me, C. Kim, Q. Dao, H. Sohn, S. W. Nam, J. Kim, Y. Kim\co{}
+     \& H. Jeong\co}
+    {Promoter-guided reaction intermediate dynamics enhance perhydro-benzyltoluene
+     dehydrogenation}
+    {ACS Catalysis}{, 2025, 15, 5531--5545.}
+    {https://doi.org/10.1021/acscatal.4c07703}
+
+\pub{J. Y. Park, \me, J. E. Lee, Y. D. Kim, S. H. Lee, D. W. Jeong, B. S. Kim \& Y. H. Choa}
+    {Hydrovoltaic electricity generator using a hierarchical NiFe LDH-coated CuO nanowire
+     mesh device}
+    {Chemical Engineering Journal}{ 485 (2024) 149914.}
+    {https://doi.org/10.1016/j.cej.2024.149914}
+
+\pub{S. Gupta, \me, R. P. Raj \& P. Selvam\co}
+    {Ytterbium-nitrogen co-doped ordered mesoporous TiO\textsubscript{2}: The innovative
+     hetero-phase photocatalyst for harnessing solar energy in green hydrogen production}
+    {Journal of Materials Chemistry A}{ (2024) 12, 6906--6927.}
+    {https://doi.org/10.1039/D3TA07458G}
+
+\pub{C. Wang\eq, S. Sourav\eq, K. Yu, \me, W. Zheng \& D. G. Vlachos\co}
+    {Green syngas production by microwave-assisted dry reforming of methane on doped ceria
+     catalysts}
+    {ACS Sustainable Chemistry \& Engineering}{ 2023, 11 (36) 13353--13362.}
+    {https://doi.org/10.1021/acssuschemeng.3c02693}
+
+\pub{I. S. Lim, Y. Jeong, \me, E.-R. On, H. Jeong, H. Sohn, S. W. Nam, T.-H. Lim, K. Muller
+     \& Y. Kim\co}
+    {Maximizing clean hydrogen release from perhydro-benzyltoluene: Energy-efficient scale-up
+     strategies and techno-economic analyses}
+    {Chemical Engineering Journal}{ 478 (2023) 147296.}
+    {https://doi.org/10.1016/j.cej.2023.147296}
+
+\pub{C.-I. Ahn, \me, A.-R. Kim, M. Jang, A. Badakhsh, J. Cha, Y. Kim, Y. S. Jo, H. Jeong,
+     S. H. Choi, S. W. Nam, C. W. Yoon\co{} \& H. Sohn\co}
+    {Dehydrogenation of homocyclic liquid organic hydrogen carriers over Pt supported on an
+     ordered pore structure of 3-D cubic mesoporous KIT-6 silica}
+    {Applied Catalysis B: Environment and Energy}{ 307 (2022) 121169.}
+    {https://doi.org/10.1016/j.apcatb.2022.121169}
+
+\pub{J. Y. Park, \me, H.-R. Lim, S.-W. Park, M. S. Lim, H.-B. Cho, N. V. Myung \& Y.-H. Choa\co}
+    {Tuning the sensing responses towards room-temperature hypersensitive methanol gas sensor
+     using exfoliated graphene-enhanced ZnO quantum dot nanostructures}
+    {Journal of Hazardous Materials}{ 438 (2022) 129412.}
+    {https://doi.org/10.1016/j.jhazmat.2022.129412}
+
+\pub{A. Badakhsh, \me, Y.-J. Lee, H. Jeong, Y. Kim, S. W. Nam, C. W. Yoon, C. W. Park\co{}
+     \& Y. S. Jo\co}
+    {A compact catalytic foam reactor for decomposition of ammonia by the Joule-heating
+     mechanism}
+    {Chemical Engineering Journal}{ 426 (2021) 130802.}
+    {https://doi.org/10.1016/j.cej.2021.130802}
+
+\pub{Y.-J. Lee, J. Cha, \me, Y. Park, Y. S. Jo, H. Jeong, H. Sohn, C. W. Yoon, Y. Kim\co,
+     K.-B. Kim\co{} \& S. W. Nam\co}
+    {Top-down syntheses of nickel-based structured catalyst for hydrogen production from
+     ammonia}
+    {ACS Applied Materials \& Interfaces}{ 2021, 13, 1, 597--607.}
+    {https://doi.org/10.1021/acsami.0c18454}
+
+\pub{Y. Kim, \me, Y.-J. Lee, Y. S. Jo, H. Sohn, H. Jeong, H. J. Kim, J. H. Han \textit{et al.}}
+    {Compact ATR-WGS-integrated bioethanol fuel processor for portable and on-board fuel cell
+     applications}
+    {ACS Sustainable Chemistry \& Engineering}{ 2020, 8 (41) 15611--15619.}
+    {https://doi.org/10.1021/acssuschemeng.0c04954}
+
+\pub{S. Kim, J. H. Jang, M. Ahn, \me, G. B. Han, B. H. Jeong, J. S. Han \& J. K. Kim}
+    {Effects of reaction conditions on composition of the organic liquid product during the
+     deoxygenation process of palm oil}
+    {Journal of Oil \& Applied Science}{, 35 (2018) 865--875.}
+    {https://doi.org/10.12925/jkocs.2018.35.3.865}
+
+\end{publist}
+
+%========================================= manuscripts under review / prep ====
+\section{Manuscripts Under Review, In Revision, and In Preparation}
+
+\begin{publist}{3}
+\pubnl{L. F. Rasteiro, \me, N. Wang, P. S. Sinhmar, J. Sweet, M. Cendejas, S. R. Bare,
+       A. J. Medford, F. Boukouvala, J. Kwan, W. Liu, D. G. Vlachos, J. C. Hicks, D. S. Sholl,
+       T. S. Choksi \& C. Sievers\co}
+      {Challenges and opportunities of catalytic process with alternative forms of energy
+       input}
+      {\textit{Chemical Reviews}, under review}
+
+\pubnl{\me, A. P. Jones, M. P. Bobbin, T. U. Rahman, S. Yoon, P. J. Plaza-Gonzalez,
+       J. M. Catala-Civera, W. Zheng \& D. G. Vlachos\co}
+      {Electromagnetic field-enhanced redox catalytic activity in reducible oxides}
+      {In preparation}
+
+\pubnl{\me, J. Y. Kim \& D. G. Vlachos\co}
+      {Product- and power-constrained modeling and optimization of
+       CH\textsubscript{4}--CO\textsubscript{2} thermochemistry}
+      {In preparation}
+\end{publist}
+
+%========================================================== issued patents ====
+\section{Issued Patents}
+\begin{cvplain}
+  \item Hydrogen extraction reactor and hydrogen extraction process using phase change
+        materials, \textbf{US 11,674,068 B2}
+  \item A catalyst for dehydrogenation of LOHCs and method for producing the same,
+        \textbf{KR 10-2472412}
+  \item Apparatus for manufacturing eco-friendly transportation fuel and method therefor,
+        \textbf{KR 10-2859154}
+  \item Apparatus for separating and producing hydrocarbon fuels, \textbf{KR 10-2786950}
+\end{cvplain}
+
+%=============================================== selected oral presentations ==
+\section{Selected Oral Presentations}
+\begin{cvplain}
+  \dated{Process Electrification for Scalable and Intensified Chemical Manufacturing,
+         KAIST YGIS, Korea}{2026}
+  \dated{Dynamic Electrification of Nonoxidative Propane Dehydrogenation, NAM29, GA}{2025}
+  \dated{Electrified Biogas Upgrading into Value-Added Chemicals, AIChE Fall, CA}{2024}
+  \dated{Mechanistic Insights into Microwave-Assisted Thermal Catalysis, 5GCMEA, Japan}{2024}
+  \dated{Microwave-Assisted Direct Propane Dehydrogenation, AIChE Fall, FL \& NAM28, RI}{2023}
+  \dated{Electromagnetic field driven catalysis for electrification, ACS Spring, Hybrid}{2023}
+\end{cvplain}
+
+%========================================================== awards & honors ===
+\section{Awards \& Honors}
+\begin{cvplain}
+  \dated{Theodore A. Koch Graduate Student Travel Award \textbar{} Catalysis Club of
+         Philadelphia (CCP)}{2026}
+  \dated{NSF Delaware EPSCoR Graduate Bridge Fund Award}{2025 -- 2026}
+  \dated{Best Oral Presentation Award \textbar{} 5th Global Congress on Microwave Energy
+         Applications (5GCMEA)}{2024}
+  \dated{AIChE Hanwha Travel Award \textbar{} Hanwha Solutions \& TotalEnergies
+         Petrochemical}{2024}
+  \dated{Graduate Student Travel Awards \textbar{} UD Graduate College \& UD CCST}{2024 -- 2025}
+  \dated{Commendation for Oral Ph.D.\ Qualifier Exam (Exceptional) \textbar{} UD ChBE}{2022}
+  \dated{Finalist, Fulbright Graduate Scholarship \textbar{} U.S. Department of State \&
+         Fulbright Korea}{2021}
+  \dated{Master of Science in Energy Scholarship \textbar{} Texas A\&M Energy Institute}{2017}
+  \dated{Global Engineers Fostering Scholarship (M.S. Full Funding) \textbar{} EDRC of Seoul
+         National University}{2016 -- 2017}
+  \dated{National Scholarship in Science and Technology (B.S. Full Funding) \textbar{}
+         Ministry of Education of Korea}{2012 -- 2016}
+  \dated{4th Place Award, Korea Chemical Process Simulation Olympiad \textbar{} KIChE,
+         Schneider Electric}{2016}
+  \dated{Research Scholarship for Undergraduate Research Program \textbar{} POSTECH}{2015}
+  \dated{Exchange Student Scholarship (National University of Singapore, Fall 2015) \textbar{}
+         POSTECH}{2015}
+  \dated{Exchange Student Scholarship (Nanyang Technological University, Summer 2014) \textbar{}
+         POSTECH}{2014}
+\end{cvplain}
+
+%======================================================= service & leadership ==
+\section{Service \& Leadership}
+
+\cventry{Peer Reviewer \textbar{} American Association for the Advancement of Science,
+         American Chemical Society, Royal Society of Chemistry \& Elsevier}{2022 -- Present}
+\begin{cvbullets}
+  \item Completed 40+ peer reviews for Science Advances, ACS Catalysis, Chemical Engineering
+        Journal, Fuel, International Journal of Hydrogen Energy, Catalysis Today, Molecular
+        Catalysis, ACS Omega, Journal of Alloys and Compounds, RSC Advances, and Fuel
+        Processing Technology
+\end{cvbullets}
+
+\cventry{Research Mentor \textbar{} UD Delaware Energy Institute}{2023 -- Present}
+\begin{cvbullets}
+  \item Auden Jones ('24--'25): Microwave catalysis of metal oxides; admitted to the
+        University of Houston's Ph.D.\ program
+  \item Matthew Conlon ('23): Microwave heating of carbon materials; admitted to Purdue's
+        Ph.D.\ program
+\end{cvbullets}
+
+\cventry{President ('23--'24), Treasurer ('22--'23) \textbar{} UD Korean Graduate Student
+         Association}{2022 -- 2024}
+\begin{cvbullets}
+  \item Managed annual finances exceeding \$3,000 and organized 10+ academic and community
+        events, serving 100+ members of the UD Korean and Korean-American community
+\end{cvbullets}
+
+\cventry{Teaching Assistant \textbar{} UD ChBE}{2023}
+\begin{cvbullets}
+  \item CHEG614/814 (Special Topics in Energy, Spring), Instructor: Prof.\ Dionisios G.
+        Vlachos. Led office hours and facilitated graduate-level discussions on energy systems
+  \item CHEG445 (Chemical Engineering Lab II -- Distillation, Fall), Instructor: Prof.\
+        Nicholas Shevchenko. Supervised distillation pilot plant operations and graded
+        technical reports for 30+ seniors, adhering to safety protocols
+\end{cvbullets}
+
+%=================================================== professional membership ==
+\section{Professional Membership}
+\begin{cvplain}
+  \dated{Catalysis Club of Philadelphia (CCP), Graduate Student Member}{2024 -- Present}
+  \dated{American Institute of Chemical Engineers (AIChE), Graduate Student Member}{2022 -- Present}
+  \dated{Korean-American Scientists and Engineers Association (KSEA), Graduate Student
+         Member}{2022 -- Present}
+  \dated{Korean Institute of Chemical Engineers (KIChE), Regular Member (on leave)}{2017 -- Present}
+\end{cvplain}
+
+%================================================================ references ==
+\secnote{Contact information available upon request}
+\section{References}
+\begin{cvplain}
+  \item Dionisios G. Vlachos, Ph.D. \textbar{} Ph.D.\ Advisor \textbar{} Professor, University
+        of Delaware, USA
+  \item Raul Lobo, Ph.D. \textbar{} Ph.D.\ Dissertation Committee \textbar{} Professor,
+        University of Delaware, USA
+  \item José M. Catalá-Civera, Ph.D. \textbar{} Research Collaborator \textbar{} Professor,
+        ITACA Institute, Spain
+  \item Yongmin Kim, Ph.D. \textbar{} Supervisor at KIST \textbar{} Principal Researcher,
+        KIST, South Korea
+\end{cvplain}
+
+\end{document}
