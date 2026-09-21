@@ -25,9 +25,9 @@ cv:
         area: Chemical & Biomolecular Engineering
         studyType: Ph.D. Candidate
         start_date: 2021-08
-        end_date: 2026-08
+        end_date: 2026-11
         highlights:
-          - "Expected August 2026. Advisor: Prof. Dionisios G. Vlachos."
+          - "Expected November 2026. Advisor: Prof. Dionisios G. Vlachos."
           - "Dissertation committee: Profs. Raul Lobo, Dongxia Liu, and José M. Catalá-Civera."
 
       - institution: Texas A&M University (TAMU)
@@ -53,6 +53,7 @@ cv:
         position: R&D Intern
         location: Tonawanda, NY, United States
         start_date: 2026-05
+        summary: "Managers: Dr. Monica Zanfir & Dr. Troy M. Raybold."
         highlights:
           - Developed and validated an equilibrium-kinetic model predicting high-temperature water-gas-shift performance and hydrocarbon byproduct formation from reactor operating conditions; deployed as an interactive web solver.
           - Developed a UniSim hydrogen-plant flowsheet model and quantitative design guidance for H<sub>2</sub> recycle, reformer/shift configuration, heat integration, and carbon intensity.
@@ -61,7 +62,7 @@ cv:
         position: Graduate Research Assistant
         location: Newark, DE, United States
         start_date: 2021-08
-        end_date: 2026-08
+        end_date: 2026-11
         summary: "Advisor: Prof. Dionisios G. Vlachos."
         highlights:
           - Designed catalysts and used operando dielectric, Raman, XRD, and reaction measurements to investigate oxygen-vacancy-mediated reactivity.
@@ -119,11 +120,13 @@ cv:
 
     Research Interests:
       - label: Catalysis
-        details: Heterogeneous catalysis; catalytic reaction engineering; biomass, plastic, and hydrocarbon conversion.
-      - label: Reactors
-        details: Continuous-flow reactors; process intensification and electrification.
-      - label: Characterization
-        details: Catalyst characterization and operando spectroscopy.
+        details: Heterogeneous catalysis and catalytic reaction engineering; operando characterization under reaction conditions.
+      - label: Electrification
+        details: Electrified and intensified chemical manufacturing; microwave and pulsed Joule reactors.
+      - label: Process Systems
+        details: Hydrogen and low-carbon process systems modeling, optimization, and techno-economic analysis.
+      - label: Upcycling
+        details: Catalytic upcycling of biomass and plastics.
 
     Skills:
       - name: Catalyst & Reactor Engineering
