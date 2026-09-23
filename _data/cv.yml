@@ -49,6 +49,10 @@ cv:
         end_date: 2016-08
 
     Experience:
+      - company: National Laboratory of the Rockies (NLR)
+        position: Postdoctoral Researcher (Incoming)
+        summary: "Joining in late 2026. Host: Dr. Gregg Beckham."
+
       - company: Linde Engineering America
         position: R&D Intern
         location: Tonawanda, NY, United States
@@ -56,8 +60,8 @@ cv:
         end_date: 2026-08
         summary: "Managers: Dr. Monica Zanfir & Dr. Troy M. Raybold."
         highlights:
-          - Developed and validated an equilibrium-kinetic model predicting high-temperature water-gas-shift performance and hydrocarbon byproduct formation from reactor operating conditions; deployed as an interactive web solver.
-          - Developed a UniSim hydrogen-plant flowsheet model and quantitative design guidance for H<sub>2</sub> recycle, reformer/shift configuration, heat integration, and carbon intensity.
+          - Developed a hybrid equilibrium–kinetic model that defines the thermodynamic over-reduction boundary of Fe<sub>3</sub>O<sub>4</sub> water-gas-shift catalysts and predicts hydrocarbon slip from finite-rate methanation and Fischer–Tropsch reactions.
+          - Developed a UniSim blue-hydrogen flowsheet and evaluated reformer and shift configurations to quantify H<sub>2</sub> recycle, carbon intensity, heat integration, and process-design trade-offs.
 
       - company: University of Delaware
         position: Graduate Research Assistant
@@ -66,7 +70,7 @@ cv:
         end_date: 2026-11
         summary: "Advisor: Prof. Dionisios G. Vlachos."
         highlights:
-          - Designed catalysts and used operando dielectric, Raman, XRD, and reaction measurements to investigate oxygen-vacancy-mediated reactivity.
+          - Quantified the linear scaling of dielectric loss with oxygen-vacancy concentration in reduced rutile TiO<sub>2</sub> and related microwave absorption to reduction kinetics and reverse water-gas shift performance using operando dielectric and spectroscopic measurements.
           - Combined pulsed Joule-heating experiments with collaborative microkinetic modeling to explain enhanced methane coupling and reduced coke and aromatics relative to continuous heating.
           - Led internally Joule-heated ethane reactor experiments and collaborated on CFD modeling, improving ethylene yield with projected reductions in capital requirements and CO<sub>2</sub> emissions.
           - Developed continuous-flow microwave reactors and PtSn/SiO<sub>2</sub> catalysts for coke-resistant propane dehydrogenation without H<sub>2</sub> co-feed, improving energy efficiency and slowing sintering versus furnace heating.
