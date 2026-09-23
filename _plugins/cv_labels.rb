@@ -55,7 +55,8 @@ module CvDocument
           title["data-toc-skip"] = ""
           title.inner_html = headings[0].inner_html
           header.add_child(title)
-          header.add_child(node(doc, "span", row.at_css(".badge").text.strip, "document-date"))
+          date_badge = row.at_css(".badge")
+          header.add_child(node(doc, "span", date_badge.text.strip, "document-date")) if date_badge
           institution = node(doc, "div", nil, "document-institution")
           institution.inner_html = headings[1].inner_html if headings[1]
           header.add_child(institution)
