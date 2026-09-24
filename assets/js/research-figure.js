@@ -479,7 +479,19 @@
       bctx.fillStyle = colors[t.col];
       bctx.textAlign = "left";
       bctx.textBaseline = "alphabetic";
-      bctx.fillText(t.t, t.b[0], t.b[3] + 0.5 - (t.desc ? size * 0.2 : 0));
+      const y = t.b[3] + 0.5 - (t.desc ? size * 0.2 : 0);
+      if (t === TEXTS[0]) {
+        const lead = "Designing the ";
+        const leadWidth = bctx.measureText(lead).width;
+        bctx.font = `400 ${size}px ${FONT}`;
+        const tail = "reaction environment";
+        const x = (t.b[0] + t.b[2] - leadWidth - bctx.measureText(tail).width) / 2;
+        bctx.fillText(tail, x + leadWidth, y);
+        bctx.font = `700 ${size}px ${FONT}`;
+        bctx.fillText(lead, x, y);
+      } else {
+        bctx.fillText(t.t, t.b[0], y);
+      }
     }
     // temporal control: rapid pulsed (RPH) and continuous (CJH) at matched average power
     const tint = mixWhite(P.temporal, 0.45);

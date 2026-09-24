@@ -651,8 +651,21 @@ h2 + .highlights-grid {
   margin-top: 1.5rem;
 }
 
-.highlights-grid + h2 {
+.highlights-grid + h2,
+.news + h2 {
   margin-top: 3.5rem;
+}
+
+#news,
+#journal-covers,
+#photos {
+  margin-bottom: 1.5rem;
+}
+
+.news:has(+ #journal-covers),
+.news:has(+ #journal-covers) table,
+.highlights-grid {
+  margin-bottom: 0;
 }
 
 .highlights-grid {
@@ -660,7 +673,7 @@ h2 + .highlights-grid {
   grid-template-columns: 1fr;
   gap: 2.5rem;
   margin-top: 1.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0;
 
   @media (min-width: 768px) {
     grid-template-columns: 1fr 1fr;

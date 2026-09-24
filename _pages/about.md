@@ -24,7 +24,7 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I develop electrified reactors using microwave and Joule heating, with operando measurements of catalyst behavior.
+I develop electrified reactors using microwave and Joule heating, with operando measurements of catalyst behavior. My research focuses on hydrogen carriers and the conversion of biomass, shale gas, and biogas into fuels and value-added chemicals.
 
 Advised by [Prof. Dionisios G. Vlachos](https://cbi.udel.edu/), I expect to defend in October 2026. I will join the [National Laboratory of the Rockies](https://www.nlr.gov/) as a postdoctoral researcher with [Dr. Gregg Beckham](https://scholar.google.com/citations?hl=en&user=7SIetucAAAAJ&view_op=list_works) in late 2026.
 
