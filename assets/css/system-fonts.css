@@ -1,0 +1,4 @@
+/* Local font stack; no font download or post-load substitution. */
+:root {
+  --site-font: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
