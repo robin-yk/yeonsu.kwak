@@ -145,15 +145,14 @@
 }
 
 // -----------------------------------------------------------------------------
-// About page research figure
+// Research page figure
 // -----------------------------------------------------------------------------
 // assets/js/research-figure.js redraws assets/img/research-overview.png on two
 // canvases: `rfig-base` holds the cleaned figure and its labels, `rfig-fx` the
 // animation. The <img> stays underneath as the fallback if they cannot draw.
 
 .rfig {
-  clear: both; // below the floated profile photo
-  margin: 2.5rem 0 1rem;
+  margin: 1.5rem 0 0;
 }
 
 .rfig-stage {
@@ -242,7 +241,7 @@
   }
 
   a {
-    color: var(--c);
+    color: var(--global-theme-color);
   }
 
   .rfig-tag {

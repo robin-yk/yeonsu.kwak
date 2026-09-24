@@ -1,4 +1,4 @@
-// Research figure on the about page: assets/img/research-overview.png, cleaned up and set in motion.
+// Research figure on the research page: assets/img/research-overview.png, cleaned up and set in motion.
 // Left alone it tours through the topics; pointing at a part of the figure explains that part.
 // All coordinates are pixels of the source image (1672 x 941).
 (() => {
@@ -74,7 +74,6 @@
     carbon: "material",
     catalyst: "ink",
   };
-  const DUR = { mw: 5600, joule: 5200, rph: 6400, cjh: 4400, tio2: 4600, sic: 4200, carbon: 4200 };
   const DOI = {
     sciadv: ["Science Advances, 2023", "https://doi.org/10.1126/sciadv.adi8219"],
     cej: ["Chem. Eng. J., 2025", "https://doi.org/10.1016/j.cej.2025.168251"],
@@ -119,6 +118,9 @@
       text: "The structured catalyst, where the delivered energy drives the reaction. Point to MW or Joule above to compare how each heats the bed.",
     },
   };
+  // Each stop lasts as long as its description takes to read (about 25 characters a second).
+  const DUR = {};
+  for (const key of STEPS) DUR[key] = Math.round(1500 + 40 * TOPICS[key].text.length);
   const HOTS = [
     { t: "mw", r: [64, 258, 238, 410], label: "Microwave heating" },
     { t: "mw", r: [130, 178, 394, 230], label: "Spatial control" },
@@ -319,7 +321,8 @@
     hoverTopic = null,
     resumeAt = 0,
     topic = "mw",
-    userDriven = false;
+    userDriven = false,
+    reading = false;
   let heat = 0,
     wMW = 1,
     wJ = 0,
@@ -1023,7 +1026,7 @@
 
   /* ---------- state update ---------- */
   function update(dt, now) {
-    if (!paused && !hoverTopic && now > resumeAt) {
+    if (!paused && !hoverTopic && !reading && now > resumeAt) {
       stepT += dt * 1000;
       if (stepT >= DUR[STEPS[stepIdx]]) {
         stepIdx = (stepIdx + 1) % STEPS.length;
@@ -1275,6 +1278,9 @@
       }
     })
   );
+  // Hold the tour while the pointer rests on the caption, so a description does not change mid-sentence.
+  explain.addEventListener("pointerenter", () => (reading = true));
+  explain.addEventListener("pointerleave", () => (reading = false));
   playBtn.addEventListener("click", () => {
     paused = !paused;
     playBtn.textContent = paused ? "Play" : "Pause";
