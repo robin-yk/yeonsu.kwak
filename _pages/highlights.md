@@ -2,10 +2,14 @@
 layout: page
 title: Highlights
 permalink: /highlights/
-description: Journal covers and press coverage.
+description: News, journal covers and press coverage.
 nav: true
 nav_order: 4
 ---
+
+## News
+
+{% include news.liquid %}
 
 ## Journal covers
 
