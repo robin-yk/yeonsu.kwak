@@ -185,11 +185,22 @@
 
   > img {
     user-select: none;
+    visibility: hidden;
   }
 
   .rfig-fx {
     pointer-events: none;
   }
+}
+
+.rfig.is-loading .rfig-stage > img,
+.rfig.is-loading .rfig-stage > canvas,
+.rfig.is-live .rfig-stage > img {
+  visibility: hidden;
+}
+
+.rfig.is-fallback .rfig-stage > img {
+  visibility: visible;
 }
 
 .rfig-hot {

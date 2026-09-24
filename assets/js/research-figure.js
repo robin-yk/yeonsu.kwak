@@ -4,6 +4,7 @@
 (() => {
   const root = document.getElementById("research-figure");
   if (!root) return;
+  root.classList.add("is-loading");
   const FW = 1672,
     FH = 941,
     BGC = [253, 253, 253],
@@ -1312,6 +1313,10 @@
     applyPaletteUI();
     resize();
     showTopic();
+    render(0);
+    root.classList.toggle("is-live", Boolean(figC));
+    root.classList.toggle("is-fallback", !figC);
+    root.classList.remove("is-loading");
     if (reduced.matches) {
       playBtn.hidden = true;
       still();
@@ -1330,5 +1335,15 @@
   applyPaletteUI();
   new ResizeObserver(resize).observe(fig);
   if (img.complete && img.naturalWidth) start();
-  else img.addEventListener("load", start, { once: true });
+  else {
+    img.addEventListener("load", start, { once: true });
+    img.addEventListener(
+      "error",
+      () => {
+        root.classList.remove("is-loading");
+        root.classList.add("is-fallback");
+      },
+      { once: true }
+    );
+  }
 })();
