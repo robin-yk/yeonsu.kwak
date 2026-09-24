@@ -13,6 +13,33 @@
   --global-hover-color: #115e59; // darker teal, for hover states
 }
 
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button,
+input,
+select,
+textarea,
+.navbar,
+.post-title,
+.desc {
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+.profile img {
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
 // -----------------------------------------------------------------------------
 // Capitalised labels
 // -----------------------------------------------------------------------------
@@ -233,7 +260,7 @@
 }
 
 .rfig-explain {
-  --c: #b83c2a;
+  --c: #c23f2c;
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
   gap: 0.5rem 1.5rem;

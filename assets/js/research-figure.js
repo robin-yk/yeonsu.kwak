@@ -1159,18 +1159,6 @@
     render(1.2);
   }
 
-  function reserveText() {
-    const keep = exText.innerHTML;
-    let tallest = 0;
-    exText.style.minHeight = "0";
-    for (const key in TOPICS) {
-      const T = TOPICS[key];
-      exText.textContent = T.text + (T.link ? " " + T.link[0] : "") + (T.tag ? " " + T.tag : "");
-      tallest = Math.max(tallest, exText.offsetHeight);
-    }
-    exText.innerHTML = keep;
-    exText.style.minHeight = tallest + "px";
-  }
   function resize() {
     dpr = Math.min(2, window.devicePixelRatio || 1);
     const r = fig.getBoundingClientRect();
@@ -1179,7 +1167,6 @@
       c.height = Math.max(1, Math.round(r.height * dpr));
     }
     k = r.width / FW;
-    reserveText();
     drawBase();
     if (ready && !running) render((performance.now() - t0) / 1000);
   }
