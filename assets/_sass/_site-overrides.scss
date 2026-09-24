@@ -145,27 +145,174 @@
 }
 
 // -----------------------------------------------------------------------------
+// About page research figure
+// -----------------------------------------------------------------------------
+// assets/js/research-figure.js redraws assets/img/research-overview.png on two
+// canvases: `rfig-base` holds the cleaned figure and its labels, `rfig-fx` the
+// animation. The <img> stays underneath as the fallback if they cannot draw.
+
+.rfig {
+  clear: both; // below the floated profile photo
+  margin: 2.5rem 0 1rem;
+}
+
+.rfig-stage {
+  position: relative;
+  aspect-ratio: 1672 / 941;
+  background: #fdfdfd;
+
+  > img,
+  > canvas {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+  }
+
+  > img {
+    user-select: none;
+  }
+
+  .rfig-fx {
+    pointer-events: none;
+  }
+}
+
+.rfig-hot {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 1rem;
+  background: transparent;
+  cursor: pointer;
+
+  &:focus-visible {
+    outline: 2px dashed var(--global-text-color);
+    outline-offset: 2px;
+  }
+
+  &.is-circle {
+    border-radius: 50%;
+  }
+
+  &.is-key {
+    border-radius: 50%;
+    pointer-events: none;
+  }
+}
+
+.rfig-explain {
+  --c: #b83c2a;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.5rem 1.5rem;
+  align-items: start;
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--global-divider-color);
+
+  @media (max-width: 575px) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.rfig-eyebrow {
+  margin: 0;
+  color: var(--c);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.rfig-text {
+  margin: 0.3rem 0 0;
+  color: var(--global-text-color);
+  font-size: 0.92rem;
+  line-height: 1.55;
+
+  a,
+  .rfig-tag {
+    margin-left: 0.25rem;
+    font-size: 0.8rem;
+    white-space: nowrap;
+  }
+
+  a {
+    color: var(--c);
+  }
+
+  .rfig-tag {
+    color: var(--global-text-color-light);
+  }
+}
+
+.rfig-tour {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding-top: 0.1rem;
+}
+
+.rfig-dot {
+  position: relative;
+  overflow: hidden;
+  width: 0.55rem;
+  height: 0.55rem;
+  padding: 0;
+  border: 0;
+  border-radius: 1rem;
+  background: #dcdfe7;
+  cursor: pointer;
+  transition: width 0.25s ease;
+
+  &[aria-current="step"] {
+    width: 1.9rem;
+    background: color-mix(in srgb, var(--c) 22%, #fff);
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: var(--c);
+      transform: scaleX(var(--p, 0));
+      transform-origin: left center;
+    }
+  }
+}
+
+.rfig-play {
+  margin-left: 0.3rem;
+  padding: 0.3rem 0.65rem;
+  border: 1px solid var(--global-divider-color);
+  border-radius: 2rem;
+  background: none;
+  color: var(--global-text-color-light);
+  font-size: 0.72rem;
+  line-height: 1.2;
+  cursor: pointer;
+
+  &:hover {
+    border-color: var(--global-theme-color);
+    color: var(--global-theme-color);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rfig-dot {
+    transition: none;
+  }
+}
+
+// -----------------------------------------------------------------------------
 // Research page
 // -----------------------------------------------------------------------------
 // Icon cards that stay quiet until pointed at. The description is always in the
 // DOM so it is readable by search engines and screen readers; only its height is
 // animated, via the 0fr/1fr grid-row trick, which avoids guessing a max-height.
-
-.research-overview {
-  margin: 1.5rem 0 2.5rem;
-  background: #fff;
-
-  img {
-    display: block;
-    width: 100%;
-    height: auto;
-  }
-
-  a:focus-visible {
-    outline: 2px solid var(--global-theme-color);
-    outline-offset: 4px;
-  }
-}
 
 .research-grid {
   display: grid;

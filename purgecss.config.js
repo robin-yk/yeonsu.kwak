@@ -30,5 +30,9 @@ module.exports = {
     "pub-index",
     "pub-filter-count",
     "is-active",
+    // research-figure.js creates the figure's hotspots at runtime.
+    /^rfig-/,
+    "is-circle",
+    "is-key",
   ],
 };
