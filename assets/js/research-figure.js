@@ -84,7 +84,7 @@
     mw: {
       eyebrow: "Spatial control | Microwave heating",
       link: DOI.sciadv,
-      text: "Microwaves deposit energy throughout the catalyst bed instead of conducting it in from the wall, so the core runs hotter than the surface. Over PtSn/SiO\u2082, this sustained propane dehydrogenation without H\u2082 co-feed, resisting coke and slowing sintering relative to furnace heating.",
+      text: "Microwave-heated PtSn/SiO₂ sustained propane dehydrogenation without H₂ co-feed. Coking and sintering were lower than under furnace heating.",
     },
     joule: {
       eyebrow: "Spatial control | Joule heating",
