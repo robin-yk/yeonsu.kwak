@@ -272,6 +272,10 @@
 
   a {
     color: var(--c);
+
+    em {
+      color: inherit;
+    }
   }
 
   .rfig-tag {
