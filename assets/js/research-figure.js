@@ -77,7 +77,7 @@
   };
   const DOI = {
     sciadv: ["Science Advances, 2023", "https://doi.org/10.1126/sciadv.adi8219"],
-    cej: ["Chem. Eng. J., 2025", "https://doi.org/10.1016/j.cej.2025.168251"],
+    cej: ["Chemical Engineering Journal, 2025", "https://doi.org/10.1016/j.cej.2025.168251"],
     acsel: ["ACS Energy Letters, 2025", "https://doi.org/10.1021/acsenergylett.5c02853"],
   };
   const TOPICS = {
@@ -107,6 +107,7 @@
     },
     sic: {
       eyebrow: "Material state | Silicon carbide",
+      link: DOI.sciadv,
       text: "Silicon carbide couples strongly to microwaves and conducts current, which is why it serves both as a microwave susceptor and as a resistive heating element.",
     },
     carbon: {
@@ -1110,7 +1111,11 @@
     if (T.link) {
       const a = document.createElement("a");
       a.href = T.link[1];
-      a.textContent = T.link[0];
+      const split = T.link[0].lastIndexOf(", "),
+        journal = document.createElement("em");
+      journal.textContent = split < 0 ? T.link[0] : T.link[0].slice(0, split);
+      a.append(journal);
+      if (split >= 0) a.append(document.createTextNode(T.link[0].slice(split)));
       exText.append(a);
     }
     if (T.tag) {
