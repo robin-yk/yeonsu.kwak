@@ -2,25 +2,34 @@
 layout: page
 title: Tools
 permalink: /tools/
-description: Browser-based models for electrified reactor design.
+description:
 published: true
 nav: true
 nav_order: 3
 ---
 
-<section class="tool-feature" aria-labelledby="screenjoule-title">
-  <p class="tool-kicker">Open-source reactor design toolkit</p>
+<section class="tool-showcase" aria-labelledby="screenjoule-title">
+  <img src="{{ '/assets/img/tools/screenjoule-ui.png' | relative_url }}" width="1680" height="900" alt="ScreenJoule controls and a hollow reactor tube with its calculated temperature field" loading="eager">
+  <div>
   <h2 id="screenjoule-title">ScreenJoule</h2>
-  <p class="tool-feature-title">Electrothermal Design of Reactor Elements under Power-Supply and Electrode Constraints</p>
-  <p class="tool-feature-meta"><strong>Yeonsu Kwak*</strong><span aria-hidden="true"> · </span>Preprint, 2026</p>
+  <p>Explore how material, geometry, electrodes, and power-supply limits affect reactor-element heating.</p>
   <div class="tool-actions">
     <a class="tool-action primary" href="https://robin-yk.github.io/ScreenJoule/dist/#joule3d">Open ScreenJoule <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
     <a class="tool-action" href="{{ '/assets/pdf/ScreenJoule-Preprint-2026.pdf' | relative_url }}" target="_blank" rel="noopener">Read preprint <i class="fa-regular fa-file-pdf" aria-hidden="true"></i></a>
-    <a class="tool-action" href="https://github.com/robin-yk/ScreenJoule">Source code <i class="fa-brands fa-github" aria-hidden="true"></i></a>
+  </div>
   </div>
 </section>
 
-ScreenJoule brings three browser-based solvers together for electrified reactor design. Each runs locally in the browser and is also importable as a standalone JavaScript module.
+<section class="tool-showcase" aria-labelledby="ethanecracker-title">
+  <img src="{{ '/assets/img/tools/ethanecracker-ui.png' | relative_url }}" width="1680" height="900" alt="EthaneCracker interface with reactor controls, process flowsheet, and calculated costs" loading="lazy">
+  <div>
+    <h2 id="ethanecracker-title">EthaneCracker</h2>
+    <p>Compare production costs and CO₂ emissions across operating conditions, energy prices, and heating methods.</p>
+    <div class="tool-actions">
+      <a class="tool-action primary" href="https://robin-yk.github.io/EthaneCracker/?model=aramco&amp;heat=fired&amp;T=850&amp;tau=0.3500&amp;steam=0.35&amp;P=1.5&amp;n=1&amp;cap=610&amp;ethane=200&amp;elec=0.07&amp;gas=4&amp;grid=0.36&amp;case=Reference+case">Open EthaneCracker <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    </div>
+  </div>
+</section>
 
 {% comment %}
 Temporarily hidden while the older model interfaces are being revised.
