@@ -24,9 +24,9 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I develop electrified catalytic reactors using microwave and pulsed Joule heating, coupled with operando methods to track catalyst behavior under reaction conditions. This work has enabled coke-resistant propane dehydrogenation without H₂ co-feed, pulsed methane coupling with reduced coking, and internally heated ethane cracking.
+I develop electrified reactors using microwave and Joule heating, with operando measurements of catalyst behavior.
 
-I am a Ph.D. candidate advised by [Prof. Dionisios G. Vlachos](https://cbi.udel.edu/) and expect to defend in October 2026. I recently completed an R&D internship at Linde Engineering America. Before Delaware, I spent four years at KIST and IAE developing hydrogen and sustainable-fuel reactors from laboratory systems to pilot scale. Email is the best way to reach me.
+Advised by [Prof. Dionisios G. Vlachos](https://cbi.udel.edu/), I expect to defend in October 2026. I will join the [National Laboratory of the Rockies](https://www.nlr.gov/) as a postdoctoral researcher with [Dr. Gregg Beckham](https://scholar.google.com/citations?hl=en&user=7SIetucAAAAJ&view_op=list_works) in late 2026.
 
 <section class="home-research" aria-label="Research">
 {% include research-overview.liquid %}
