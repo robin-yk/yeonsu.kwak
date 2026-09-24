@@ -1,6 +1,6 @@
 ---
 layout: page
-title: tools
+title: Tools
 permalink: /tools/
 description: Browser-based models for electrified reactor design.
 published: true

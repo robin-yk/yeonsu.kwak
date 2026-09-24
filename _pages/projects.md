@@ -1,6 +1,6 @@
 ---
 layout: page
-title: research
+title: Research
 permalink: /research/
 description: I study how electrical energy delivery changes catalytic reactions, and use those insights to design reactors.
 nav: true
@@ -15,7 +15,7 @@ nav_order: 2
   </div>
   <figcaption class="rfig-explain" aria-live="off">
     <div>
-      <p class="rfig-eyebrow">Spatial control &middot; Microwave heating</p>
+      <p class="rfig-eyebrow">Spatial control | Microwave heating</p>
       <p class="rfig-text">Microwaves deposit energy throughout the catalyst bed instead of conducting it in from the wall, so the core runs hotter than the surface.</p>
     </div>
     <div class="rfig-tour" role="group" aria-label="Guided tour of the figure">

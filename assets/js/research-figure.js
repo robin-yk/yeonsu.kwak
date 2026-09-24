@@ -81,40 +81,40 @@
   };
   const TOPICS = {
     mw: {
-      eyebrow: "Spatial control \u00B7 Microwave heating",
+      eyebrow: "Spatial control | Microwave heating",
       link: DOI.sciadv,
       text: "Microwaves deposit energy throughout the catalyst bed instead of conducting it in from the wall, so the core runs hotter than the surface. Over PtSn/SiO\u2082, this sustained propane dehydrogenation without H\u2082 co-feed, resisting coke and slowing sintering relative to furnace heating.",
     },
     joule: {
-      eyebrow: "Spatial control \u00B7 Joule heating",
+      eyebrow: "Spatial control | Joule heating",
       link: DOI.cej,
       text: "Current passed through a conductive support dissipates heat inside the structure, so the bed temperature follows the applied power rapidly and can be programmed. I led the experiments on internally Joule-heated ethane crackers, which raised ethylene yield.",
     },
     rph: {
-      eyebrow: "Temporal control \u00B7 Rapid pulsed heating (RPH)",
+      eyebrow: "Temporal control | Rapid pulsed heating (RPH)",
       link: DOI.acsel,
       text: "Rapid pulsed heating concentrates power into brief pulses, so the catalyst reaches peak temperature only momentarily. Relative to continuous heating, pulsing enhanced methane coupling and reduced coke and aromatics.",
     },
     cjh: {
-      eyebrow: "Temporal control \u00B7 Continuous Joule heating (CJH)",
+      eyebrow: "Temporal control | Continuous Joule heating (CJH)",
       text: "Continuous Joule heating holds the power constant. It is the reference against which pulsed operation is compared: a lower temperature, held throughout.",
     },
     tio2: {
-      eyebrow: "Material state \u00B7 Reduced rutile TiO\u2082",
+      eyebrow: "Material state | Reduced rutile TiO\u2082",
       tag: "Manuscript in preparation",
       text: "Oxygen vacancies raise the dielectric loss of reduced rutile, so the oxide absorbs microwaves more strongly as it reduces. Operando dielectric measurements resolve a linear scaling of loss with vacancy concentration, which I related to reduction kinetics and reverse water-gas shift performance.",
     },
     sic: {
-      eyebrow: "Material state \u00B7 Silicon carbide",
+      eyebrow: "Material state | Silicon carbide",
       text: "Silicon carbide couples strongly to microwaves and conducts current, which is why it serves both as a microwave susceptor and as a resistive heating element.",
     },
     carbon: {
-      eyebrow: "Material state \u00B7 Carbon",
+      eyebrow: "Material state | Carbon",
       link: DOI.acsel,
       text: "Carbon conducts electrons and heats rapidly under microwaves or current. It is also the coke that deactivates catalysts, which pulsed heating suppressed in methane coupling.",
     },
     catalyst: {
-      eyebrow: "The reactor \u00B7 Structured catalyst",
+      eyebrow: "The reactor | Structured catalyst",
       text: "The structured catalyst, where the delivered energy drives the reaction. Point to MW or Joule above to compare how each heats the bed.",
     },
   };
@@ -1259,7 +1259,7 @@
     b.type = "button";
     b.className = "rfig-hot is-key";
     place(b, keys[key]);
-    b.setAttribute("aria-label", TOPICS[key].eyebrow.replace("Material state \u00B7 ", ""));
+    b.setAttribute("aria-label", TOPICS[key].eyebrow.replace("Material state | ", ""));
     b.addEventListener("focus", () => engage(key));
     b.addEventListener("blur", release);
     fig.append(b);

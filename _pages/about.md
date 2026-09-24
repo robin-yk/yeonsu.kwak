@@ -1,6 +1,6 @@
 ---
 layout: about
-title: about
+title: About
 permalink: /
 subtitle: Ph.D. Candidate, <a href="https://www.che.udel.edu/">Chemical &amp; Biomolecular Engineering</a>, University of Delaware
 
