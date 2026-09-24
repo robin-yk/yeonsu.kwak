@@ -9,7 +9,7 @@ nav_order: 2
 
 <figure class="rfig" id="research-figure">
   <div class="rfig-stage">
-    <img class="rfig-img" src="{{ '/assets/img/research-overview.png' | relative_url }}" alt="Designing the reaction environment through spatial control of microwave and Joule heating, temporal control of power, and material reduction state. Feed and products pass through inlet and outlet ports. Conceptual synthesis of separate studies." width="1672" height="941" fetchpriority="high">
+    <img class="rfig-img" src="{{ '/assets/img/research-overview-open-cell.png' | relative_url }}" alt="Designing the reaction environment through spatial control of microwave and Joule heating, temporal control of power, and material reduction state. An open-cell foam sits inside the reactor, with feed and products passing through inlet and outlet ports. Conceptual synthesis of separate studies." width="1672" height="941" fetchpriority="high">
     <canvas class="rfig-base" aria-hidden="true"></canvas>
     <canvas class="rfig-fx" aria-hidden="true"></canvas>
   </div>

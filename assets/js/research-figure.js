@@ -1,4 +1,4 @@
-// Research figure on the research page: assets/img/research-overview.png, cleaned up and set in motion.
+// Research figure on the research page: assets/img/research-overview-open-cell.png, cleaned up and set in motion.
 // Left alone it tours through the topics; pointing at a part of the figure explains that part.
 // All coordinates are pixels of the source image (1672 x 941).
 (() => {
