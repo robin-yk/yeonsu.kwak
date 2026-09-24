@@ -243,6 +243,9 @@
   color: var(--global-text-color);
   font-size: 0.92rem;
   line-height: 1.55;
+  height: 4.65em;
+  overflow-y: auto;
+  scrollbar-width: thin;
 
   a,
   .rfig-tag {

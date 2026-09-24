@@ -102,7 +102,7 @@
     tio2: {
       eyebrow: "Material state | Reduced rutile TiO\u2082",
       tag: "Manuscript in preparation",
-      text: "Oxygen vacancies raise the dielectric loss of reduced rutile, so the oxide absorbs microwaves more strongly as it reduces. Operando dielectric measurements resolve a linear scaling of loss with vacancy concentration, which I related to reduction kinetics and reverse water-gas shift performance.",
+      text: "I study how oxygen vacancies affect dielectric loss in reduced rutile TiO₂, and how dielectric response relates to reduction kinetics and reverse water-gas shift performance.",
     },
     sic: {
       eyebrow: "Material state | Silicon carbide",
@@ -1105,6 +1105,7 @@
     explain.setAttribute("aria-live", userDriven ? "polite" : "off");
     exEyebrow.textContent = T.eyebrow;
     exText.textContent = T.text + " ";
+    exText.scrollTop = 0;
     if (T.link) {
       const a = document.createElement("a");
       a.href = T.link[1];
