@@ -364,6 +364,17 @@
     };
     mark(400, 338, 650, 545, (r, g, b) => r > 150 && r - b > 80 && r - g > 40, 5);
     mark(764, 358, 824, 507, (r, g, b) => g - r > 55 && b - r > 50 && g > 100, 5);
+    // Above the catalyst the teal shaft also carries a soft white outline, wider than its colour mask. Replace the
+    // whole band with the background 30 px to its left, 2 px lower to follow the tube's slope so the glass edges meet.
+    for (let y = 358; y <= 481; y++)
+      for (let x = 781; x <= 806; x++) {
+        const o = (y * W + x) * 4,
+          src = ((y + 2) * W + x - 30) * 4;
+        D[o] = D[src];
+        D[o + 1] = D[src + 1];
+        D[o + 2] = D[src + 2];
+        M[y * W + x] = 0;
+      }
     const isCat = (r, g, b) => (g - r > 25 && r + g + b < 520) || r + g + b < 150;
     for (let y = 330; y <= 552; y++)
       for (let x = 390; x <= 835; x++) {
@@ -416,7 +427,6 @@
     };
     for (const t of TEXTS) erase(t.b[0] - 4, t.b[1] - (t.t === "Time" ? 2 : 4), t.b[2] + 4, t.b[3] + 4);
     erase(1310, 694, 1588, 736);
-    erase(784, 359, 802, 374); // the teal arrow's tail cap under the time axis
   }
   // Per palette: move the arcs and the material annotations onto the chosen hues.
   function paintFigure() {
