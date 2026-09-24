@@ -484,6 +484,10 @@ textarea,
 // Tools page
 // -----------------------------------------------------------------------------
 
+body > footer {
+  display: none !important;
+}
+
 body:has(.tool-showcase) {
   > .container.mt-5 {
     margin-top: 1.5rem !important;
@@ -493,9 +497,6 @@ body:has(.tool-showcase) {
   }
   .post-description:empty {
     display: none;
-  }
-  footer.fixed-bottom {
-    position: static;
   }
 }
 
