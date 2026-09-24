@@ -12,7 +12,7 @@ nav_order: 3
   <img src="{{ '/assets/img/tools/screenjoule-ui.png' | relative_url }}" width="1680" height="900" alt="ScreenJoule controls and a hollow reactor tube with its calculated temperature field" loading="eager">
   <div>
   <h2 id="screenjoule-title">ScreenJoule</h2>
-  <p>Explore how material, geometry, electrodes, and power-supply limits affect reactor-element heating.</p>
+  <p>Coupled electrical and thermal models resolve temperature distributions in 0D, 2D, and 3D.</p>
   <div class="tool-actions">
     <a class="tool-action primary" href="https://robin-yk.github.io/ScreenJoule/dist/#joule3d">Open ScreenJoule <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
     <a class="tool-action" href="{{ '/assets/pdf/ScreenJoule-Preprint-2026.pdf' | relative_url }}" target="_blank" rel="noopener">Read preprint <i class="fa-regular fa-file-pdf" aria-hidden="true"></i></a>
@@ -24,7 +24,7 @@ nav_order: 3
   <img src="{{ '/assets/img/tools/ethanecracker-ui.png' | relative_url }}" width="1680" height="900" alt="EthaneCracker interface with reactor controls, process flowsheet, and calculated costs" loading="lazy">
   <div>
     <h2 id="ethanecracker-title">EthaneCracker</h2>
-    <p>Compare production costs and CO₂ emissions across operating conditions, energy prices, and heating methods.</p>
+    <p>A Gaussian-process surrogate of detailed reaction kinetics feeds process, cost, and emissions calculations.</p>
     <div class="tool-actions">
       <a class="tool-action primary" href="https://robin-yk.github.io/EthaneCracker/?model=aramco&amp;heat=fired&amp;T=850&amp;tau=0.3500&amp;steam=0.35&amp;P=1.5&amp;n=1&amp;cap=610&amp;ethane=200&amp;elec=0.07&amp;gas=4&amp;grid=0.36&amp;case=Reference+case">Open EthaneCracker <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
     </div>
