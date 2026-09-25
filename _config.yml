@@ -15,8 +15,8 @@ footer_text: >
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
 keywords: heterogeneous catalysis, reaction engineering, microwave catalysis, Joule heating, process electrification, propane dehydrogenation, methane coupling, hydrogen, LOHC # add your own keywords or leave empty
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
-icon: yk-touch-icon.png
-apple_touch_icon: yk-touch-icon.png
+icon: yk-transparent.png
+apple_touch_icon: yk-transparent.png
 
 url: https://robin-yk.github.io # the base hostname & protocol for your site
 baseurl: /yeonsu.kwak # the subpath of your site, e.g. /blog/. Leave blank for root
