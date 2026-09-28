@@ -6,7 +6,7 @@ subtitle: Ph.D. Candidate, <a href="https://www.che.udel.edu/">Chemical &amp; Bi
 
 profile:
   align: right
-  image: prof_pic.png
+  image: yeonsu-kwak-profile.jpeg
   image_circular: true # crops the image to make it circular
   more_info: # text under the photo; left empty on purpose, the affiliation is already in the subtitle
 
