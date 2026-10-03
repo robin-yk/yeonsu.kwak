@@ -11,7 +11,7 @@ profile:
   more_info: # text under the photo; left empty on purpose, the affiliation is already in the subtitle
 
 selected_papers: false # the full list lives on the publications page; no need to repeat it here
-social: true # includes social icons at the bottom of the page
+social: false # no icon row at the bottom of the page
 
 announcements:
   enabled: false # news lives on Highlights
