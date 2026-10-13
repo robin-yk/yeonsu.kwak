@@ -27,6 +27,7 @@ nav_order: 3
     <p>A Gaussian-process surrogate of detailed reaction kinetics feeds process, cost, and emissions calculations.</p>
     <div class="tool-actions">
       <a class="tool-action primary" href="https://robin-yk.github.io/EthaneCracker/?model=aramco&amp;heat=fired&amp;T=850&amp;tau=0.3500&amp;steam=0.35&amp;P=1.5&amp;n=1&amp;cap=610&amp;ethane=200&amp;elec=0.07&amp;gas=4&amp;grid=0.36&amp;case=Reference+case">Open EthaneCracker <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+      <a class="tool-action" href="{{ '/assets/pdf/EthaneCracker-Preprint-2026.pdf' | relative_url }}" target="_blank" rel="noopener">Read preprint <i class="fa-regular fa-file-pdf" aria-hidden="true"></i></a>
     </div>
   </div>
 </section>
