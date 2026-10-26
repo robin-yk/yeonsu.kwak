@@ -3,8 +3,8 @@ layout: page
 title: Tools
 permalink: /tools/
 description:
-published: true
-nav: true
+published: false
+nav: false
 nav_order: 3
 ---
 
