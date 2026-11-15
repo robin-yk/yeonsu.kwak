@@ -53,6 +53,14 @@ nav_order: 4
 <div class="highlights-grid photos">
 
 <figure>
+  {% include figure.liquid loading="eager" path="assets/img/highlights/ccp_monthly_meeting_2026.jpg" class="img-fluid rounded z-depth-1" alt="Yeonsu Kwak presenting at the CCP Monthly Meeting" %}
+  <figcaption>
+    <strong>CCP Monthly Meeting</strong>, 2026.<br>
+    Student talk on chemical reaction engineering through electrification.
+  </figcaption>
+</figure>
+
+<figure>
   {% include figure.liquid loading="eager" path="assets/img/highlights/linde_internship.jpg" class="img-fluid rounded z-depth-1" alt="Yeonsu Kwak at Linde Engineering America" %}
   <figcaption>
     <strong>Linde Engineering America</strong>, Tonawanda, NY, 2026.<br>

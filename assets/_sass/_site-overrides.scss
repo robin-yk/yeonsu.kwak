@@ -851,10 +851,10 @@ h2 + .highlights-grid {
   }
 }
 
-// One landscape photo, so hold it to half width rather than letting it stretch.
+// Three photos per row on desktop.
 .highlights-grid.photos {
   @media (min-width: 768px) {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   figcaption {
