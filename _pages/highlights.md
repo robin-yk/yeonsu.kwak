@@ -2,7 +2,6 @@
 layout: page
 title: Highlights
 permalink: /highlights/
-description: News, journal covers and press coverage.
 nav: true
 nav_order: 4
 ---

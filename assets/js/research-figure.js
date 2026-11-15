@@ -475,6 +475,7 @@
     // labels in Helvetica
     const colors = { ink: INK, spatial: P.spatial, temporal: P.temporal, material: P.material };
     for (const t of TEXTS) {
+      if (t === TEXTS[0] && root.closest(".home-research")) continue;
       const size = fitText(bctx, t);
       bctx.fillStyle = colors[t.col];
       bctx.textAlign = "left";

@@ -172,8 +172,7 @@ textarea,
 // About page profile photo
 // -----------------------------------------------------------------------------
 // Keep the introduction compact and scale the figure to laptop window height.
-body:has(.home-research) > .container.mt-5 {
-  max-width: 1120px;
+body > .container.mt-5 {
   margin-top: 1.5rem !important;
 }
 
@@ -221,9 +220,28 @@ body:has(.home-research) > .container.mt-5 {
     margin-top: -5.25rem;
   }
 
+  .home-research .rfig-composition {
+    display: grid;
+    grid-template-columns: 22% minmax(0, 1fr);
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .home-research .rfig-heading {
+    display: block;
+    font-size: clamp(1.7rem, 2.5vw, 2.4rem);
+    font-weight: 400;
+    line-height: 1.15;
+    margin: 0;
+  }
+
+  .home-research .rfig-viewport {
+    overflow: hidden;
+  }
+
   .home-research .rfig-stage {
-    width: min(100%, clamp(480px, calc((100svh - 430px) * 1672 / 941), 1000px));
-    margin-inline: auto;
+    margin-top: -8.4%;
+    margin-bottom: -5%;
   }
 }
 
@@ -852,3 +870,64 @@ h2 + .highlights-grid {
 }
 
 @import "cv-document";
+
+// Shared page spacing keeps the content aligned with the navigation.
+.rfig-heading {
+  display: none;
+}
+@media (max-width: 767px) {
+  .home-research .rfig-heading {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.2;
+    margin: 0 0 1rem;
+    br {
+      display: none;
+    }
+  }
+}
+.post:has(#published),
+.post:has(.highlights-grid) {
+  .post-header {
+    margin-bottom: 1rem;
+  }
+  .post-title {
+    font-size: 2.25rem;
+    margin-bottom: 0.5rem;
+  }
+}
+.post:has(#published) {
+  .pub-filter {
+    margin-top: 1rem;
+  }
+  .publications {
+    margin-top: 1rem;
+  }
+  h2.bibliography {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    padding-top: 0.5rem;
+    font-size: 1.6rem;
+  }
+  ol.bibliography {
+    margin-bottom: 0.5rem;
+  }
+  ol.bibliography > li {
+    margin-bottom: 0.75rem;
+  }
+}
+.post:has(.highlights-grid) {
+  .news + h2,
+  .highlights-grid + h2 {
+    margin-top: 2rem;
+  }
+  #news,
+  #journal-covers,
+  #photos {
+    margin-bottom: 1rem;
+  }
+  .news th {
+    width: 16% !important;
+  }
+}
