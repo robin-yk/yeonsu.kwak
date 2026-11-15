@@ -853,6 +853,15 @@ h2 + .highlights-grid {
 
 // Three photos per row on desktop.
 .highlights-grid.photos {
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: none;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+  }
+
   @media (min-width: 768px) {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
