@@ -171,16 +171,71 @@ textarea,
 // -----------------------------------------------------------------------------
 // About page profile photo
 // -----------------------------------------------------------------------------
-// The about layout floats the photo at the top of <article>, which starts below
-// the <header> holding the name and subtitle, so the photo sits noticeably lower
-// than the heading. Pull it up alongside the name. Only from the breakpoint where
-// the photo actually sits beside the text; narrower than that it stacks, and a
-// negative margin would drag it under the navbar.
+// Keep the introduction compact and scale the figure to laptop window height.
+body:has(.home-research) > .container.mt-5 {
+  max-width: 1120px;
+  margin-top: 1.5rem !important;
+}
+
+.post:has(.home-research) .post-header {
+  margin-bottom: 0.75rem;
+}
+
+.post:has(.home-research) .post-title {
+  font-size: 2.25rem;
+  line-height: 1.15;
+  margin-bottom: 0.5rem;
+}
+
+.post:has(.home-research) .desc {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+
+.post:has(.home-research) article > .clearfix > p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 0.65rem;
+}
+
+.post:has(.home-research) .profile {
+  width: 144px;
+  margin: 0 0 0.75rem 1.5rem;
+}
+
+.post:has(.home-research) .home-research {
+  padding-top: 0.25rem;
+}
+
+.post:has(.home-research) .rfig {
+  margin-top: 0;
+}
 
 @media (min-width: 768px) {
-  .profile.float-right,
-  .profile.float-left {
-    margin-top: -6.5rem;
+  .post:has(.home-research) .post-header {
+    margin-right: 168px;
+  }
+
+  .post:has(.home-research) .profile {
+    margin-top: -5.25rem;
+  }
+
+  .home-research .rfig-stage {
+    width: min(100%, clamp(480px, calc((100svh - 430px) * 1672 / 941), 1000px));
+    margin-inline: auto;
+  }
+}
+
+@media (max-width: 767px) {
+  .post:has(.home-research) .profile {
+    float: none !important;
+    margin: 0 0 1rem;
+    width: 112px;
+  }
+
+  .post:has(.home-research) .post-title {
+    font-size: 2rem;
   }
 }
 
