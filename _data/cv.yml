@@ -1,6 +1,6 @@
 cv:
   name: Yeonsu Kwak
-  label: Ph.D. Candidate in Chemical & Biomolecular Engineering
+  label: Ph.D. in Chemical & Biomolecular Engineering
   email: fiske@udel.edu
   location: Newark, DE
   image: ""
@@ -23,11 +23,11 @@ cv:
         location: Newark, DE, United States
         url: https://www.che.udel.edu/
         area: Chemical & Biomolecular Engineering
-        studyType: Ph.D. Candidate
+        studyType: Ph.D.
         start_date: 2021-08
         end_date: 2026-11
         highlights:
-          - "Expected November 2026. Advisor: Prof. Dionisios G. Vlachos."
+          - "Defended November 17, 2026. Advisor: Prof. Dionisios G. Vlachos."
           - "Dissertation committee: Profs. Raul Lobo, Dongxia Liu, and José M. Catalá-Civera."
 
       - institution: Texas A&M University (TAMU)
