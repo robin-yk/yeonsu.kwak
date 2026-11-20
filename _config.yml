@@ -8,7 +8,7 @@ middle_name:
 last_name: Kwak
 contact_note: # left empty: the bio already closes on how to reach him, and the note repeated it under the icons
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  Ph.D. candidate in Chemical & Biomolecular Engineering at the University of Delaware, working on
+  Ph.D. in Chemical & Biomolecular Engineering at the University of Delaware, working on
   heterogeneous catalysis, catalytic reaction engineering, and the electrification of chemical manufacturing.
 footer_text: >
   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.

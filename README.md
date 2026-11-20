@@ -1,6 +1,6 @@
 # yeonsu.kwak
 
-Source for [robin-yk.github.io/yeonsu.kwak](https://robin-yk.github.io/yeonsu.kwak/), the personal academic site of **Yeonsu Kwak**, Ph.D. candidate in Chemical & Biomolecular Engineering at the University of Delaware.
+Source for [robin-yk.github.io/yeonsu.kwak](https://robin-yk.github.io/yeonsu.kwak/), the personal academic site of **Yeonsu Kwak**, Ph.D. in Chemical & Biomolecular Engineering at the University of Delaware.
 
 Built on [al-folio](https://github.com/alshedivat/al-folio) v1.x, a Jekyll starter whose runtime comes from versioned `al-*` gems.
 
