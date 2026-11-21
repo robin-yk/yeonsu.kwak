@@ -1,0 +1,123 @@
+<!doctype html><meta charset=utf-8><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
+<style>
+body{font-family:Helvetica,Arial,sans-serif;background:#fff;margin:0 auto;max-width:720px;color:#1d1f23}
+.card{background:#fff;border:1px solid #e2e4e8;border-radius:14px;overflow:hidden}
+.row{display:grid;grid-template-columns:1fr 1.15fr}
+.txt{padding:28px 26px;display:flex;flex-direction:column}
+.txt h3{font-size:26px;font-weight:600;margin:0 0 10px}.txt p{margin:0;color:#444;font-size:15px;line-height:1.45}
+.meta{margin-top:auto!important;color:#777!important;font-size:14px!important;padding-top:24px}
+.fig{background:#f4f5f8;padding:14px 14px 10px;cursor:pointer}
+.links{border-top:1px solid #e9eaee;padding:12px 26px;font-size:14px}.links a{color:#1f3a68;text-decoration:none;font-weight:500}
+svg text{font-family:Helvetica,Arial,sans-serif}.cap{transition:opacity .3s}
+.seek{display:flex;gap:4px;margin-top:6px}.seek div{height:3px;background:#d5d8de;border-radius:2px;position:relative;overflow:hidden}.seek i{position:absolute;left:0;top:0;bottom:0;background:#4a4f5a;width:0}
+.seek{cursor:pointer;padding:6px 0}/*jy*/.card{font-family:system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif}.txt{padding:24px 22px!important}.txt h3{font-size:24px!important;font-weight:600!important;line-height:1.1;color:#15171c;letter-spacing:-.01em}.txt p{font-size:15px!important;color:#464a54!important;line-height:1.45}.links a{font-weight:550!important}.fig{background:#f3f5f8!important}.card{border-color:#e3e6ea!important}@media(max-width:640px){.row{grid-template-columns:1fr!important}.fig{order:-1}}/*ov*/.txt{padding:28px 32px!important}.txt h3{font-size:22px!important}.seek{opacity:0;transition:opacity .3s}.fig.on .seek{opacity:1}.hl{color:#1f6f4a!important;font-weight:550;margin-top:4px!important;padding-top:0!important}.links a::before{content:'';display:inline-block;width:11px;height:13px;margin-right:6px;vertical-align:-2px;border:1.4px solid currentColor;border-radius:2px;box-sizing:border-box}/*sz*/.fig svg{max-width:420px;margin:0 auto}.fig .seek{max-width:420px;margin-left:auto;margin-right:auto}.cov{margin:2px 0 0!important;color:#777!important;font-size:14px!important}/*home*/body{background:#fff!important}.card{border:1px solid rgba(0,0,0,.1)!important;border-radius:10px!important;box-shadow:none}.fig{background:#fff!important;border-left:1px solid rgba(0,0,0,.06)}.links{border-top:1px solid rgba(0,0,0,.08)!important}@media(max-width:640px){.fig{border-left:0;border-bottom:1px solid rgba(0,0,0,.06)}}</style>
+<div class=card><div class=row>
+<div class=txt><h3>ALD-TiO&#8322; supports</h3><p>Scalable atomic-layer tailoring of abundant oxide supports unlocks superior interfaces for low-metal-loading dehydrogenation</p><p class=meta><i>Angew. Chem. Int. Ed.</i> 2024</p><p class=cov><i>Inside back cover art</i></p></div>
+<div class=fig id=fig><svg id=v viewBox="0 0 400 290" role="img" aria-label="TiO2 grows on five-coordinate aluminum sites, forms a 100 nm shell at the edge of a gamma-alumina pellet, holds platinum in that shell, and raises hydrogen productivity. A gamma-alumina pellet gets a thin TiO2 shell by atomic layer deposition; the same 0.1 wt% platinum then forms smaller particles, and hydrogen productivity from methylcyclohexane rises above a commercial 0.5 wt% platinum catalyst."></svg><div class=seek id=seek></div></div></div>
+<div class=links><a href="https://doi.org/10.1002/anie.202417598">Paper</a></div></div>
+<script>
+(function(){
+const D={"bare":[[1.73,35.5],[2.55,33.5],[2.9,30.5],[3.3,28],[3.72,26]],"ald20":[[1.73,65.5],[2.55,79.5],[2.9,80.5],[3.3,81],[3.72,81]],"ald50":[[1.73,64],[2.55,78.5],[2.9,80.5],[3.3,80],[3.72,80]],"ald100":[[1.73,61],[2.55,74.5],[2.9,75],[3.3,74.5],[3.72,73.5]],"com":[[1.93,44],[2.95,55],[4.0,61]]},NS='http://www.w3.org/2000/svg',svg=document.getElementById('v'),A='#1f3a68',G='#b3b8c1',TI='#d9a441',PT='#3d4452';
+const el=(n,a,p)=>{const e=document.createElementNS(NS,n);for(const k in a)e.setAttribute(k,a[k]);(p||svg).appendChild(e);return e};
+const tx=(x,y,s,a,p)=>{const e=el('text',Object.assign({x,y,'font-size':15,fill:'#555'},a||{}),p);e.textContent=s;return e};
+const lerp=(a,b,f)=>a+(b-a)*f,clamp=(v,a,b)=>Math.max(a,Math.min(b,v)),sm=u=>{u=clamp(u,0,1);return u*u*(3-2*u)};
+let seed=7;const R=()=>(seed=(seed*16807)%2147483647)/2147483647;
+/* porous gamma-Al2O3: jittered grain packing; pores are the gaps */
+function grains(x,y,w,h,g){/* irregular platelet crystallites in a random, partly sintered network; gaps are mesopores of many sizes */
+ const out=[],n=Math.round(w*h/58);for(let i=0;i<n;i++){const rx=2.6+R()*4.2,ry=1.4+R()*2.2,cx=x+rx+R()*(w-2*rx),cy=y+ry+R()*(h-2*ry),a=R()*180;
+  if(out.some(q=>Math.hypot(q.cx-cx,q.cy-cy)<(q.rx+rx)*0.55))continue;
+  out.push({cx,cy,rx,r:rx,e:el('ellipse',{cx,cy,rx,ry,transform:`rotate(${a.toFixed(0)} ${cx.toFixed(1)} ${cy.toFixed(1)})`,fill:'#d3d7df',stroke:TI,'stroke-width':0},g)})}return out}
+const defs0=el('defs',{});{const m=el('marker',{id:'ah',viewBox:'0 0 10 10',refX:9,refY:5,markerWidth:6,markerHeight:6,orient:'auto'},defs0);el('path',{d:'M0 0L10 5L0 10z',fill:A},m)}
+/* scene 0: ALD drum coats a batch of pellets, then the pellets fill a large reactor */
+const g0=el('g',{});const DC=[70,140],DRr=50;
+const drumC=el('circle',{cx:DC[0],cy:DC[1],r:DRr,fill:'#fff',stroke:'#8a8f99','stroke-width':1.4},g0);
+tx(DC[0],DC[1]+DRr+18,'ALD chamber',{'text-anchor':'middle','font-size':12,fill:'#666'},g0);
+const RX=300,RW=70,RY=40,RH=200;const BKX=160,BKY=110,BKW=86,BKH=110;el('path',{d:`M${BKX} ${BKY}V${BKY+BKH}H${BKX+BKW}V${BKY}`,fill:'none',stroke:'#8a8f99','stroke-width':1.4},g0);el('rect',{x:BKX+1,y:BKY+30,width:BKW-2,height:BKH-31,fill:'#dfe6f2'},g0);tx(BKX+BKW/2,BKY+BKH+18,'Pt impregnation',{'text-anchor':'middle','font-size':12,fill:'#666'},g0);el('rect',{x:RX-9,y:RY+40,width:RW+18,height:RH-80,rx:4,fill:'#f6e3d4',stroke:'#c7783e','stroke-width':1.2},g0);
+el('rect',{x:RX+12,y:RY,width:RW-24,height:RH,rx:5,fill:'#fff',stroke:'#8a8f99','stroke-width':1.3},g0);
+el('rect',{x:RX+13,y:RY+RH/2-58,width:RW-26,height:6,fill:'#e4e6ea'},g0);el('rect',{x:RX+13,y:RY+RH/2+52,width:RW-26,height:6,fill:'#e4e6ea'},g0);
+el('path',{d:`M${RX+RW/2} ${RY-12}v10M${RX+RW/2} ${RY+RH+2}v10`,stroke:'#555','stroke-width':1.2,'marker-end':'url(#ah)'},g0);
+tx(RX+RW/2,RY+RH+26,'fixed-bed reactor',{'text-anchor':'middle','font-size':12,fill:'#666'},g0);
+const pel=[];for(let i=0;i<45;i++){const a=R()*Math.PI*2,rr=Math.sqrt(R())*(DRr-12),row=Math.floor(i/3),col=i%3;
+ pel.push({a,rr,tx:RX+RW/2+(col-1)*12+(row%2?2:-2),ty:RY+RH/2+(row-7)*7.2,delay:(i%10)*.04,e:el('circle',{r:6,fill:'#e7e9ee',stroke:'#9aa0aa','stroke-width':1.2},g0),p:[0,1,2].map(()=>el('circle',{r:1.3,fill:PT,opacity:0},g0)),po:[0,1,2].map(()=>[R()*Math.PI*2,3+R()*2]),bx:BKX+10+R()*(BKW-20),by:BKY+40+R()*(BKH-50)})}
+const vap=[...Array(8)].map(()=>el('circle',{r:2.2,fill:TI,opacity:0},g0));const stepLab=tx(DC[0],DC[1]-DRr-8,'',{'text-anchor':'middle','font-size':12,fill:'#a2741c'},g0);
+const arrow=el('path',{d:`M${BKX+BKW+8} ${DC[1]}H${RX-8}`,stroke:A,'stroke-width':1.4,opacity:0,'marker-end':'url(#ah)'},g0);
+/* scene 1: surface atoms */
+const g1=el('g',{opacity:0});
+const AY=170,sites=[];for(let i=0;i<9;i++){const x=40+i*40,pen=[1,4,7].includes(i);
+ const c=el('circle',{cx:x,cy:AY,r:11,fill:'#dfe2e8',stroke:pen?A:'#9aa0aa','stroke-width':pen?2:1},g1);
+ const t=tx(x,AY+4,pen?'V':'VI',{'text-anchor':'middle','font-size':11,fill:pen?A:'#888'},g1);sites.push({x,pen,c,t})}
+el('rect',{x:20,y:AY+14,width:360,height:40,fill:'#eceef2'},g1);
+tx(200,AY+40,'γ-Al₂O₃ surface',{'text-anchor':'middle','font-size':12,fill:'#777'},g1);
+tx(20,AY-70,'Al(V): five-coordinate site',{'font-size':12,fill:A},g1);tx(20,AY-54,'Al(VI): six-coordinate site',{'font-size':12,fill:'#888'},g1);
+const ttip=[1,4,7].map(i=>el('circle',{r:7,fill:TI,stroke:'#a2741c',opacity:0},g1));
+const ttipLab=tx(300,AY-62,'TTIP (Ti precursor)',{'font-size':12,fill:'#a2741c',opacity:0,'text-anchor':'middle'},g1);
+/* after binding: a TiO2 patch grows over each former Al(V) site, then Pt lands on the patches only */
+const patches=[1,4,7].map(i=>el('rect',{x:40+i*40-22,y:AY-19,width:44,height:0,rx:3,fill:TI,opacity:.9},g1));
+const ptA=[];[1,4,7].forEach(i=>[-10,2,13].forEach((dx,n)=>ptA.push({x:40+i*40+dx,d:n*0.12+i*0.02,c:el('circle',{r:4.2,fill:PT,opacity:0},g1)})));
+const ptLab=tx(300,AY-46,'Pt (from TAPN)',{'font-size':12,fill:PT,opacity:0,'text-anchor':'middle'},g1);
+/* scene 2: pellet edge depth view */
+const g2=el('g',{opacity:0});
+const DX=110,DW=210,DY=40,DH=200,dy=d=>DY+d/400*DH;
+el('rect',{x:DX,y:DY,width:DW,height:DH,fill:'#fbfbfc',stroke:'#9aa0aa'},g2);const gr2=grains(DX,DY,DW,DH,g2);
+const defs=el('defs',{});const gr=el('linearGradient',{id:'tig',x1:0,y1:0,x2:0,y2:1},defs);el('stop',{offset:0,'stop-color':TI,'stop-opacity':.9},gr);el('stop',{offset:1,'stop-color':TI,'stop-opacity':0},gr);
+
+tx(DX-6,dy(0)+4,'0',{'text-anchor':'end','font-size':12,fill:'#777'},g2);tx(DX-6,dy(100)+4,'100',{'text-anchor':'end','font-size':12,fill:'#777'},g2);tx(DX-6,dy(300)+4,'300',{'text-anchor':'end','font-size':12,fill:'#777'},g2);tx(DX-6,dy(400)+4,'400 nm',{'text-anchor':'end','font-size':12,fill:'#777'},g2);
+tx(DX+DW+6,dy(330),'pores',{'font-size':12,fill:'#888'},g2);tx(DX+DW/2,DY-10,'pellet edge, 205 m\u00b2 g\u207b\u00b9',{'text-anchor':'middle','font-size':13,fill:'#555'},g2);
+const shellLab=tx(DX+DW+6,dy(50)+4,'TiO₂ shell',{'font-size':12,fill:'#a2741c',opacity:0},g2);
+/* scene 3: Pt precursor into two pellets */
+const g3=el('g',{opacity:0});
+const lanes=[{x:40,lab:'bare γ-Al₂O₃',ti:false,deep:300,r:3.2},{x:220,lab:'with ALD-TiO₂',ti:true,deep:100,r:2.2}];
+const LW=140,LY=46,LH=190,ly=d=>LY+d/400*LH;
+const pts=[];lanes.forEach((L,li)=>{el('rect',{x:L.x,y:LY,width:LW,height:LH,fill:'#fbfbfc',stroke:'#9aa0aa'},g3);
+ const gl=grains(L.x,LY,LW,LH,g3);if(L.ti)gl.forEach(q=>{const d=(q.cy-LY)/LH*400;if(d<110)q.e.setAttribute('stroke-width',(2.2*(1-d/110)+.4).toFixed(2))});L.gl=gl;
+ tx(L.x+LW/2,LY-10,L.lab,{'text-anchor':'middle','font-size':13,fill:L.ti?A:'#777'},g3);
+ el('path',{d:`M${L.x-4} ${ly(L.deep)}h${LW+8}`,stroke:L.ti?A:'#888','stroke-dasharray':'3 3'},g3);
+ tx(L.x+LW-2,ly(L.deep)+14,L.deep+' nm',{'text-anchor':'end','font-size':12,fill:L.ti?A:'#888'},g3);
+ const n=L.ti?26:12;const cand=gl.filter(q=>{const d=(q.cy-LY)/LH*400;return L.ti?d<100:d<300});for(let i=0;i<n;i++){const q=cand[Math.floor(R()*cand.length)],a=R()*Math.PI*2;pts.push({li,x:q.cx+q.r*Math.cos(a),y:q.cy+q.r*Math.sin(a),r:L.r,c:el('circle',{r:L.r,fill:PT,opacity:0},g3),delay:R()*.5})}});
+/* scene 4: productivity */
+const g4=el('g',{opacity:0});
+const PX=40,PY=48,PW=330,PH=180,sx=x=>PX+(x-1.5)/2.7*PW,sy=y=>PY+PH-y/100*PH;
+tx(PX,PY-10,'H₂ from methylcyclohexane at 320 °C',{fill:A,'font-weight':600,'font-size':14},g4);
+el('rect',{x:PX,y:PY,width:PW,height:PH,fill:'none',stroke:'#b9bdc5','stroke-width':.8},g4);
+tx(PX-4,sy(0)+4,'0',{'text-anchor':'end','font-size':12,fill:'#888'},g4);tx(PX-4,sy(80)+4,'80',{'text-anchor':'end','font-size':12,fill:'#888'},g4);
+tx(PX+PW,PY-10,'mmol g⁻¹ h⁻¹',{'text-anchor':'end','font-size':11,fill:'#888'},g4);
+tx(PX,PY+PH+16,'LHSV 1.5',{'font-size':12,fill:'#777'},g4);tx(PX+PW,PY+PH+16,'4.2 h⁻¹',{'text-anchor':'end','font-size':12,fill:'#777'},g4);
+const S={bare:{c:G,w:1.6,lab:'0.1 wt% Pt, bare'},com:{c:G,w:1.6,dash:'4 3',lab:'0.5 wt% Pt, commercial'},ald20:{c:A,w:2,lab:'0.1 wt% Pt, ALD-TiO₂'},ald50:{c:A,w:1,op:.45},ald100:{c:A,w:1,op:.45}};
+const L={},Dt={},Lb={};for(const k in S){L[k]=el('path',{fill:'none',stroke:S[k].c,'stroke-width':S[k].w,'stroke-dasharray':S[k].dash||'none',opacity:S[k].op||1},g4);Dt[k]=el('circle',{r:2.6,fill:S[k].c,opacity:0},g4);if(S[k].lab)Lb[k]=tx(0,0,S[k].lab,{'font-size':12,fill:S[k].c==A?A:'#888',opacity:0,'text-anchor':'end'},g4)}
+const yAt=(k,x)=>{const p=D[k];if(x<=p[0][0])return p[0][1];for(let i=0;i<p.length-1;i++)if(x<=p[i+1][0])return lerp(p[i][1],p[i+1][1],(x-p[i][0])/(p[i+1][0]-p[i][0]));return p[p.length-1][1]};
+function curve(k,f){if(f<=0){L[k].setAttribute('d','');Dt[k].setAttribute('opacity',0);if(Lb[k])Lb[k].setAttribute('opacity',0);return}const p=D[k],x0=p[0][0],xe=lerp(x0,p[p.length-1][0],f);let d='M'+sx(x0)+' '+sy(p[0][1]);for(const q of p){if(q[0]>xe)break;d+='L'+sx(q[0]).toFixed(1)+' '+sy(q[1]).toFixed(1)}d+='L'+sx(xe).toFixed(1)+' '+sy(yAt(k,xe)).toFixed(1);L[k].setAttribute('d',d);Dt[k].setAttribute('cx',sx(xe));Dt[k].setAttribute('cy',sy(yAt(k,xe)));Dt[k].setAttribute('opacity',f<1?(S[k].op||1):0);
+ if(Lb[k]){const q=p[p.length-1];Lb[k].setAttribute('x',sx(q[0])-2);Lb[k].setAttribute('y',sy(q[1])+(k=='bare'?16:k=='com'?-8:-9));Lb[k].setAttribute('opacity',f>=1?1:0)}}
+const cap=tx(200,284,'',{'text-anchor':'middle',fill:'#222','font-size':15,class:'cap'});
+const CH=[[0,4.0,'ALD coats the pellets; Pt goes on in a separate step'],[4.0,8.5,'More H₂ than 0.5 wt% Pt, with one-fifth the Pt'],[8.5,13.0,'TiO₂ coats the pore walls in the outer 100 nm'],[13.0,17.5,'The TiO₂ shell holds Pt near the surface'],[17.5,23.5,'NMR: TiO₂ grows on five-coordinate Al, and Pt sits on TiO₂']];const ORDER=[0,4,2,3,1];
+const TT=23.5,seek=document.getElementById('seek'),sb=CH.map(c=>{const b=document.createElement('div');b.style.flex=c[1]-c[0];b.appendChild(document.createElement('i'));seek.appendChild(b);return b.firstChild});
+let cur='';const G4=[g0,g1,g2,g3,g4];
+function draw(T){
+ const ci=CH.findIndex(c=>T<c[1]),kk=ci<0?4:ci,c=CH[kk],k=ORDER[kk],f=sm((T-c[0])/((c[1]-c[0])*.8));
+ if(!cap.textContent){cur=c[2];cap.textContent=cur}if(c[2]!==cur){cur=c[2];cap.style.opacity=0;setTimeout(()=>{cap.textContent=cur;cap.style.opacity=1},150)}
+ sb.forEach((b,j)=>b.style.width=clamp((T-CH[j][0])/(CH[j][1]-CH[j][0]),0,1)*100+'%');
+ G4.forEach((g,j)=>{const q=ORDER.indexOf(j),fin=q==0?1:clamp((T-CH[q][0])/.4,0,1),fout=q<4?1-clamp((T-CH[q][1]+.3)/.4,0,1):1;g.setAttribute('opacity',(j==k?Math.min(fin,fout):0).toFixed(2))});
+ if(k==0){const uC=clamp(T/0.8,0,1),uB=sm(clamp((T-0.85)/0.6,0,1)),uP=clamp((T-1.5)/0.4,0,1),u2=sm(clamp((T-2.0)/1.0,0,1));
+  pel.forEach(q=>{const ang=q.a+T*1.6,rr=q.rr*DRr/62,x0=DC[0]+rr*Math.cos(ang),y0=DC[1]+rr*Math.sin(ang),vb=sm(clamp((uB-q.delay)/.6,0,1)),v=sm(clamp((u2-q.delay)/.6,0,1));
+   const xb=lerp(x0,q.bx,vb),yb=lerp(y0,q.by,vb),x=lerp(xb,q.tx,v),y=lerp(yb,q.ty,v);
+   q.e.setAttribute('cx',x);q.e.setAttribute('cy',y);q.e.setAttribute('stroke',uC>.5?TI:'#9aa0aa');q.e.setAttribute('stroke-width',uC>.5?2:1.2);
+   q.p.forEach((d,i)=>{d.setAttribute('cx',x+q.po[i][1]*Math.cos(q.po[i][0]));d.setAttribute('cy',y+q.po[i][1]*Math.sin(q.po[i][0]));d.setAttribute('opacity',uP.toFixed(2))})});
+  vap.forEach((v,j)=>{const ph=(T*1.2+j/8)%1;v.setAttribute('cx',DC[0]-DRr-14+ph*30);v.setAttribute('cy',DC[1]-14+j*4);v.setAttribute('opacity',(T<0.8?Math.sin(Math.PI*ph):0).toFixed(2))});
+  stepLab.textContent=T<0.85?'TTIP / H\u2082O cycles':'';arrow.setAttribute('opacity',u2>0?1:0)}
+ if(k==1){const fa=clamp(f/0.4,0,1),fb=clamp((f-0.4)/0.25,0,1),fc=clamp((f-0.62)/0.38,0,1);
+  sites.forEach((s,i)=>{if(!s.pen)return;const j=[1,4,7].indexOf(i),u=clamp(fa*1.6-j*.25,0,1),m=ttip[j];m.setAttribute('cx',s.x);m.setAttribute('cy',lerp(AY-80,AY-17,sm(u)));m.setAttribute('opacity',u>0&&fb<1?(1-fb).toFixed(2):0);
+   const done=u>=1;s.c.setAttribute('stroke',done?'#9aa0aa':A);s.t.textContent=done?'VI':'V';s.t.setAttribute('fill',done?'#888':A)});
+  patches.forEach(r=>{const h=8*sm(fb);r.setAttribute('height',h);r.setAttribute('y',AY-11-h)});
+  ptA.forEach(q=>{const u=sm(clamp((fc-q.d)/0.45,0,1));q.c.setAttribute('cx',q.x);q.c.setAttribute('cy',lerp(AY-90,AY-23,u));q.c.setAttribute('opacity',u>0?1:0)});
+  ttipLab.setAttribute('opacity',f>.05&&f<.45?1:0);ptLab.setAttribute('opacity',fc>.05?1:0)}
+ if(k==2){gr2.forEach(q=>{const d=(q.cy-DY)/DH*400,front=140*f;q.e.setAttribute('stroke-width',d<Math.min(front,110)?(2.2*(1-d/110)+.4).toFixed(2):0)});shellLab.setAttribute('opacity',f>.6?1:0)}
+ if(k==3){pts.forEach(p=>{const u=clamp((f-p.delay)/.5,0,1);p.c.setAttribute('cx',lerp(p.x,p.x,1));p.c.setAttribute('cy',lerp(LY-6,p.y,sm(u)));p.c.setAttribute('opacity',u>0?1:0)})}
+ if(k==4){curve('bare',f);curve('com',f);curve('ald20',f);curve('ald50',f);curve('ald100',f)}
+}
+const fig=document.getElementById('fig');let t0=null,tN=0,run=false,raf,idle;
+function step(ts){if(t0===null)t0=ts-tN*1000;tN=Math.min(TT,(ts-t0)/1000);draw(tN);if(run&&tN<TT)raf=requestAnimationFrame(step);else if(tN>=TT)run=false}
+function play(){clearTimeout(idle);fig.classList.add('on');if(run)return;if(tN>=TT)tN=0;run=true;t0=null;raf=requestAnimationFrame(step)}
+function pause(){run=false;cancelAnimationFrame(raf);idle=setTimeout(()=>{tN=0;fig.classList.remove('on');draw(8.1)},5000)}
+const __sk=document.getElementById('seek');let __seekDrag=false;function __seekTo(e){fig.classList.add('on');const r=__sk.getBoundingClientRect(),u=Math.max(0,Math.min(0.999,(e.clientX-r.left)/r.width));run=false;cancelAnimationFrame(raf);clearTimeout(idle);tN=u*TT;draw(tN);}__sk.addEventListener('pointerdown',e=>{e.stopPropagation();__seekDrag=true;__sk.setPointerCapture(e.pointerId);__seekTo(e)});__sk.addEventListener('pointermove',e=>{if(__seekDrag)__seekTo(e)});__sk.addEventListener('pointerup',()=>{__seekDrag=false});__sk.addEventListener('click',e=>e.stopPropagation());fig.addEventListener('mouseenter',play);fig.addEventListener('mouseleave',pause);fig.addEventListener('click',()=>run?pause():play());
+draw(8.1);window.__d=t=>{run=false;draw(t)};
+})();
+</script>

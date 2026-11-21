@@ -1,0 +1,158 @@
+<!doctype html><meta charset=utf-8><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
+<style>
+body{font-family:Helvetica,Arial,sans-serif;background:#fff;margin:0 auto;max-width:720px;color:#1d1f23}
+.card{background:#fff;border:1px solid #e2e4e8;border-radius:14px;overflow:hidden}
+.row{display:grid;grid-template-columns:1fr 1.15fr}
+.txt{padding:28px 26px;display:flex;flex-direction:column}
+.txt h3{font-size:26px;font-weight:600;margin:0 0 10px}
+.txt p{margin:0;color:#444;font-size:15px;line-height:1.45}
+.meta{margin-top:auto!important;color:#777!important;font-size:14px!important;padding-top:24px}
+.fig{background:#f4f5f8;padding:14px 14px 10px;position:relative;cursor:pointer}
+.links{border-top:1px solid #e9eaee;padding:12px 26px;font-size:14px}.links a{color:#1f3a68;text-decoration:none;font-weight:500}
+svg text{font-family:Helvetica,Arial,sans-serif}
+.cap{transition:opacity .3s}
+.seek{display:flex;gap:4px;margin-top:6px}.seek div{height:3px;background:#d5d8de;border-radius:2px;position:relative;overflow:hidden}.seek i{position:absolute;left:0;top:0;bottom:0;background:#4a4f5a;width:0}
+.seek{cursor:pointer;padding:6px 0}/*jy*/.card{font-family:system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif}.txt{padding:24px 22px!important}.txt h3{font-size:24px!important;font-weight:600!important;line-height:1.1;color:#15171c;letter-spacing:-.01em}.txt p{font-size:15px!important;color:#464a54!important;line-height:1.45}.links a{font-weight:550!important}.fig{background:#f3f5f8!important}.card{border-color:#e3e6ea!important}@media(max-width:640px){.row{grid-template-columns:1fr!important}.fig{order:-1}}/*ov*/.txt{padding:28px 32px!important}.txt h3{font-size:22px!important}.seek{opacity:0;transition:opacity .3s}.fig.on .seek{opacity:1}.hl{color:#1f6f4a!important;font-weight:550;margin-top:4px!important;padding-top:0!important}.links a::before{content:'';display:inline-block;width:11px;height:13px;margin-right:6px;vertical-align:-2px;border:1.4px solid currentColor;border-radius:2px;box-sizing:border-box}/*sz*/.fig svg{max-width:420px;margin:0 auto}.fig .seek{max-width:420px;margin-left:auto;margin-right:auto}/*home*/body{background:#fff!important}.card{border:1px solid rgba(0,0,0,.1)!important;border-radius:10px!important;box-shadow:none}.fig{background:#fff!important;border-left:1px solid rgba(0,0,0,.06)}.links{border-top:1px solid rgba(0,0,0,.08)!important}@media(max-width:640px){.fig{border-left:0;border-bottom:1px solid rgba(0,0,0,.06)}}</style>
+<div class=card><div class=row>
+<div class=txt><h3>PCM-heated H&#8322; release</h3><p>A boiling organic liquid spreads heat evenly over catalyst beds: a methanol reformer, then MCH dehydrogenation at 5 kg H&#8322; per day</p><p class=meta><i>Int. J. Energy Res.</i> 2021<br><i>Energy Convers. Manag.</i> 2024</p></div>
+<div class=fig id=fig><svg id=pcm viewBox="0 0 400 290" role="img" aria-label="Start-up of a methanol steam reformer heated by boiling diphenylmethane. Left: reactor colored by measured temperature. Right: bed inlet temperature from 120 to 150 minutes."></svg>
+<div class=seek id=seek></div></div></div>
+<div class=links><a href="https://doi.org/10.1002/er.6526">Paper 2021</a> &nbsp;&nbsp; <a href="https://doi.org/10.1016/j.enconman.2024.118345">Paper 2024</a></div></div>
+<script>
+(function(){
+const D={"t":[120.0,120.5,121.0,121.5,122.0,122.5,123.0,123.5,124.0,124.5,125.0,125.5,126.0,126.5,127.0,127.5,128.0,128.5,129.0,129.5,130.0,130.5,131.0,131.5,132.0,132.5,133.0,133.5,134.0,134.5,135.0,135.5,136.0,136.5,137.0,137.5,138.0,138.5,139.0,139.5,140.0,140.5,141.0,141.5,142.0,142.5,143.0,143.5,144.0,144.5,145.0,145.5,146.0,146.5,147.0,147.5,148.0,148.5,149.0,149.5,150.0],"high":[213.5,213.7,214.6,215.2,215.7,215.8,215.8,215.9,215.8,216.3,216.4,216.8,217.1,217.6,218.2,218.3,217.6,217.0,216.3,215.7,215.0,214.3,213.7,213.4,213.7,214.4,214.5,215.8,218.2,218.8,220.2,221.6,223.0,224.5,226.4,229.5,234.7,245.1,257.7,266.5,281.9,284.4,284.4,284.1,283.8,283.4,282.9,282.1,281.5,281.1,280.3,279.4,278.8,277.9,277.2,276.5,275.6,267.1,266.4,266.5,266.5],"mid":[212.4,212.7,212.9,213.3,213.9,214.1,214.5,214.6,214.9,215.4,215.5,215.8,216.4,216.7,217.0,217.4,217.6,218.0,218.0,218.5,218.7,218.9,219.4,219.8,220.1,220.4,261.4,261.5,263.2,265.5,268.2,271.1,273.2,275.1,276.8,278.6,279.4,280.0,280.5,280.9,281.6,282.3,282.5,282.1,280.6,279.1,277.7,276.4,275.6,274.8,274.0,273.2,272.3,271.5,270.9,270.3,269.6,268.8,268.2,267.5,267.1],"low":[259.9,260.4,260.9,261.4,261.7,262.0,262.2,262.6,262.9,262.9,263.0,263.2,263.5,263.6,263.6,264.0,264.9,266.5,268.1,269.3,270.4,271.9,273.5,274.7,277.5,278.4,279.4,275.0,271.3,270.6,273.6,275.9,278.7,280.1,281.8,283.5,284.7,285.6,286.3,286.9,287.3,287.8,287.9,287.7,287.5,286.9,286.3,285.5,284.8,284.2,283.4,282.6,282.0,281.1,280.4,279.6,278.7,278.5,277.4,277.1,276.6],"inlet":[194.9,195.2,195.6,195.9,196.3,196.6,197.0,197.1,197.5,198.0,198.3,198.7,199.0,199.3,199.5,199.9,200.2,200.5,200.8,201.1,201.2,201.5,201.8,202.1,202.3,202.7,202.9,203.7,204.8,206.4,207.1,208.7,210.5,212.5,215.6,219.4,224.2,230.0,236.7,244.1,250.8,256.5,260.5,263.5,265.5,266.6,267.4,267.9,268.0,268.0,267.8,267.4,266.8,265.9,265.3,264.5,263.7,262.9,261.9,261.1,260.8],"outlet":[209.6,209.9,210.1,210.4,211.0,211.1,211.5,211.9,212.3,212.7,212.9,213.3,213.6,213.9,214.1,214.3,214.6,214.9,215.2,215.5,215.8,216.0,216.3,216.6,216.9,216.9,217.1,219.0,223.4,224.2,228.1,232.4,237.7,244.4,251.8,259.3,265.4,269.9,272.9,275.2,277.8,278.8,279.6,280.0,280.2,280.0,279.5,279.0,278.6,277.7,277.1,276.7,275.4,274.6,273.6,273.3,272.6,271.9,271.2,270.6,270.4],"p":[1.053,1.06,1.067,1.073,1.074,1.077,1.084,1.085,1.091,1.091,1.091,1.096,1.103,1.104,1.111,1.114,1.123,1.137,1.152,1.163,1.165,1.194,1.212,1.222,1.238,1.248,1.248,1.184,1.037,1.099,1.156,1.213,1.253,1.296,1.339,1.374,1.403,1.425,1.439,1.449,1.445,1.449,1.448,1.44,1.43,1.409,1.389,1.368,1.346,1.326,1.307,1.288,1.265,1.245,1.227,1.208,1.189,1.176,1.165,1.15,1.141]},NS='http://www.w3.org/2000/svg',svg=document.getElementById('pcm');
+const el=(n,a,p)=>{const e=document.createElementNS(NS,n);for(const k in a)e.setAttribute(k,a[k]);(p||svg).appendChild(e);return e};
+const tx=(x,y,s,a,p)=>{const e=el('text',Object.assign({x,y,'font-size':15,fill:'#555'},a||{}),p);e.textContent=s;return e};
+const A='#1f3a68';
+const lerp=(a,b,f)=>a+(b-a)*f;
+const val=(k,t)=>{const u=(t-120)/0.5,i=Math.max(0,Math.min(59,Math.floor(u))),f=Math.max(0,Math.min(1,u-i));return lerp(D[k][i],D[k][i+1],f)};
+const col=T=>{const u=Math.max(0,Math.min(1,(T-190)/95)),s=[[74,112,180],[236,238,242],[196,86,82]];const i=u<.5?0:1,f=u<.5?u*2:u*2-1;return 'rgb('+s[i].map((v,j)=>Math.round(lerp(v,s[i+1][j],f))).join(',')+')'};
+/* reactor: chamber with U-tube bed (Fig. 3E proportions) */
+const X=22,Y=62,W=118,H=170;
+const month=tx(385,32,'',{'text-anchor':'end',fill:'#222','font-weight':600,'font-size':16});
+const ch=el('rect',{x:X,y:Y,width:W,height:H,rx:4,stroke:'#8a8f99','stroke-width':1});
+const pool=el('rect',{x:X,y:Y+H-34,width:W,height:34,rx:0,opacity:.9});
+el('rect',{x:X,y:Y,width:W,height:H,rx:4,fill:'none',stroke:'#8a8f99','stroke-width':1});
+const legIn=el('path',{stroke:'#555','stroke-width':.8}),legOut=el('path',{stroke:'#555','stroke-width':.8});
+const lx=X+34,rx2=X+70,lw=16,top=Y-10,bt=Y+H-52;
+legIn.setAttribute('d',`M${lx} ${top}V${bt}a${(rx2+lw-lx)/2} ${(rx2+lw-lx)/2} 0 0 0 ${(rx2+lw-lx)/2} ${(rx2+lw-lx)/2}V${bt+(rx2+lw-lx)/2-lw}a${(rx2+lw-lx)/2-lw} ${(rx2+lw-lx)/2-lw} 0 0 1 ${-(rx2+lw-lx)/2+lw} ${-(rx2+lw-lx)/2+lw}V${top}Z`);
+legOut.setAttribute('d',`M${rx2+lw} ${top}V${bt}a${(rx2+lw-lx)/2} ${(rx2+lw-lx)/2} 0 0 1 ${-(rx2+lw-lx)/2} ${(rx2+lw-lx)/2}V${bt+(rx2+lw-lx)/2-lw}a${(rx2+lw-lx)/2-lw} ${(rx2+lw-lx)/2-lw} 0 0 0 ${(rx2+lw-lx)/2-lw} ${-(rx2+lw-lx)/2+lw}V${top}Z`);
+
+/* reactants and products along the U-tube centerline: CH3OH + H2O in, H2 + CO2 out */
+const UL=lx+lw/2,UR=rx2+lw/2,UC=(UL+UR)/2,URAD=(UR-UL)/2,UTOP=Y-14;
+const legLen=bt-UTOP,arc=Math.PI*URAD,ULEN=2*legLen+arc;
+const upos=u=>{let d=u*ULEN;if(d<legLen)return [UL,UTOP+d];d-=legLen;if(d<arc){const a=Math.PI-d/URAD;return [UC+URAD*Math.cos(a),bt+URAD*Math.sin(a)]}d-=arc;return [UR,bt-d]};
+const NM=12,mols=[...Array(NM)].map((_,j)=>({j,c:el('circle',{r:2.4})}));
+const molKey=el('g',{});[[ '#2e4f8f','CH\u2083OH'],['#7fb2e5','H\u2082O'],['#fff','H\u2082'],['#8a8f99','CO\u2082']].forEach((k,i)=>{el('circle',{cx:X+6+[0,42,76,100][i],cy:Y+H+14,r:2.6,fill:k[0],stroke:k[0]=='#fff'?'#7d8fb0':'none'},molKey);tx(X+11+[0,42,76,100][i],Y+H+18,k[1],{'font-size':9,fill:'#666'},molKey)});
+const sel=el('rect',{x:lx-3,y:Y+6,width:lw+6,height:16,fill:'none',stroke:A,'stroke-width':1.6,rx:2});
+tx(lx+lw,Y-16,'CH\u2083OH + H\u2082O',{'text-anchor':'end','font-size':11,fill:'#444'});tx(rx2,Y-16,'H\u2082 + CO\u2082',{'font-size':11,fill:'#444'});el('path',{d:`M${lx+lw/2} ${Y-12}v8`,stroke:'#444','stroke-width':1});el('path',{d:`M${rx2+lw/2} ${Y-4}v-8`,stroke:'#444','stroke-width':1});
+const NB=16,bubs=[...Array(NB)].map(()=>el('circle',{r:1.8,fill:'#fff',opacity:0}));
+const glows=[...Array(NB)].map(()=>el('ellipse',{rx:3,ry:7,fill:'#ffb347',opacity:0}));
+
+/* plot */
+const PX=165,PY=40,PW=220,PH=190,sx=t=>PX+(t-120)/30*PW,sy=T=>PY+PH-(T-185)/110*PH;
+tx(PX,PY-8,'bed inlet',{fill:A,'font-weight':400});
+el('rect',{x:PX,y:PY,width:PW,height:PH,fill:'none',stroke:'#b9bdc5','stroke-width':.8});
+const vent=el('rect',{x:sx(132.5),y:PY,width:sx(134.5)-sx(132.5),height:PH,fill:'#e3e5ea',opacity:0});
+el('path',{d:`M${PX} ${sy(250)}h${PW}`,stroke:'#9aa0aa','stroke-width':.8,'stroke-dasharray':'3 3'});
+tx(PX+PW-4,sy(250)-5,'250 °C',{'text-anchor':'end','font-size':12,fill:'#888'});
+for(const t of [130,140])el('path',{d:`M${sx(t)} ${PY+PH}v-5`,stroke:'#9aa0aa','stroke-width':.8});
+tx(PX,PY+PH+20,'120 min',{'font-size':14});tx(PX+PW,PY+PH+20,'150',{'text-anchor':'end','font-size':14});
+const ghost=el('path',{fill:'none',stroke:'#b9bdc5','stroke-width':1.2,opacity:0});
+const ghostLab=tx(sx(122),sy(272)-6,'chamber',{'font-size':12,fill:'#9aa0aa',opacity:0});
+const line=el('path',{fill:'none',stroke:A,'stroke-width':1.8,'stroke-linejoin':'round'}),dot=el('circle',{r:2.6,fill:A});
+const cap=tx(200,282,'',{'text-anchor':'middle',fill:'#222','font-size':15,class:'cap'});
+const g21=el('g',{});[...svg.childNodes].forEach(n=>{if(n!==g21&&n!==cap&&n.tagName!=='defs')g21.appendChild(n)});svg.appendChild(cap);
+/* 2024: three catalytic modules in series inside a benzyltoluene (BT) shell; electric heater in the liquid, burner below */
+const g24=el('g',{opacity:0});const SX=18,SW=150,SY=48,SH=190,BTL=SY+SH-40;
+el('rect',{x:SX,y:SY,width:SW,height:SH,rx:5,fill:'#f2ece4',stroke:'#8a8f99'},g24);
+el('rect',{x:SX+1,y:BTL,width:SW-2,height:SY+SH-BTL-1,fill:'#e0a26a',opacity:.9},g24);
+let coil='';for(let i=0;i<=96;i++){const x=SX+14+i*(SW-28)/96;coil+=(i?'L':'M')+x.toFixed(1)+' '+(BTL+20+5*Math.sin(i/96*Math.PI*14)).toFixed(1)}
+el('path',{d:`M${SX+14} ${BTL+20}V${SY-6}M${SX+SW-14} ${BTL+20}V${SY-6}`,stroke:'#5f6470','stroke-width':1.4,fill:'none'},g24);
+const coilGlow=el('path',{d:coil,fill:'none',stroke:'#ff6a2a','stroke-width':6,'stroke-linecap':'round',opacity:.35},g24);
+const coilCore=el('path',{d:coil,fill:'none',stroke:'#ffd27a','stroke-width':1.8,'stroke-linecap':'round'},g24);
+const sparks=[...Array(8)].map(()=>el('circle',{r:1.2,fill:'#ffd27a',opacity:0},g24));
+const bgrad=el('radialGradient',{id:'bglow',cx:'50%',cy:'100%',r:'70%'},svg.querySelector('defs')||el('defs',{}));el('stop',{offset:0,'stop-color':'#ffb347','stop-opacity':.55},bgrad);el('stop',{offset:1,'stop-color':'#ffb347','stop-opacity':0},bgrad);
+const bglow=el('ellipse',{cx:SX+SW/2,cy:SY+SH,rx:SW*0.55,ry:16,fill:'url(#bglow)'},g24);
+el('rect',{x:SX+14,y:SY+SH+22,width:SW-28,height:4,rx:2,fill:'#5f6470'},g24);
+const NF=7,flames=[...Array(NF)].map((_,i)=>({x:SX+22+i*(SW-44)/(NF-1),o:el('path',{fill:'#f07a2a',opacity:.9},g24),m:el('path',{fill:'#ffc247'},g24),b:el('path',{fill:'#5b8fd6',opacity:.85},g24)}));
+const flame=(x,yb,w,h)=>`M${x-w} ${yb}C${x-w} ${yb-h*0.45} ${x-w*0.25} ${yb-h*0.7} ${x} ${yb-h}C${x+w*0.25} ${yb-h*0.7} ${x+w} ${yb-h*0.45} ${x+w} ${yb}Z`;
+
+const TXS=[SX+28,SX+64,SX+100],TW2=20,TT2=SY+18,TB2=BTL-6;
+TXS.forEach((x,i)=>{el('rect',{x,y:TT2,width:TW2,height:TB2-TT2,rx:4,fill:'#c9ced8',stroke:'#555','stroke-width':.8},g24);tx(x+TW2/2,TB2-6,String(i+1),{'text-anchor':'middle','font-size':10,fill:'#555'},g24)});
+el('path',{d:`M${TXS[0]+TW2/2} ${TT2}V${SY-16}M${TXS[0]+TW2/2} ${TB2}v8H${TXS[1]+TW2/2}V${TB2}M${TXS[1]+TW2/2} ${TT2}v-8H${TXS[2]+TW2/2}V${TT2}M${TXS[2]+TW2/2} ${TB2}v12H${SX+SW+14}`,fill:'none',stroke:'#555','stroke-width':1},g24);
+tx(TXS[0]+TW2/2,SY-20,'MCH',{'text-anchor':'middle','font-size':11,fill:'#444'},g24);tx(SX+SW+4,TB2+28,'toluene + H₂',{'text-anchor':'start','font-size':11,fill:'#444'},g24);
+const PP=[[TXS[0]+10,SY-14],[TXS[0]+10,TB2+8],[TXS[1]+10,TB2+8],[TXS[1]+10,TT2-8],[TXS[2]+10,TT2-8],[TXS[2]+10,TB2+12],[SX+SW+14,TB2+12]];
+const segL=PP.slice(1).map((p,i)=>Math.hypot(p[0]-PP[i][0],p[1]-PP[i][1])),totL=segL.reduce((a,b)=>a+b,0);
+const ppos=u=>{let d=u*totL;for(let i=0;i<segL.length;i++){if(d<=segL[i]){const f=d/segL[i];return [PP[i][0]+(PP[i+1][0]-PP[i][0])*f,PP[i][1]+(PP[i+1][1]-PP[i][1])*f]}d-=segL[i]}return PP[PP.length-1]};
+const m24=[...Array(14)].map((_,j)=>({j,c:el('circle',{r:2.4,'stroke-width':.7},g24)}));
+const v24=[...Array(12)].map(()=>el('circle',{r:2,fill:'#fff',stroke:'#9aa0aa','stroke-width':.5,opacity:0},g24));
+const fl24=[...Array(12)].map(()=>el('ellipse',{rx:2.6,ry:6,fill:'#ffb347',opacity:0},g24));
+/* right side: scale numbers, then efficiencies (paper text, Fig. 6c) */
+const r1=el('g',{opacity:0},g24);[['5 kg H₂ / day','2.3 Nm³ H₂ per hour'],['1.6 L catalyst','three modules in series'],['310 °C','near-equilibrium conversion']].forEach((q,i)=>{tx(250,78+i*58,q[0],{'font-size':20,'font-weight':i==0?600:400,fill:'#1f3a68'},r1);tx(250,96+i*58,q[1],{'font-size':12,fill:'#666'},r1)});
+const r2=el('g',{opacity:0},g24);const EB=[['no HX',29.0,-66.0],['EH + HX',77.7,46.5],['hybrid + HX',69.7,38.4]],BX0=245,BZ=150,BS=1.0;
+tx(BX0,50,'Net efficiency, LHV basis',{'font-size':13,'font-weight':400,fill:'#1f3a68'},r2);
+el('path',{d:`M${BX0} ${BZ}H${BX0+146}`,stroke:'#9aa0aa'},r2);tx(BX0+148,BZ+4,'0',{'font-size':11,fill:'#888'},r2);
+const ebar=EB.map((e,i)=>{const x=BX0+4+i*48;const r=el('rect',{x,width:30,y:BZ,height:0,fill:e[2]<0?'#c0392b':'#1f3a68',rx:1},r2);const v=tx(x+17,0,'',{'text-anchor':'middle','font-size':12,fill:e[2]<0?'#c0392b':'#1f3a68','font-weight':400},r2);const l=tx(x+15,BZ+(e[2]<0?-8:84),e[0],{'text-anchor':'middle','font-size':10,fill:'#666'},r2);return {r,v,e}});
+const CAP24=['The same idea scales to 5 kg H₂ per day with MCH','Heat recovery turns −66% net efficiency into +47%'];
+function draw24(a){const k=a<SEC24[0]?0:1,f=k==0?a/SEC24[0]:(a-SEC24[0])/SEC24[1],clk=performance.now()/1000;
+ const c=CAP24[k];if(cap.textContent!==c&&cap.dataset.want!==c){cap.dataset.want=c;cap.style.opacity=0;setTimeout(()=>{cap.textContent=c;cap.style.opacity=1},150)}
+ bars24.forEach((b,j)=>b.style.width=(j<k?100:j==k?Math.min(100,f*100):0)+'%');bars.forEach(b=>b.style.width='100%');
+ m24.forEach(m=>{const u=(clk*0.12+m.j/14)%1,[x,y]=ppos(u),isH=m.j%2==1,prod=u>0.35;m.c.setAttribute('cx',x);m.c.setAttribute('cy',y);
+  if(!prod){m.c.setAttribute('fill',isH?'#1f3a68':'#1f3a68');m.c.setAttribute('stroke','#fff');m.c.setAttribute('r',2.6)}
+  else{m.c.setAttribute('fill',isH?'#fff':'#5f6470');m.c.setAttribute('stroke',isH?'#1f3a68':'#fff');m.c.setAttribute('r',isH?1.8:2.4)}});
+ const walls=[TXS[0],TXS[0]+TW2,TXS[1],TXS[1]+TW2,TXS[2],TXS[2]+TW2],sd=[-1,1,-1,1,-1,1];
+ v24.forEach((v,j)=>{const ph=(clk*0.5+j/12)%1,w=walls[j%6],s2=sd[j%6],yw=TT2+12+((j*23)%(TB2-TT2-30)),x0=w+s2*(6+(j%3)*3),g=fl24[j];
+  if(ph<.55){const u=ph/.55;v.setAttribute('cx',x0+(w+s2*2.5-x0)*u*u);v.setAttribute('cy',BTL-2+(yw-BTL+2)*u);v.setAttribute('opacity',.95);g.setAttribute('opacity',0)}
+  else if(ph<.68){v.setAttribute('cx',w+s2*2.5);v.setAttribute('cy',yw);v.setAttribute('opacity',0);g.setAttribute('cx',w);g.setAttribute('cy',yw);g.setAttribute('opacity',(0.9*Math.sin(Math.PI*(ph-.55)/.13)).toFixed(2))}
+  else{v.setAttribute('opacity',0);g.setAttribute('opacity',0)}});
+ {const q=0.55+0.45*Math.sin(clk*5);coilGlow.setAttribute('opacity',(0.25+0.35*q).toFixed(2));coilCore.setAttribute('stroke',q>0.5?'#ffe3a0':'#ffbf5a');sparks.forEach((sp,j)=>{const ph=(clk*0.8+j/8)%1;sp.setAttribute('cx',SX+20+j*(SW-40)/7+3*Math.sin(clk*3+j));sp.setAttribute('cy',BTL+16-ph*18);sp.setAttribute('opacity',(0.8*(1-ph)).toFixed(2))})}
+ flames.forEach((F,i)=>{const yb=SY+SH+22,h=16+4*Math.sin(clk*11+i*1.9)+2.5*Math.sin(clk*17+i),w=7+0.8*Math.sin(clk*13+i*2.3);F.o.setAttribute('d',flame(F.x,yb,w,h));F.m.setAttribute('d',flame(F.x,yb,w*0.6,h*0.62));F.b.setAttribute('d',flame(F.x,yb,w*0.55,h*0.25))});bglow.setAttribute('opacity',(0.75+0.25*Math.sin(clk*7)).toFixed(2));
+ r1.setAttribute('opacity',k==0?Math.min(1,f*3):Math.max(0,1-f*4));r2.setAttribute('opacity',k==1?Math.min(1,f*4):0);
+ [...r1.childNodes].forEach((n,i)=>n.setAttribute('opacity',k==0?Math.min(1,Math.max(0,f*4-Math.floor(i/2)*0.8)):1));
+ if(k==1)ebar.forEach((b,i)=>{const p=Math.min(1,Math.max(0,f*2.2-i*0.35)),p2=p*p*(3-2*p),h=Math.abs(b.e[2])*BS*p2;b.r.setAttribute('height',h);b.r.setAttribute('y',b.e[2]<0?BZ:BZ-h);b.v.setAttribute('x',+b.r.getAttribute('x')+15);b.v.setAttribute('y',b.e[2]<0?BZ+h+14:BZ-h-5);b.v.textContent=p>.95?(b.e[2]>0?'+':'−')+Math.abs(b.e[2]).toFixed(0)+'%':''});
+}
+
+const path=(k,t)=>{let s='';for(let i=0;i<=60&&D.t[i]<=t;i++)s+=(i?'L':'M')+sx(D.t[i]).toFixed(1)+' '+sy(D[k][i]).toFixed(1);return s+'L'+sx(t).toFixed(1)+' '+sy(val(k,t)).toFixed(1)};
+const CH=[[120,132.5,'Liquid DPM heats the methanol reformer slowly'],[132.5,134.5,'Venting the chamber drops the pressure'],[134.5,143,'DPM vapor condenses on the tubes and releases heat'],[143,150,'The bed reaches 250 °C within 10 min']];
+const seek=document.getElementById('seek'),SEC=[2.2,2.4,3.0,2.6],bars=CH.map((c,j)=>{const b=document.createElement('div');b.style.flex=SEC[j];b.appendChild(document.createElement('i'));seek.appendChild(b);return b.firstChild});
+let curCap='';
+function draw(t){
+ const ci=CH.findIndex(c=>t<c[1]+1e-9);const c=CH[Math.max(0,ci)];
+ if(c[2]!==curCap){curCap=c[2];cap.style.opacity=0;setTimeout(()=>{cap.textContent=curCap;cap.style.opacity=1},150)}
+ CH.forEach((q,j)=>bars[j].style.width=(t>=q[1]?100:t<=q[0]?0:(t-q[0])/(q[1]-q[0])*100)+'%');
+ const m=Math.floor(t),s=Math.round((t-m)*60);month.textContent=m+' min';
+ const dpm=(val('high',t)+val('mid',t)+val('low',t))/3;
+ ch.setAttribute('fill',col(dpm));ch.setAttribute('fill-opacity',.45);pool.setAttribute('fill',col(val('low',t)));
+ legIn.setAttribute('fill',col(val('inlet',t)));legOut.setAttribute('fill',col(val('outlet',t)));
+ line.setAttribute('d',path('inlet',t));dot.setAttribute('cx',sx(t));dot.setAttribute('cy',sy(val('inlet',t)));
+ ghost.setAttribute('d',path('low',t));const go=t>=134.5?Math.min(1,(t-134.5)/2):0;ghost.setAttribute('opacity',go);ghostLab.setAttribute('opacity',go);
+ vent.setAttribute('opacity',t>=132.5?1:0);
+ const boil=t>=134.5?Math.min(1,(t-134.5)/1.5):0;
+ const clk=performance.now()/1000,conv=Math.max(0,Math.min(1,(val('inlet',t)-205)/45));
+ mols.forEach(m=>{const u=(clk*0.16+m.j/NM)%1,[x,y]=upos(u),isW=m.j%2==1,out=u>0.5&&((m.j*0.37)%1)<conv*0.95+0.05;
+  m.c.setAttribute('cx',x);m.c.setAttribute('cy',y);
+  if(!out){m.c.setAttribute('fill',isW?'#7fb2e5':'#1f3a68');m.c.setAttribute('stroke','#fff');m.c.setAttribute('stroke-width',.7);m.c.setAttribute('r',isW?2:2.6)}
+  else{m.c.setAttribute('fill',isW?'#fff':'#5f6470');m.c.setAttribute('stroke',isW?'#1f3a68':'#fff');m.c.setAttribute('stroke-width',.7);m.c.setAttribute('r',isW?1.8:2.4)}});
+ const walls=[lx,lx+lw,rx2,rx2+lw],sides=[-1,1,-1,1],poolTop=Y+H-34;
+ bubs.forEach((b,j)=>{const g=glows[j];if(!boil){b.setAttribute('opacity',0);g.setAttribute('opacity',0);return}
+  const ph=((t-134.5)*0.42+j/NB)%1,w=walls[j%4],sd=sides[j%4];
+  const x0=w+sd*(7+(j%3)*5),yw=Y+20+((j*53)%(bt-Y-30)),xw=w+sd*2.5;
+  if(ph<.5){const u=ph/.5,e=u*u*(3-2*u);b.setAttribute('cx',lerp(x0,xw,e));b.setAttribute('cy',lerp(poolTop-2,yw,u));b.setAttribute('r',2.3);b.setAttribute('fill','#fff');b.setAttribute('stroke','#9aa0aa');b.setAttribute('stroke-width',.5);b.setAttribute('opacity',(boil*.9).toFixed(2));g.setAttribute('opacity',0)}
+  else if(ph<.62){const u=(ph-.5)/.12;b.setAttribute('cx',xw);b.setAttribute('cy',yw);b.setAttribute('r',2.3-0.6*u);b.setAttribute('stroke','none');b.setAttribute('fill','#8a4a18');b.setAttribute('opacity',boil);g.setAttribute('cx',w);g.setAttribute('cy',yw);g.setAttribute('opacity',(boil*0.9*Math.sin(Math.PI*u)).toFixed(2))}
+  else{const u=(ph-.62)/.38;b.setAttribute('cx',xw);b.setAttribute('cy',lerp(yw,Math.min(bt,poolTop),u*u));b.setAttribute('r',1.7);b.setAttribute('stroke','none');b.setAttribute('fill','#8a4a18');b.setAttribute('opacity',(boil*(1-u*.6)).toFixed(2));g.setAttribute('opacity',0)}
+ });
+}
+/* player: hover plays, leave pauses, rests after 5 s */
+const SEC24=[3.8,4.2],bars24=SEC24.map(v=>{const b=document.createElement('div');b.style.flex=v;b.appendChild(document.createElement('i'));seek.appendChild(b);return b.firstChild});
+const fig=document.getElementById('fig'),A21=SEC.reduce((a,b)=>a+b,0),AT=A21+SEC24[0]+SEC24[1];let t0=null,aNow=0,run=false,raf,idle;
+const a2t=a=>{let s0=0;for(let j=0;j<CH.length;j++){if(a<=s0+SEC[j])return CH[j][0]+(CH[j][1]-CH[j][0])*(a-s0)/SEC[j];s0+=SEC[j]}return 150};
+function render(a){const x=Math.min(1,Math.max(0,(a-A21+0.3)/0.5));g21.setAttribute('opacity',1-x);g24.setAttribute('opacity',x);g24.style.display=x<0.01?'none':'';g21.style.display=x>0.99?'none':'';if(a<A21){if(cap.dataset.want){curCap='';cap.dataset.want=''}draw(a2t(a));bars24.forEach(b=>b.style.width='0%')}else draw24(a-A21)}
+function step(ts){if(t0===null)t0=ts-aNow*1000;aNow=Math.min(AT,(ts-t0)/1000);render(aNow);if(aNow<AT&&run)raf=requestAnimationFrame(step);else if(aNow>=AT){run=false}}
+function play(){clearTimeout(idle);fig.classList.add('on');resting=false;if(run)return;if(aNow>=AT)aNow=0;run=true;t0=null;raf=requestAnimationFrame(step)}
+function pause(){run=false;cancelAnimationFrame(raf);idle=setTimeout(()=>{aNow=0;resting=true;fig.classList.remove('on')},5000)}
+const __sk=document.getElementById('seek');let __seekDrag=false;function __seekTo(e){fig.classList.add('on');const r=__sk.getBoundingClientRect(),u=Math.max(0,Math.min(0.999,(e.clientX-r.left)/r.width));run=false;cancelAnimationFrame(raf);clearTimeout(idle);aNow=u*AT;t0=null;resting=false;fig.classList.add('on');render(aNow);}__sk.addEventListener('pointerdown',e=>{e.stopPropagation();__seekDrag=true;__sk.setPointerCapture(e.pointerId);__seekTo(e)});__sk.addEventListener('pointermove',e=>{if(__seekDrag)__seekTo(e)});__sk.addEventListener('pointerup',()=>{__seekDrag=false});__sk.addEventListener('click',e=>e.stopPropagation());fig.addEventListener('mouseenter',play);fig.addEventListener('mouseleave',pause);fig.addEventListener('click',()=>run?pause():play());
+draw(120);
+window.__d=a=>{run=false;resting=false;aNow=a;render(a)};let resting=true;(function idleTick(){if(!run)render(resting?A21-0.5:aNow);requestAnimationFrame(idleTick)})();
+})();
+</script>
