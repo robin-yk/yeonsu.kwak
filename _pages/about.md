@@ -31,3 +31,17 @@ Advised by [Prof. Dionisios G. Vlachos](https://cbi.udel.edu/), I defended my Ph
 <section class="home-research" aria-label="Research">
 {% include research-overview.liquid %}
 </section>
+
+<script>
+(function () {
+  // The theme hides the site name in the top bar on the About page; show it on every page.
+  var c = document.querySelector("#navbar .container");
+  if (c && !c.querySelector(".navbar-brand")) {
+    var a = document.createElement("a");
+    a.className = "navbar-brand title font-weight-lighter";
+    a.href = "{{ '/' | relative_url }}";
+    a.innerHTML = '<span class="font-weight-bold">Yeonsu</span> Kwak';
+    c.insertBefore(a, c.firstChild);
+  }
+})();
+</script>
