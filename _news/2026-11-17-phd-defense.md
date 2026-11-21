@@ -5,5 +5,5 @@ inline: true
 related_posts: false
 ---
 
-Defended my Ph.D. dissertation in Chemical & Biomolecular Engineering at the **University of Delaware**, advised by [Prof. Dionisios G. Vlachos](https://cbi.udel.edu/).
+Defended my Ph.D. dissertation in Chemical & Biomolecular Engineering at the **University of Delaware**.
 
