@@ -56,7 +56,7 @@ nav_order: 4
   {% include figure.liquid loading="eager" path="assets/img/highlights/phd_defense_2026.jpg" class="img-fluid rounded z-depth-1" alt="Yeonsu Kwak with Prof. Dionisios G. Vlachos and the Vlachos group after the Ph.D. defense" %}
   <figcaption>
     <strong>Ph.D. defense</strong>, University of Delaware, November 2026.<br>
-    With Prof. Dionisios G. Vlachos and the Vlachos group.
+    With the Vlachos group.
   </figcaption>
 </figure>
 
