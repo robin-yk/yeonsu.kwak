@@ -14,7 +14,7 @@ nav_order: 1
 </div>
 
 <style>
-.rc-frame { width: 100%; height: 340px; border: 0; padding: 0; margin: 0 0 24px; display: block; background: transparent; border-radius: 0; box-shadow: none; }
+.rc-frame { width: 100%; height: 340px; border: 0; padding: 0; margin: 0 0 28px; display: block; background: #fff; border-radius: 14px; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 10px 28px rgba(0, 0, 0, 0.07); overflow: hidden; }
 </style>
 <script>
 (function () {
