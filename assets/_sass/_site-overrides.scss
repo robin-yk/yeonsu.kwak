@@ -9,8 +9,8 @@
 // Swap the two hex values below to re-theme the whole site.
 
 :root {
-  --global-theme-color: #0f766e; // deep teal
-  --global-hover-color: #115e59; // darker teal, for hover states
+  --global-theme-color: #1f3a68; // navy
+  --global-hover-color: #142848; // darker navy, for hover states
 }
 
 body,
@@ -115,7 +115,7 @@ textarea,
     &.is-active {
       border-color: var(--global-theme-color);
       background-color: var(--global-theme-color);
-      color: #fff; // explicit, so the label keeps contrast on the teal fill
+      color: #fff; // explicit, so the label keeps contrast on the navy fill
     }
   }
 
