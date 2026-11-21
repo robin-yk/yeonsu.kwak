@@ -1,0 +1,121 @@
+<!doctype html><meta charset=utf-8><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
+<style>
+body{font-family:Helvetica,Arial,sans-serif;background:#fff;margin:0 auto;max-width:720px;color:#1d1f23}
+.card{background:#fff;border:1px solid #e2e4e8;border-radius:14px;overflow:hidden}
+.row{display:grid;grid-template-columns:1fr 1.15fr}
+.txt{padding:28px 26px;display:flex;flex-direction:column}
+.txt h3{font-size:26px;font-weight:600;margin:0 0 10px}.txt p{margin:0;color:#444;font-size:15px;line-height:1.45}
+.meta{margin-top:auto!important;color:#777!important;font-size:14px!important;padding-top:24px}
+.fig{background:#f4f5f8;padding:14px 14px 10px;cursor:pointer}
+.links{border-top:1px solid #e9eaee;padding:12px 26px;font-size:14px}.links a{color:#1f3a68;text-decoration:none;font-weight:500}
+svg text{font-family:Helvetica,Arial,sans-serif}.cap{transition:opacity .3s}
+.seek{display:flex;gap:4px;margin-top:6px}.seek div{height:3px;background:#d5d8de;border-radius:2px;position:relative;overflow:hidden}.seek i{position:absolute;left:0;top:0;bottom:0;background:#4a4f5a;width:0}
+.seek{cursor:pointer;padding:6px 0}/*jy*/.card{font-family:system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif}.txt{padding:24px 22px!important}.txt h3{font-size:24px!important;font-weight:600!important;line-height:1.1;color:#15171c;letter-spacing:-.01em}.txt p{font-size:15px!important;color:#464a54!important;line-height:1.45}.links a{font-weight:550!important}.fig{background:#f3f5f8!important}.card{border-color:#e3e6ea!important}@media(max-width:640px){.row{grid-template-columns:1fr!important}.fig{order:-1}}/*ov*/.txt{padding:28px 32px!important}.txt h3{font-size:22px!important}.seek{opacity:0;transition:opacity .3s}.fig.on .seek{opacity:1}.hl{color:#1f6f4a!important;font-weight:550;margin-top:4px!important;padding-top:0!important}.links a::before{content:'';display:inline-block;width:11px;height:13px;margin-right:6px;vertical-align:-2px;border:1.4px solid currentColor;border-radius:2px;box-sizing:border-box}/*sz*/.fig svg{max-width:420px;margin:0 auto}.fig .seek{max-width:420px;margin-left:auto;margin-right:auto}/*home*/body{background:#fff!important}.card{border:1px solid rgba(0,0,0,.1)!important;border-radius:10px!important;box-shadow:none}.fig{background:#fff!important;border-left:1px solid rgba(0,0,0,.06)}.links{border-top:1px solid rgba(0,0,0,.08)!important}@media(max-width:640px){.fig{border-left:0;border-bottom:1px solid rgba(0,0,0,.06)}}</style>
+<div class=card><div class=row>
+<div class=txt><h3>MW-assisted PDH</h3><p>Microwave-assisted, performance-advantaged electrification of propane dehydrogenation</p><p class=meta><i>Science Advances</i> 2023</p></div>
+<div class=fig id=fig><svg id=v viewBox="0 0 400 290" role="img" aria-label="Microwaves heat a SiC monolith and PtSn catalyst while the gas stays cool. Compared with a furnace, propylene selectivity stays high at 700 degrees, coke is lower, and Pt-Sn particles sinter less."></svg><div class=seek id=seek></div></div></div>
+<div class=links><a href="https://doi.org/10.1126/sciadv.adi8219">Paper</a></div></div>
+<script>
+(function(){
+const D={"CH":[[-19.59,20.9],[-18.73,140.8],[-17.49,295.8],[-14.96,570.2],[-12.4,645.5],[-9.86,683.2],[-7.3,690.1],[-4.77,699.0],[-2.23,700.0],[-0.21,695.3],[2.86,700.0],[5.39,699.0],[7.93,701.6]],"LCH":[[-7.58,50.3],[-4.59,130.9],[-3.07,180.6],[-0.59,570.2],[0.05,699.5],[1.47,700.0]],"MW":[[-3.45,28],[-0.77,24],[-0.46,33],[-0.36,58],[-0.31,105],[-0.26,137],[-0.21,229],[-0.11,416],[-0.15,706],[1.4,713],[1.57,651],[1.62,565],[1.72,501],[1.77,449],[1.82,397],[1.92,353],[1.97,304],[2.12,244],[2.33,164],[2.53,108],[2.73,73],[2.94,53],[3.24,37],[3.85,24],[4.71,22.5],[5.06,28]],"coke":{"CH":2.839,"LCH":3.781,"MW":1.064},"coke500":{"CH":1.551,"LCH":0.892,"MW":0.375},"sel":{"MW":[[500,99.46],[600,99.61],[700,96.95],[800,38.27]],"CH":[[500,99.31],[600,98.17],[700,61.18],[800,1.96]]},"psd":{"fresh":3.0,"CH":4.77,"MW":3.65}},NS='http://www.w3.org/2000/svg',svg=document.getElementById('v'),A='#1f3a68',G='#b3b8c1',HOT='#e06a2c';
+const el=(n,a,p)=>{const e=document.createElementNS(NS,n);for(const k in a)e.setAttribute(k,a[k]);(p||svg).appendChild(e);return e};
+const tx=(x,y,s,a,p)=>{const e=el('text',Object.assign({x,y,'font-size':13,fill:'#555'},a||{}),p);e.textContent=s;return e};
+const lerp=(a,b,f)=>a+(b-a)*f,clamp=(v,a,b)=>Math.max(a,Math.min(b,v)),sm=u=>{u=clamp(u,0,1);return u*u*(3-2*u)};
+const X0=-20,X1=10,PX=30,PW=355,sx=x=>PX+(x-X0)/(X1-X0)*PW;
+const xEnd=m=>D[m][D[m].length-1][0];
+const prof=(m,x)=>{const p=D[m];if(x<=p[0][0])return m=='CH'?20:p[0][1];for(let i=0;i<p.length-1;i++){const a=p[i],b=p[i+1];if(x<=b[0])return b[0]==a[0]?b[1]:lerp(a[1],b[1],(x-a[0])/(b[0]-a[0]))}return p[p.length-1][1]};
+const col=T=>{const u=clamp((T-20)/700,0,1),s=[[232,234,239],[240,196,120],[196,70,50]];const i=u<.5?0:1,f=u<.5?u*2:u*2-1;return 'rgb('+s[i].map((v,j)=>Math.round(lerp(v,s[i+1][j],f))).join(',')+')'};
+/* reactor: quartz tube, SiC monolith with PtSn pellets at 0-1.5 cm */
+const TY=52,TH=22,defs=el('defs',{}),grad=el('linearGradient',{id:'tg',x1:sx(X0),x2:sx(X1),y1:0,y2:0,gradientUnits:'userSpaceOnUse'},defs);
+const stops=[...Array(61)].map((_,i)=>el('stop',{offset:i/60},grad));
+const furnace=el('rect',{x:sx(-20),y:TY-14,width:sx(10)-sx(-20),height:TH+28,fill:'none',stroke:'#7a5230','stroke-width':1.6,rx:4,opacity:0});
+/* rectangular waveguide crossing the tube at the bed, with a standing wave */
+const WG={x:sx(-1.2),w:sx(2.7)-sx(-1.2),y:TY-40,h:TH+80};
+const wg=el('g',{opacity:0});el('rect',{x:WG.x,y:WG.y,width:WG.w,height:WG.h,rx:3,fill:'#eef2f8',stroke:A,'stroke-width':1.2},wg);
+const wave=el('path',{fill:'none',stroke:A,'stroke-width':1.3},wg);const wave2=el('path',{fill:'none',stroke:A,'stroke-width':1,opacity:.4},wg);
+tx(WG.x-4,WG.y+10,'2.4 GHz',{'font-size':11,fill:A,'text-anchor':'end'},wg);
+el('rect',{x:sx(X0),y:TY,width:PW,height:TH,fill:'url(#tg)',stroke:'#8a8f99','stroke-width':1,rx:3});
+const BX0=sx(-0.2),BX1=sx(0.65),MX1=sx(1.5);
+el('rect',{x:BX0,y:TY+2,width:BX1-BX0,height:TH-4,fill:'#f4f5f7',stroke:'#9aa0aa','stroke-width':.6});
+let bs=11;const bR=()=>(bs=(bs*16807)%2147483647)/2147483647;
+for(let i=0;i<34;i++){const cat=i%9==0;el('circle',{cx:BX0+2+bR()*(BX1-BX0-4),cy:TY+4+bR()*(TH-8),r:1.3,fill:cat?'#2c2f36':'#c4c8d0'})}
+const sic=el('rect',{x:BX1,y:TY+2,width:MX1-BX1,height:TH-4,fill:'#4a4f5a',rx:1});
+for(let j=1;j<5;j++)el('path',{d:`M${BX1} ${TY+2+j*(TH-4)/5}H${MX1}`,stroke:'#8a8f99','stroke-width':.6});
+/* coke: the packed bed darkens in proportion to the measured coke (700 C, 3 h); in the furnace, specks come from the hot gas */
+const bedOv=el('rect',{x:BX0,y:TY+2,width:BX1-BX0,height:TH-4,fill:'#141416',opacity:0});
+const specks=[...Array(10)].map(()=>el('circle',{r:1.4,fill:'#111',opacity:0}));
+const hotGlow=el('rect',{x:sx(-0.2)-2,y:TY+1,width:sx(1.5)-sx(-0.2)+4,height:TH-2,rx:2,fill:'none',stroke:HOT,'stroke-width':2,opacity:0});
+tx(sx(X0),TY-20,'C₃H₈ →',{'font-size':11,fill:'#666'});
+const mol=[...Array(16)].map(()=>el('circle',{r:2.1,stroke:'#6b707a','stroke-width':.5}));
+const modeLab=tx(sx(X1),TY-20,'',{'text-anchor':'end','font-size':12,fill:A,'font-weight':600});
+/* lower panel: one plot per chapter */
+const PY=112,PH=125,sy=T=>PY+PH-(T/750)*PH;
+const gT=el('g',{}),gS=el('g',{opacity:0}),gC=el('g',{opacity:0}),gP=el('g',{opacity:0});
+el('rect',{x:PX,y:PY,width:PW,height:PH,fill:'none',stroke:'#b9bdc5','stroke-width':.8},gT);
+el('path',{d:`M${PX} ${sy(700)}h${PW}`,stroke:'#9aa0aa','stroke-width':.8,'stroke-dasharray':'3 3'},gT);
+tx(PX+4,sy(700)+13,'700 °C',{'font-size':11,fill:'#888'},gT);
+tx(PX,PY+PH+15,'−20 cm',{'font-size':11,fill:'#777'},gT);tx(sx(0),PY+PH+15,'0',{'text-anchor':'middle','font-size':11,fill:'#777'},gT);tx(sx(10),PY+PH+15,'10',{'text-anchor':'end','font-size':11,fill:'#777'},gT);
+const LT={CH:el('path',{fill:'none','stroke-width':1.8},gT),MW:el('path',{fill:'none','stroke-width':2.2},gT)};
+const LTl={CH:tx(0,0,'furnace',{'font-size':11},gT),MW:tx(0,0,'microwaves',{'font-size':11},gT)};
+const curve=(m,f)=>{const p=D[m];let s='';const xe=Math.min(lerp(X0,X1,f),xEnd(m));let first=true;for(let x=X0;x<=xe;x+=0.1){if(m!='CH'&&x<p[0][0])continue;s+=(first?'M':'L')+sx(x).toFixed(1)+' '+sy(prof(m,x)).toFixed(1);first=false}return s};
+/* selectivity vs temperature */
+const SX0=PX+20,SW=PW-40,ssx=T=>SX0+(T-500)/300*SW,ssy=v=>PY+PH-v/100*PH;
+el('rect',{x:PX,y:PY,width:PW,height:PH,fill:'none',stroke:'#b9bdc5','stroke-width':.8},gS);
+tx(PX+4,PY+12,'propylene selectivity (%)',{'font-size':11,fill:'#666'},gS);
+[500,600,700,800].forEach(T=>tx(ssx(T),PY+PH+15,T+' °C',{'text-anchor':'middle','font-size':11,fill:'#777'},gS));
+tx(PX-4,ssy(100)+4,'100',{'text-anchor':'end','font-size':11,fill:'#888'},gS);tx(PX-4,ssy(0)+4,'0',{'text-anchor':'end','font-size':11,fill:'#888'},gS);
+const LS={CH:el('path',{fill:'none',stroke:G,'stroke-width':1.8},gS),MW:el('path',{fill:'none',stroke:A,'stroke-width':2.2},gS)};
+const LSd={CH:el('circle',{r:2.8,fill:G},gS),MW:el('circle',{r:2.8,fill:A},gS)};
+const LSl={CH:tx(0,0,'furnace',{'font-size':11,fill:'#888'},gS),MW:tx(0,0,'microwaves',{'font-size':11,fill:A},gS)};
+const v700=tx(ssx(700)+6,0,'',{'font-size':11,fill:'#555'},gS);
+/* coke bars, 500 and 700 C */
+const BX=PX+30,BY=PY+14,BW=300,LC=96;
+tx(BX,BY+10,'coke after 3 h of PDH (wt%)',{'font-size':13,fill:'#555'},gC);
+const NAME={CH:'furnace',LCH:'heating tape',MW:'microwaves'};
+const cb={};['CH','LCH','MW'].forEach((m,i)=>{const y=BY+22+i*24,c=m=='MW'?A:G;tx(BX,y+15,NAME[m],{'font-size':13,fill:m=='MW'?A:'#777'},gC);
+ cb[m]={a:el('rect',{x:BX+LC,y,width:0,height:9,fill:c,opacity:.45,rx:1},gC),b:el('rect',{x:BX+LC,y:y+11,width:0,height:9,fill:c,rx:1},gC),ta:tx(0,y+8,'',{'font-size':11,fill:'#777'},gC),tb:tx(0,y+19,'',{'font-size':11,fill:m=='MW'?A:'#777'},gC)}});
+tx(BX+LC,BY+104,'light: 500 °C   dark: 700 °C',{'font-size':11,fill:'#888'},gC);
+/* particle size after 800 C aging */
+const PCx=[PX+60,PX+178,PX+296],PCy=PY+60,nmR=7;
+const pc=[['fresh',D.psd.fresh,'#c9ced8'],['furnace, 800 °C',D.psd.CH,G],['microwaves, 800 °C',D.psd.MW,A]].map((q,i)=>({q,c:el('circle',{cx:PCx[i],cy:PCy,r:0,fill:q[2],opacity:.9},gP),l:tx(PCx[i],PCy+48,q[0],{'text-anchor':'middle','font-size':11,fill:i==2?A:'#777'},gP),v:tx(PCx[i],PCy+62,'',{'text-anchor':'middle','font-size':11,fill:i==2?A:'#777'},gP)}));
+tx(PX+4,PY+12,'Pt-Sn particle size',{'font-size':11,fill:'#666'},gP);
+const cap=tx(200,284,'',{'text-anchor':'middle',fill:'#222','font-size':15,class:'cap'});
+const CH=[[0,4.0,'A furnace heats the whole tube and the gas','CH'],[4.0,8.0,'Microwaves heat only the SiC and the catalyst','MW'],[8.0,12.6,'Cool gas keeps propylene selectivity at 97% at 700 °C','MW'],[12.6,16.6,'Less gas cracking, less coke','MW'],[16.6,20.8,'Pt-Sn particles sinter less under microwaves','MW']];
+const TT=20.8,seek=document.getElementById('seek'),sb=CH.map(c=>{const b=document.createElement('div');b.style.flex=c[1]-c[0];b.appendChild(document.createElement('i'));seek.appendChild(b);return b.firstChild});
+const GG=[gT,gT,gS,gC,gP];let cur='';
+function draw(T){
+ const ci=CH.findIndex(c=>T<c[1]),k=ci<0?4:ci,c=CH[k],f=sm((T-c[0])/((c[1]-c[0])*.8)),tm=c[3];
+ if(!cap.textContent){cur=c[2];cap.textContent=cur}if(c[2]!==cur){cur=c[2];cap.style.opacity=0;setTimeout(()=>{cap.textContent=cur;cap.style.opacity=1},150)}
+ sb.forEach((b,j)=>b.style.width=clamp((T-CH[j][0])/(CH[j][1]-CH[j][0]),0,1)*100+'%');
+ [gT,gS,gC,gP].forEach(g=>{const idx=GG.indexOf(g),last=GG.lastIndexOf(g);const t0=CH[idx][0],t1=CH[last][1];const fin=idx==0?1:clamp((T-t0)/.4,0,1),fout=last<4?1-clamp((T-t1+.3)/.4,0,1):1;g.setAttribute('opacity',(T>=t0&&T<t1?Math.min(fin,fout):0).toFixed(2));g.style.display=(T>=t0-0.05&&T<t1)?'':'none'});
+ /* reactor */
+ stops.forEach((s,i)=>{const x=lerp(X0,X1,i/60);s.setAttribute('stop-color',col(tm=='CH'?prof('CH',x):(x<-0.2||x>1.5?60:700)))});
+ furnace.setAttribute('opacity',tm=='CH'?1:0);wg.setAttribute('opacity',tm=='MW'?1:0);hotGlow.setAttribute('opacity',tm=='MW'?(0.6+0.4*Math.sin(T*6)).toFixed(2):0);
+ modeLab.textContent=tm=='CH'?'furnace':'microwaves';
+ let wd='',wd2='';for(let i=0;i<=40;i++){const y=WG.y+i*WG.h/40,ph=i/40*3*Math.PI;wd+=(i?'L':'M')+(WG.x+WG.w/2+9*Math.sin(ph)*Math.cos(T*5)).toFixed(1)+' '+y.toFixed(1);wd2+=(i?'L':'M')+(WG.x+WG.w/2-9*Math.sin(ph)*Math.cos(T*5)).toFixed(1)+' '+y.toFixed(1)}
+ wave.setAttribute('d',wd);wave2.setAttribute('d',wd2);
+
+ mol.forEach((g,j)=>{const x=X0+((T*2.2+j*30/16)%30),c3h6=x>1.5;const Tg=tm=='CH'?prof('CH',x):(x>=-0.2&&x<=1.5?650:80);g.setAttribute('cx',sx(x));g.setAttribute('cy',TY+5+((j*7)%12));g.setAttribute('fill',c3h6?'#e58a3a':col(Tg));g.setAttribute('stroke',c3h6?'#b3621f':'#6b707a')});
+ {const ck=(tm=='CH'?D.coke.CH:D.coke.MW)/3.781,prog=k==0?f:k==1?f:1;bedOv.setAttribute('opacity',(0.8*ck*prog).toFixed(2));
+  specks.forEach((p,j)=>{if(j>=Math.round(ck*10)||k>1){p.setAttribute('opacity',0);return}const ph=(T*0.9+j*0.13)%1,x0=-0.1+((j*0.37)%0.7),fromGas=tm=='CH';
+   p.setAttribute('cx',sx(x0+(fromGas?0.5*(1-ph):0)));p.setAttribute('cy',fromGas?lerp(TY-2,TY+TH/2,ph):TY+6+((j*5)%10));p.setAttribute('opacity',Math.sin(Math.PI*ph).toFixed(2))})}
+ /* chapter panels */
+ if(k<=1){const fc=k==0?f:1,fm=k==1?f:0;LT.CH.setAttribute('d',curve('CH',fc));LT.CH.setAttribute('stroke',k==0?A:G);LT.MW.setAttribute('d',fm>0?curve('MW',fm):'');LT.MW.setAttribute('stroke',A);
+  LTl.CH.setAttribute('x',sx(-15)+6);LTl.CH.setAttribute('y',sy(prof('CH',-15))+14);LTl.CH.setAttribute('text-anchor','start');LTl.CH.setAttribute('fill',k==0?A:'#9aa0aa');LTl.CH.setAttribute('opacity',fc>=1?1:0);
+  LTl.MW.setAttribute('x',sx(2.3)+6);LTl.MW.setAttribute('y',sy(prof('MW',2.3))-2);LTl.MW.setAttribute('fill',A);LTl.MW.setAttribute('opacity',fm>=1?1:0)}
+ if(k==2){['CH','MW'].forEach(m=>{const p=D.sel[m],te=500+300*f;let d='';for(let i=0;i<p.length;i++){if(p[i][0]>te){const u=(te-p[i-1][0])/(p[i][0]-p[i-1][0]),v=lerp(p[i-1][1],p[i][1],u);d+='L'+ssx(te).toFixed(1)+' '+ssy(v).toFixed(1);LSd[m].setAttribute('cx',ssx(te));LSd[m].setAttribute('cy',ssy(v));break}d+=(i?'L':'M')+ssx(p[i][0]).toFixed(1)+' '+ssy(p[i][1]).toFixed(1);if(i==p.length-1){LSd[m].setAttribute('cx',ssx(p[i][0]));LSd[m].setAttribute('cy',ssy(p[i][1]))}}
+   LS[m].setAttribute('d',d);const q=p[p.length-1];LSl[m].setAttribute('x',ssx(q[0])-6);LSl[m].setAttribute('y',ssy(q[1])+(m=='MW'?-8:-8));LSl[m].setAttribute('text-anchor','end');LSl[m].setAttribute('opacity',f>=1?1:0)});
+  v700.setAttribute('y',ssy(80));v700.textContent=f>0.7?'700 °C: 97% vs 61%':''}
+ if(k==3){const fa=sm(clamp(f/0.5,0,1)),fb=sm(clamp((f-0.4)/0.5,0,1)),K=(BW-LC-34)/3.8;['CH','LCH','MW'].forEach(m=>{const wa=D.coke500[m]*K*fa,wb=D.coke[m]*K*fb;cb[m].a.setAttribute('width',wa);cb[m].b.setAttribute('width',wb);cb[m].ta.setAttribute('x',BX+LC+wa+4);cb[m].tb.setAttribute('x',BX+LC+wb+4);cb[m].ta.textContent=fa>.95?D.coke500[m].toFixed(1):'';cb[m].tb.textContent=fb>.95?D.coke[m].toFixed(1):''})}
+ if(k==4){pc.forEach((p,i)=>{const r=nmR*(i==0?p.q[1]:lerp(D.psd.fresh,p.q[1],f));p.c.setAttribute('r',r.toFixed(1));p.v.textContent=(i==0?p.q[1]:lerp(D.psd.fresh,p.q[1],f)).toFixed(i==0?1:2)+' nm'})}
+}
+const fig=document.getElementById('fig');let t0=null,tN=0,run=false,raf,idle;const REST=12.2;
+function step(ts){if(t0===null)t0=ts-tN*1000;tN=Math.min(TT,(ts-t0)/1000);draw(tN);if(run&&tN<TT)raf=requestAnimationFrame(step);else if(tN>=TT)run=false}
+function play(){clearTimeout(idle);fig.classList.add('on');if(run)return;if(tN>=TT)tN=0;run=true;t0=null;raf=requestAnimationFrame(step)}
+function pause(){run=false;cancelAnimationFrame(raf);idle=setTimeout(()=>{tN=0;fig.classList.remove('on');draw(REST)},5000)}
+const __sk=document.getElementById('seek');let __seekDrag=false;function __seekTo(e){fig.classList.add('on');const r=__sk.getBoundingClientRect(),u=Math.max(0,Math.min(0.999,(e.clientX-r.left)/r.width));run=false;cancelAnimationFrame(raf);clearTimeout(idle);tN=u*TT;draw(tN);}
+__sk.addEventListener('pointerdown',e=>{e.stopPropagation();__seekDrag=true;__sk.setPointerCapture(e.pointerId);__seekTo(e)});__sk.addEventListener('pointermove',e=>{if(__seekDrag)__seekTo(e)});__sk.addEventListener('pointerup',()=>{__seekDrag=false});__sk.addEventListener('click',e=>e.stopPropagation());
+fig.addEventListener('mouseenter',play);fig.addEventListener('mouseleave',pause);fig.addEventListener('click',()=>run?pause():play());
+draw(REST);window.__d=t=>{run=false;draw(t)};
+})();
+</script>

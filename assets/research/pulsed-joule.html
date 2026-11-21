@@ -1,0 +1,102 @@
+<!doctype html><meta charset=utf-8><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
+<style>
+body{font-family:Helvetica,Arial,sans-serif;background:#fff;margin:0 auto;max-width:720px;color:#1d1f23}
+.card{background:#fff;border:1px solid #e2e4e8;border-radius:14px;overflow:hidden}
+.row{display:grid;grid-template-columns:1fr 1.15fr}
+.txt{padding:28px 26px;display:flex;flex-direction:column}
+.txt h3{font-size:26px;font-weight:600;margin:0 0 10px}.txt p{margin:0;color:#444;font-size:15px;line-height:1.45}
+.meta{margin-top:auto!important;color:#777!important;font-size:14px!important;padding-top:24px}
+.fig{background:#f4f5f8;padding:14px 14px 10px;cursor:pointer}
+.links{border-top:1px solid #e9eaee;padding:12px 26px;font-size:14px}.links a{color:#1f3a68;text-decoration:none;font-weight:500}
+svg text{font-family:Helvetica,Arial,sans-serif}.cap{transition:opacity .3s}
+.seek{display:flex;gap:4px;margin-top:6px}.seek div{height:3px;background:#d5d8de;border-radius:2px;position:relative;overflow:hidden}.seek i{position:absolute;left:0;top:0;bottom:0;background:#4a4f5a;width:0}
+.seek{cursor:pointer;padding:6px 0}/*jy*/.card{font-family:system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif}.txt{padding:24px 22px!important}.txt h3{font-size:24px!important;font-weight:600!important;line-height:1.1;color:#15171c;letter-spacing:-.01em}.txt p{font-size:15px!important;color:#464a54!important;line-height:1.45}.links a{font-weight:550!important}.fig{background:#f3f5f8!important}.card{border-color:#e3e6ea!important}@media(max-width:640px){.row{grid-template-columns:1fr!important}.fig{order:-1}}/*ov*/.txt{padding:28px 32px!important}.txt h3{font-size:22px!important}.seek{opacity:0;transition:opacity .3s}.fig.on .seek{opacity:1}.hl{color:#1f6f4a!important;font-weight:550;margin-top:4px!important;padding-top:0!important}.links a::before{content:'';display:inline-block;width:11px;height:13px;margin-right:6px;vertical-align:-2px;border:1.4px solid currentColor;border-radius:2px;box-sizing:border-box}/*sz*/.fig svg{max-width:420px;margin:0 auto}.fig .seek{max-width:420px;margin-left:auto;margin-right:auto}.cov{margin:2px 0 0!important;color:#777!important;font-size:14px!important}/*home*/body{background:#fff!important}.card{border:1px solid rgba(0,0,0,.1)!important;border-radius:10px!important;box-shadow:none}.fig{background:#fff!important;border-left:1px solid rgba(0,0,0,.06)}.links{border-top:1px solid rgba(0,0,0,.08)!important}@media(max-width:640px){.fig{border-left:0;border-bottom:1px solid rgba(0,0,0,.06)}}</style>
+<div class=card><div class=row>
+<div class=txt><h3>Pulsed Joule CH&#8324; + CO&#8322;</h3><p>Tandem non-oxidative coupling of methane and carbon dioxide reduction via pulsed Joule thermochemistry</p><p class=meta><i>ACS Energy Letters</i> 2025</p><p class=cov><i>Supplementary cover art</i></p></div>
+<div class=fig id=fig><svg id=v viewBox="0 0 400 290" role="img" aria-label="Carbon fiber paper heated in millisecond pulses couples methane to acetylene with less power than continuous or furnace heating, stops before benzene forms, and the hydrogen it releases reduces CO2 to CO."></svg><div class=seek id=seek></div></div></div>
+<div class=links><a href="https://doi.org/10.1021/acsenergylett.5c02853">Paper</a></div></div>
+<script>
+(function(){
+const D={"xp":{"RPH":[[50,1],[65,7],[70,19],[95,28]],"CJH":[[110,1],[155,2],[185,4],[225,16],[235,21]],"CH":[[380,6],[420,18],[470,34]]},"bz":{"CH":[[5,16],[17,26.5],[34,24.5]],"CJH":[[3,0],[16,4.5],[20,7.5]],"RPH":[[3,0],[8,1],[19,2],[28,1]]},"rt":{"H2only":[[825,1.3],[840,4.0],[876,6.0]],"H2mix":[[831,2.3],[855,4.6],[873,4.8]],"CO":[[830,0.3],[855,1.9],[870,2.1]],"H2O":[[830,0.1],[855,1.5],[870,1.6]]}},NS='http://www.w3.org/2000/svg',svg=document.getElementById('v'),A='#1f3a68',G='#b3b8c1',HOT='#e06a2c';
+const el=(n,a,p)=>{const e=document.createElementNS(NS,n);for(const k in a)e.setAttribute(k,a[k]);(p||svg).appendChild(e);return e};
+const tx=(x,y,s,a,p)=>{const e=el('text',Object.assign({x,y,'font-size':15,fill:'#555'},a||{}),p);e.textContent=s;return e};
+const lerp=(a,b,f)=>a+(b-a)*f,clamp=(v,a,b)=>Math.max(a,Math.min(b,v)),sm=u=>{u=clamp(u,0,1);return u*u*(3-2*u)};
+/* left: quartz tube with carbon fiber paper (CFP) */
+const TX=14,TW=170,TY=96,TH=46,cfp={x:TX+66,w:38};
+el('rect',{x:TX,y:TY,width:TW,height:TH,rx:8,fill:'#fff',stroke:'#8a8f99','stroke-width':1.2});
+const glow=el('rect',{x:cfp.x-10,y:TY+2,width:cfp.w+20,height:TH-4,rx:6,fill:HOT,opacity:0});
+const strip=el('rect',{x:cfp.x,y:TY+TH/2-3,width:cfp.w,height:6,fill:'#333'});
+tx(cfp.x+cfp.w/2,TY+TH+16,'carbon fiber paper',{'text-anchor':'middle','font-size':12,fill:'#666'});
+const tread=tx(TX+TW-4,TY-8,'',{'text-anchor':'end','font-size':14,fill:'#222','font-weight':600});
+/* electrodes: two copper posts through the tube wall, + and -, with a pulse symbol between them */
+const yS=TY+TH/2,eL=cfp.x-2,eR=cfp.x+cfp.w+2,ETOP=TY-26;
+[eL,eR].forEach((x,i)=>{el('rect',{x:x-1,y:ETOP,width:2,height:yS-ETOP+2,rx:1,fill:'#b87333'});tx(x,ETOP-5,i?'\u2212':'+',{'text-anchor':'middle','font-size':13,fill:'#7a4a1f'})});
+const pIcon=el('path',{d:`M${cfp.x+4} ${ETOP+10}h6v-8h6v8h6v-8h6v8h6`,fill:'none',stroke:HOT,'stroke-width':1.4});
+const elec=[...Array(7)].map((_,j)=>({j,c:el('circle',{r:1.8,fill:'#ffd23f',opacity:0})}));
+/* molecules: CH4 (gray), C2H2 (orange pair), CO2 (navy), CO (light navy), H2 (white) */
+const N=14,mol=[...Array(N)].map((_,j)=>({g:el('g',{}),j}));
+mol.forEach(m=>{m.a=el('circle',{r:2.6,fill:'#9aa0aa'},m.g);m.b=el('circle',{r:2.6,fill:'#9aa0aa',opacity:0},m.g)});
+const hex=el('path',{d:'',fill:'none',stroke:'#c0392b','stroke-width':1.4,opacity:0});
+const hexX=el('path',{d:'',stroke:'#c0392b','stroke-width':1.6,opacity:0});
+const keyG=el('g',{});const key=(y,c,s,two)=>{el('circle',{cx:TX+6,cy:y,r:3,fill:c,stroke:c=='#fff'?'#7d8fb0':'none'},keyG);if(two)el('circle',{cx:TX+12,cy:y,r:3,fill:c},keyG);tx(TX+20,y+4,s,{'font-size':11,fill:'#666'},keyG)};
+
+[[TY+70,'#9aa0aa','CH₄'],[TY+86,HOT,'C₂H₂',1]].forEach(a=>{key(a[0],a[1],a[2],a[3])});
+const kCO=el('g',{opacity:0});[[TY+102,A,'CO₂'],[TY+118,'#8fa6cf','CO'],[TY+134,'#fff','H₂']].forEach(a=>{el('circle',{cx:TX+6,cy:a[0],r:3,fill:a[1],stroke:a[1]=='#fff'?'#7d8fb0':'none'},kCO);tx(TX+20,a[0]+4,a[2],{'font-size':11,fill:'#666'},kCO)});
+/* right plots */
+const PX=222,PY=44,PW=165,PH=180;
+const box=(g,xl,xr,yl,yr,ttl,xt,yt)=>{el('rect',{x:PX,y:PY,width:PW,height:PH,fill:'none',stroke:'#b9bdc5','stroke-width':.8},g);tx(PX,PY-10,ttl,{fill:A,'font-weight':400,'font-size':13},g);tx(PX,PY+PH+15,xl,{'font-size':11,fill:'#777'},g);tx(PX+PW,PY+PH+15,xr,{'text-anchor':'end','font-size':11,fill:'#777'},g);tx(PX-4,PY+PH,yl,{'text-anchor':'end','font-size':11,fill:'#777'},g);tx(PX-4,PY+9,yr,{'text-anchor':'end','font-size':11,fill:'#777'},g);if(xt)tx(PX+PW/2,PY+PH+15,xt,{'text-anchor':'middle','font-size':11,fill:'#777'},g)};
+const mk=(x0,x1,y0,y1)=>[x=>PX+(x-x0)/(x1-x0)*PW,y=>PY+PH-(y-y0)/(y1-y0)*PH];
+const G0=el('g',{}),G1=el('g',{opacity:0}),G2=el('g',{opacity:0}),G3=el('g',{opacity:0});
+box(G0,'0','4 s','0','1200 °C','Measured by IR camera','time');
+const [tsx,tsy]=mk(0,4,0,1200);const pulse=el('path',{fill:'none',stroke:HOT,'stroke-width':1.8},G0);const pdot=el('circle',{r:2.6,fill:HOT},G0);
+el('path',{d:`M${PX} ${tsy(700)}h${PW}`,stroke:'#c0392b','stroke-width':1.4,'stroke-dasharray':'4 3'},G0);tx(PX+PW-3,tsy(700)+14,'continuous Joule',{'text-anchor':'end','font-size':11,fill:'#c0392b'},G0);tx(PX+PW-3,tsy(1080),'pulsed Joule, 1 Hz',{'text-anchor':'end','font-size':11,fill:HOT},G0);
+box(G1,'0','500 W','0','40%','CH₄ conversion','power');const [psx,psy]=mk(0,500,0,40);
+box(G2,'0','40%','0','30%','Benzene selectivity','CH₄ conversion');const [bsx,bsy]=mk(0,40,0,30);
+box(G3,'820','880 °C','0','6.5','Rates, CH₄ + CO₂','average T');const [rsx,rsy]=mk(820,880,0,6.5);
+tx(PX+PW,PY-10,'mmol h⁻¹',{'text-anchor':'end','font-size':10,fill:'#888'},G3);
+const S=(g,pts,sx,sy,c,lab,dash,w)=>{const p=el('path',{fill:'none',stroke:c,'stroke-width':w||1.8,'stroke-dasharray':dash||'none'},g),d=el('circle',{r:2.6,fill:c,opacity:0},g),l=tx(0,0,lab,{'font-size':11,fill:c==A||c==HOT?c:'#888',opacity:0},g);return {p,d,l,pts,sx,sy}};
+const curves=[[],[S(G1,D.xp.CH,psx,psy,G,'furnace'),S(G1,D.xp.CJH,psx,psy,G,'continuous','4 3'),S(G1,D.xp.RPH,psx,psy,A,'pulsed Joule',0,2.2)],
+ [S(G2,D.bz.CH,bsx,bsy,G,'furnace'),S(G2,D.bz.CJH,bsx,bsy,G,'continuous','4 3'),S(G2,D.bz.RPH,bsx,bsy,A,'pulsed Joule',0,2.2)],
+ [S(G3,D.rt.H2only,rsx,rsy,G,'H₂, CH₄ only','4 3'),S(G3,D.rt.H2mix,rsx,rsy,A,'H₂',0,2.2),S(G3,D.rt.CO,rsx,rsy,'#5b7bb8','CO'),S(G3,D.rt.H2O,rsx,rsy,'#9fb3d9','H₂O')]];
+const LBL={0:{'furnace':[-4,-8],'continuous':[6,4],'pulsed Joule':[6,4]},1:{'furnace':[-6,-8],'continuous':[6,0],'pulsed Joule':[-8,-10]},2:{'H₂, CH₄ only':[-4,16],'H₂':[-4,14],'CO':[-4,-6],'H₂O':[-4,14]}};
+function drawCurve(c,f,ci){const p=c.pts,x0=p[0][0],x1=p[p.length-1][0],xe=lerp(x0,x1,f);if(f<=0){c.p.setAttribute('d','');c.d.setAttribute('opacity',0);c.l.setAttribute('opacity',0);return}
+ let d='M'+c.sx(x0)+' '+c.sy(p[0][1]),ye=p[0][1];for(let i=1;i<p.length;i++){if(p[i][0]<=xe){d+='L'+c.sx(p[i][0]).toFixed(1)+' '+c.sy(p[i][1]).toFixed(1);ye=p[i][1]}else{const u=(xe-p[i-1][0])/(p[i][0]-p[i-1][0]);ye=lerp(p[i-1][1],p[i][1],u);d+='L'+c.sx(xe).toFixed(1)+' '+c.sy(ye).toFixed(1);break}}
+ c.p.setAttribute('d',d);c.d.setAttribute('cx',c.sx(xe));c.d.setAttribute('cy',c.sy(ye));c.d.setAttribute('opacity',f<1?1:0);
+ const lb=c.l.textContent,o=(LBL[ci]&&LBL[ci][lb])||[0,0];c.l.setAttribute('x',c.sx(x1)+o[0]);c.l.setAttribute('y',c.sy(p[p.length-1][1])+o[1]);c.l.setAttribute('text-anchor',o[0]>0?'start':'end');c.l.setAttribute('opacity',f>=1?1:0)}
+const cap=tx(200,284,'',{'text-anchor':'middle',fill:'#222','font-size':15,class:'cap'});
+const CH=[[0,5.5,'Each pulse heats the paper in 50 ms, then it cools'],[5.5,10.0,'Pulses convert more CH₄ with less power'],[10.0,14.5,'Pulses end before benzene can form'],[14.5,19.5,'H₂ from coupling reduces CO₂ to CO']];
+const TT=19.5,seek=document.getElementById('seek'),sb=CH.map(c=>{const b=document.createElement('div');b.style.flex=c[1]-c[0];b.appendChild(document.createElement('i'));seek.appendChild(b);return b.firstChild});
+const GG=[G0,G1,G2,G3];let cur='';
+const PW1=1.006,PWv=[[0,535],[0.05,1050],[0.125,837],[0.175,794],[0.225,741],[0.275,705],[0.325,673],[0.375,641],[0.425,616],[0.475,591],[0.525,580],[0.575,566],[0.625,552],[0.8,540],[1.006,535]];const Tp=t=>{const ph=((t%PW1)+PW1)%PW1;for(let i=0;i<PWv.length-1;i++){const a=PWv[i],b=PWv[i+1];if(ph<=b[0])return a[1]+(b[1]-a[1])*(ph-a[0])/(b[0]-a[0])}return 535};
+function draw(T){
+ const ci=CH.findIndex(c=>T<c[1]),k=ci<0?3:ci,c=CH[k],f=sm((T-c[0])/((c[1]-c[0])*.8));
+ if(!cap.textContent){cur=c[2];cap.textContent=cur}if(c[2]!==cur){cur=c[2];cap.style.opacity=0;setTimeout(()=>{cap.textContent=cur;cap.style.opacity=1},150)}
+ sb.forEach((b,j)=>b.style.width=clamp((T-CH[j][0])/(CH[j][1]-CH[j][0]),0,1)*100+'%');
+ GG.forEach((g,j)=>{const fin=j==0?1:clamp((T-CH[j][0])/.4,0,1),fout=j<3?1-clamp((T-CH[j][1]+.3)/.4,0,1):1;g.setAttribute('opacity',(j==k?Math.min(fin,fout):0).toFixed(2))});
+ /* pulse clock: 1 real pulse per 1.1 s of animation */
+ const tc=k==0?Math.min(4,T):T,ph=(tc%1.006)/1.006,Tn=Tp(tc),heat=(Tn-535)/515;glow.setAttribute('opacity',(0.85*heat).toFixed(2));strip.setAttribute('fill',heat>.3?HOT:'#333');
+ tread.textContent=Math.round(Tn)+' °C';const onI=ph<0.12?1:Math.max(0,1-(ph-0.12)*8);pIcon.setAttribute('opacity',(0.35+0.65*onI).toFixed(2));elec.forEach(e=>{const u=((T*2.2)+e.j/7)%1;e.c.setAttribute('cx',(eL+u*(eR-eL)).toFixed(1));e.c.setAttribute('cy',yS);e.c.setAttribute('opacity',(onI*0.95).toFixed(2))});
+ if(k==0){const te=Math.min(4,T);let d='';for(let i=0;i<=400;i++){const t=i/100;if(t>te)break;d+=(i?'L':'M')+tsx(t).toFixed(1)+' '+tsy(Tp(t)).toFixed(1)}pulse.setAttribute('d',d);pdot.setAttribute('cx',tsx(te));pdot.setAttribute('cy',tsy(Tp(te)))}
+ if(k>=1)curves[k].forEach(cv=>drawCurve(cv,f,k-1));
+ /* molecules pass the hot strip; inside a pulse CH4 pairs become C2H2; in chapter 4 CO2 + H2 -> CO + H2O */
+ const co2=k==3;kCO.setAttribute('opacity',co2?1:0);
+ mol.forEach(m=>{const j=m.j,x=TX+6+((T*28+j*12.3)%(TW-12)),y=TY+10+((j*7)%(TH-20)),past=x>cfp.x+cfp.w,isCO2=co2&&j%3==0;
+  m.g.setAttribute('transform',`translate(${x},${y})`);
+  if(isCO2){m.a.setAttribute('fill',past?'#8fa6cf':A);m.b.setAttribute('opacity',0);m.a.setAttribute('r',past?2.4:3)}
+  else if(past&&j%2==0){m.a.setAttribute('fill',HOT);m.b.setAttribute('fill',HOT);m.b.setAttribute('cx',5);m.b.setAttribute('opacity',1);m.a.setAttribute('r',2.6)}
+  else if(past&&co2){m.a.setAttribute('fill','#fff');m.a.setAttribute('stroke','#7d8fb0');m.a.setAttribute('r',2);m.b.setAttribute('opacity',0)}
+  else{m.a.setAttribute('fill','#9aa0aa');m.a.setAttribute('stroke','none');m.a.setAttribute('r',2.6);m.b.setAttribute('opacity',0)}});
+ /* chapter 3: a benzene ring tries to form after the strip and is crossed out */
+ const bx=TX+TW-28,by=TY+TH/2,hv=k==2?sm(f*2):0;let hd='';for(let i=0;i<=6;i++){const a=Math.PI/3*i+Math.PI/6;hd+=(i?'L':'M')+(bx+9*Math.cos(a)).toFixed(1)+' '+(by+9*Math.sin(a)).toFixed(1)}
+ hex.setAttribute('d',hd);hex.setAttribute('opacity',hv);hexX.setAttribute('d',`M${bx-11} ${by-11}L${bx+11} ${by+11}`);hexX.setAttribute('opacity',k==2&&f>.6?1:0);
+}
+const fig=document.getElementById('fig');let t0=null,tN=0,run=false,raf,idle;
+function step(ts){if(t0===null)t0=ts-tN*1000;tN=Math.min(TT,(ts-t0)/1000);draw(tN);if(run&&tN<TT)raf=requestAnimationFrame(step);else if(tN>=TT)run=false}
+function play(){clearTimeout(idle);fig.classList.add('on');if(run)return;if(tN>=TT)tN=0;run=true;t0=null;raf=requestAnimationFrame(step)}
+function pause(){run=false;cancelAnimationFrame(raf);idle=setTimeout(()=>{tN=0;fig.classList.remove('on');draw(9.3)},5000)}
+const __sk=document.getElementById('seek');let __seekDrag=false;function __seekTo(e){fig.classList.add('on');const r=__sk.getBoundingClientRect(),u=Math.max(0,Math.min(0.999,(e.clientX-r.left)/r.width));run=false;cancelAnimationFrame(raf);clearTimeout(idle);tN=u*TT;draw(tN);}
+__sk.addEventListener('pointerdown',e=>{e.stopPropagation();__seekDrag=true;__sk.setPointerCapture(e.pointerId);__seekTo(e)});__sk.addEventListener('pointermove',e=>{if(__seekDrag)__seekTo(e)});__sk.addEventListener('pointerup',()=>{__seekDrag=false});__sk.addEventListener('click',e=>e.stopPropagation());
+fig.addEventListener('mouseenter',play);fig.addEventListener('mouseleave',pause);fig.addEventListener('click',()=>run?pause():play());
+draw(9.3);window.__d=t=>{run=false;draw(t)};
+})();
+</script>
