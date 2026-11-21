@@ -7,10 +7,10 @@ nav_order: 1
 ---
 
 <div class="rc-list">
-<iframe class="rc-frame" src="{{ '/assets/research/pulsed-joule.html' | relative_url }}" title="Pulsed Joule CH4 + CO2" loading="lazy" scrolling="no"></iframe>
-<iframe class="rc-frame" src="{{ '/assets/research/mw-pdh.html' | relative_url }}" title="MW-assisted PDH" loading="lazy" scrolling="no"></iframe>
-<iframe class="rc-frame" src="{{ '/assets/research/ald-tio2.html' | relative_url }}" title="ALD-TiO2 supports" loading="lazy" scrolling="no"></iframe>
-<iframe class="rc-frame" src="{{ '/assets/research/pcm-h2.html' | relative_url }}" title="PCM-heated H2 release" loading="lazy" scrolling="no"></iframe>
+<iframe class="rc-frame" src="{{ '/assets/research/pulsed-joule.html' | relative_url }}?v={{ site.time | date: '%s' }}" title="Pulsed Joule CH4 + CO2" loading="lazy" scrolling="no"></iframe>
+<iframe class="rc-frame" src="{{ '/assets/research/mw-pdh.html' | relative_url }}?v={{ site.time | date: '%s' }}" title="MW-assisted PDH" loading="lazy" scrolling="no"></iframe>
+<iframe class="rc-frame" src="{{ '/assets/research/ald-tio2.html' | relative_url }}?v={{ site.time | date: '%s' }}" title="ALD-TiO2 supports" loading="lazy" scrolling="no"></iframe>
+<iframe class="rc-frame" src="{{ '/assets/research/pcm-h2.html' | relative_url }}?v={{ site.time | date: '%s' }}" title="PCM-heated H2 release" loading="lazy" scrolling="no"></iframe>
 </div>
 
 <style>
