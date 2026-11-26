@@ -14,8 +14,12 @@ nav_order: 1
 </div>
 
 <style>
-.post:has(.rc-list) { max-width: 820px; margin-inline: auto; }
-.rc-frame { width: 100%; height: 340px; border: 0; padding: 0; margin: 0 0 20px; display: block; background: #fff; border-radius: 8px; outline: 1px solid #dce0e5; overflow: hidden; }
+.post:has(.rc-list) { max-width: 1040px; margin-inline: auto; }
+.post:has(.rc-list) .post-title { font: normal clamp(54px, 7vw, 92px)/1 Georgia, serif; letter-spacing: -.055em; }
+.rc-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px 28px; align-items: start; }
+.rc-frame { display: block; width: 100%; height: 460px; border: none; background: white; }
+.rc-frame:first-child, .rc-frame:last-child { grid-column: 1 / -1; }
+@media (max-width: 760px) { .rc-list { grid-template-columns: minmax(0, 1fr); gap: 24px; } }
 </style>
 <script>
 (function () {
