@@ -3,9 +3,9 @@ body {
 }
 
 .card {
-  background: #222326;
-  color: #eeedea;
-  border: 1px solid #3b3d41 !important;
+  background: #fff;
+  color: #242628;
+  border: 1px solid #dedfdf !important;
   border-radius: 8px !important;
 }
 
@@ -14,14 +14,14 @@ body {
 }
 
 .card .txt h3 {
-  color: #eeedea !important;
+  color: #242628 !important;
   font-size: 20px !important;
   line-height: 1.25;
   letter-spacing: 0;
 }
 
 .card .txt p {
-  color: #c4c4c4 !important;
+  color: #4c525a !important;
   font-size: 13px !important;
   line-height: 1.5;
 }
@@ -32,22 +32,22 @@ body {
 }
 
 .card .txt .hl {
-  color: #e4c996 !important;
+  color: #1f507c !important;
 }
 
 .card .fig {
-  background: #f5f4f1 !important;
+  background: #f1f3f5 !important;
   padding: 10px;
 }
 
 .card .links {
-  border-top: 1px solid #3b3d41 !important;
+  border-top: 1px solid #dedfdf !important;
   padding: 8px 20px;
   font-size: 12px;
 }
 
 .card .links a {
-  color: #e4c996;
+  color: #1f507c;
 }
 
 .card .links a:hover,
@@ -71,7 +71,7 @@ body {
   }
 
   .card .fig {
-    border-left: 1px solid #3b3d41;
+    border-left: 1px solid #dedfdf;
   }
 }
 
