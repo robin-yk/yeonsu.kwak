@@ -1,77 +1,83 @@
+body {
+  background: transparent !important;
+}
+
+.card {
+  background: #222326;
+  color: #eeedea;
+  border: 1px solid #3b3d41 !important;
+  border-radius: 8px !important;
+}
+
+.card .txt {
+  padding: 20px !important;
+}
+
+.card .txt h3 {
+  color: #eeedea !important;
+  font-size: 20px !important;
+  line-height: 1.25;
+  letter-spacing: 0;
+}
+
+.card .txt p {
+  color: #c4c4c4 !important;
+  font-size: 13px !important;
+  line-height: 1.5;
+}
+
+.card .txt .meta {
+  margin-top: 14px !important;
+  padding-top: 0;
+}
+
+.card .txt .hl {
+  color: #e4c996 !important;
+}
+
+.card .fig {
+  background: #f5f4f1 !important;
+  padding: 10px;
+}
+
+.card .links {
+  border-top: 1px solid #3b3d41 !important;
+  padding: 8px 20px;
+  font-size: 12px;
+}
+
+.card .links a {
+  color: #e4c996;
+}
+
+.card .links a:hover,
+.card .links a:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.card .links a::before {
+  display: none;
+}
+
 @media (min-width: 641px) {
   .card .row {
-    grid-template-columns: 40% 60% !important;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr) !important;
   }
 
-  .card .fig svg,
-  .card .fig .seek {
-    width: 100%;
-    max-width: 400px !important;
+  .card .txt .meta {
+    margin-top: auto !important;
+    padding-top: 16px;
   }
 
-  .card .meta {
-    margin-top: 20px !important;
-    padding-top: 0;
+  .card .fig {
+    border-left: 1px solid #3b3d41;
   }
 }
 
 @media (max-width: 640px) {
-  .card .txt {
-    padding: 18px 20px !important;
-  }
-
   .card .fig {
     order: 0;
+    border-bottom: 0;
   }
-}
-
-.card {
-  border-top: 2px solid #243e48 !important;
-}
-.card .txt {
-  background: #f3f2ed;
-  padding: 24px !important;
-}
-.card .txt h3 {
-  font:
-    normal clamp(26px, 4vw, 38px)/1.08 Georgia,
-    serif !important;
-  letter-spacing: -0.04em;
-  color: #17343e;
-}
-.card .links {
-  background: #f3f2ed;
-}
-.card .links a {
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
-.card .links a::before {
-  display: none;
-}
-@media (min-width: 641px) {
-  .card .txt {
-    justify-content: center;
-  }
-  .card .row {
-    grid-template-columns: 42% 58% !important;
-  }
-  .card .fig svg {
-    max-width: 470px !important;
-  }
-}
-
-.featured .txt,
-.featured .links {
-  background: #193943;
-}
-.featured .txt h3,
-.featured .links a {
-  color: #fff;
-}
-.featured .txt p {
-  color: #e0e9e6 !important;
-}
-.featured .txt h3 {
-  color: white !important;
 }
