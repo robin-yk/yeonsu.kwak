@@ -1,0 +1,26 @@
+@media (min-width: 641px) {
+  .card .row {
+    grid-template-columns: 40% 60% !important;
+  }
+
+  .card .fig svg,
+  .card .fig .seek {
+    width: 100%;
+    max-width: 400px !important;
+  }
+
+  .card .meta {
+    margin-top: 20px !important;
+    padding-top: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .card .txt {
+    padding: 18px 20px !important;
+  }
+
+  .card .fig {
+    order: 0;
+  }
+}

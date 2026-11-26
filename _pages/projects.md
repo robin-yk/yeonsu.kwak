@@ -14,7 +14,8 @@ nav_order: 1
 </div>
 
 <style>
-.rc-frame { width: 100%; height: 340px; border: 0; padding: 0; margin: 0 0 28px; display: block; background: #fff; border-radius: 14px; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 10px 28px rgba(0, 0, 0, 0.07); overflow: hidden; }
+.post:has(.rc-list) { max-width: 820px; margin-inline: auto; }
+.rc-frame { width: 100%; height: 340px; border: 0; padding: 0; margin: 0 0 20px; display: block; background: #fff; border-radius: 8px; outline: 1px solid #dce0e5; overflow: hidden; }
 </style>
 <script>
 (function () {
